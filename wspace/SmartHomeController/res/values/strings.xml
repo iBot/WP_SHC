@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <!--    <string name="hello">Hello World, SmartHomeControllerActivity!</string>-->
+    <string name="app_name">Smart Home Controller</string>
+    <string name="short_app_name">SHC</string>
+    <string name="param_regex">param</string>
+<!-- Menu Strings -->
+    <!-- <string name="menu_search">Search</string>
+    <string name="menu_add">Add</string> -->
+    <string name="menu_quit">Quit</string>
+    <string name="menu_feedback">Feedback</string>
+    <string name="menu_about">About</string>
+    <!-- <string name="menu_share">Share</string> -->
+   <!--  
+    <string name="plugin_name_old">Name</string>
+    <string name="plugin_pointer_old">Pointer</string>
+    <string name="plugin_begin">Begin</string>
+    <string name="Path">path</string>
+    <string name="conrols_array">controls</string>
+    <string name="conrols_array_item">controlitem</string>
+    <string name="conrol_item_type">Typ</string>
+    <string name="conrol_item_group">group</string>
+    <string name="conrol_item_id">id</string>
+    <string name="conrol_item_title">Bezeichnung</string>
+    <string name="conrol_item_std_value">Standardwert</string>
+    <string name="conrol_item_current_value">Aktuellerwert</string>
+    <string name="conrol_item_max_value">Maxwert</string>
+    <string name="conrol_item_groupname">Gruppenname</string>
+    <string name="conrol_item_message_value">Nachricht</string>
+    <string name="message_value_server">Server</string>
+    <string name="message_value_port">Port</string>
+    <string name="message_value_topic">Topic</string>
+    <string name="message_value_typ">Typ</string>
+    <string name="message_value_msg">Message</string> -->
+    
+    <!-- New Plugin Strings -->
+    <string name="plugin_name">plugin_name</string>
+    <string name="plugin_pointer">plugin_pointer</string>
+    <string name="plugin_server">plugin_server</string>
+    <string name="plugin_port">plugin_port</string>
+    <string name="main_array">main_array</string>
+    <string name="location_path">location_path</string>
+    <string name="controls_array">controls_array</string>
+    <string name="control_item">control_item</string>
+    <string name="group_title">group_title</string>
+    <string name="lp_label">lp_label</string>
+    <string name="group_array">group_array</string>
+    <string name="group_item_typ">group_item_typ</string>
+    <string name="group_item_title">group_item_title</string>
+    <string name="group_item_argument_array">group_item_argument_array</string>
+    <string name="message">message</string>
+    <string name="message_topic">message_topic</string>
+    <string name="message_typ">message_typ</string>
+    <string name="message_value">message_value</string>    
+</resources>

@@ -1,0 +1,144 @@
+{
+	"plugin_name": "Heating",
+	"plugin_pointer": "LP",
+	"plugin_server": "172.16.0.200",
+	"plugin_port": 12349,
+	"main_array": [{
+		"location_path": "LP.Sleep",
+		"controls_array": [{
+			"control_item": {
+				"group_title": "heat",
+				"lp_label" : "heat_sleep",
+				"group_array": [{
+					"group_item_typ": "Switch",
+					"group_item_title": "Sleep",
+					"group_item_argument_array": ["02",
+					"00",
+					"0"]
+				}],
+				"message": {
+					"message_topic": "HEATING.CONTROL",
+					"message_typ": "topic",
+					"message_value": {
+						"heatModul0": "param1"
+					}
+				}
+			}
+		}]
+	},
+	{
+		"location_path": "LP.Dining",
+		"controls_array": [{
+			"control_item": {
+				"group_title": "heat",
+				"lp_label" : "heat_dinning",
+				"group_array": [{
+					"group_item_typ": "Switch",
+					"group_item_title": "Dinning",
+					"group_item_argument_array": ["01",
+					"00",
+					"0"]
+				}],
+				"message": {
+					"message_topic": "HEATING.CONTROL",
+					"message_typ": "topic",
+					"message_value": {
+						"heatModul0": "param1"
+					}
+				}
+			}
+		}]
+	},
+	{
+		"location_path": "LP.Bathroom",
+		"controls_array": [{
+			"control_item": {
+				"group_title": "heat",
+				"lp_label" : "heat_bathroom",
+				"group_array": [{
+					"group_item_typ": "Switch",
+					"group_item_title": "Bathroom",
+					"group_item_argument_array": ["04",
+					"00",
+					"0"]
+				}],
+				"message": {
+					"message_topic": "HEATING.CONTROL",
+					"message_typ": "topic",
+					"message_value": {
+						"heatModul1": "param1"
+					}
+				}
+			}
+		}]
+	},
+	{
+		"location_path": "LP.Lounge",
+		"controls_array": [{
+			"control_item": {
+				"group_title": "heat",
+				"lp_label" : "heat_lounge",
+				"group_array": [{
+					"group_item_typ": "Switch",
+					"group_item_title": "Lounge",
+					"group_item_argument_array": ["03",
+					"00",
+					"0"]
+				}],
+				"message": {
+					"message_topic": "HEATING.CONTROL",
+					"message_typ": "topic",
+					"message_value": {
+						"heatModul1": "param1"
+					}
+				}
+			}
+		}]
+	},
+	{
+		"location_path": "LP.Lounge.Lounge0",
+		"controls_array": [{
+			"control_item": {
+				"group_title": "heat",
+				"lp_label" : "heat_lounge0",
+				"group_array": [{
+					"group_item_typ": "Switch",
+					"group_item_title": "Lounge0",
+					"group_item_argument_array": ["01",
+					"00",
+					"0"]
+				}],
+				"message": {
+					"message_topic": "HEATING.CONTROL",
+					"message_typ": "topic",
+					"message_value": {
+						"heatModul1": "param1"
+					}
+				}
+			}
+		}]
+	},
+	{
+		"location_path": "LP.Lounge.Lounge1",
+		"controls_array": [{
+			"control_item": {
+				"group_title": "heat",
+				"lp_label" : "heat_lounge1",
+				"group_array": [{
+					"group_item_typ": "Switch",
+					"group_item_title": "Lounge1",
+					"group_item_argument_array": ["02",
+					"00",
+					"0"]
+				}],
+				"message": {
+					"message_topic": "HEATING.CONTROL",
+					"message_typ": "topic",
+					"message_value": {
+						"heatModul1": "param1"
+					}
+				}
+			}
+		}]
+	}]
+}

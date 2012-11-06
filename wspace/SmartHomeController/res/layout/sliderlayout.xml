@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"  >
+            <TextView
+                android:id="@+id/slider_name"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.90" 
+                android:text="Slider"/>
+
+            <SeekBar
+                android:id="@+id/slider_seekbar"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_weight="10" />
+
+            <EditText
+                android:id="@+id/slider_value"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5" 
+                android:text="0"
+                android:inputType="number"/>
+    
+
+</LinearLayout>

@@ -1,0 +1,656 @@
+{
+	"plugin_name" : "Light Scenes",
+	"plugin_pointer" : "LP",
+	"plugin_server" : "172.16.0.200",
+	"plugin_port" : 12349,
+	"main_array" : [{
+			"location_path" : "LP",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "Wake Up",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Start",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "start_szene_wakeUp",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Stop",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "stop_szene_wakeUp",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Hold",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "halt_szene_wakeUp",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Resume",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "resume_szene_wakeUp",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "Relax",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Start",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "start_szene_relax",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Stop",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "stop_szene_relax",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Hold",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "halt_szene_relax",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Resume",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "resume_szene_relax",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "Comming Home",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Start",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "start_szene_comingHome",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Stop",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "stop_szene_comingHome",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Hold",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "halt_szene_comingHome",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Resume",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "resume_szene_comingHome",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "Cooking",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Start",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "start_szene_cooking",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Stop",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "stop_szene_cooking",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Hold",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "halt_szene_cooking",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Resume",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "resume_szene_cooking",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "Alert",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Start",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "start_szene_alert",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Stop",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "stop_szene_alert",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Hold",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "halt_szene_alert",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Resume",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "resume_szene_alert",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "Romantic Dinner",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Start",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "start_szene_romanticDinner",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Stop",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "stop_szene_romanticDinner",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Hold",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "halt_szene_romanticDinner",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Resume",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "resume_szene_romanticDinner",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "Sunset",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Start",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "start_szene_sunset",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Stop",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "stop_szene_sunset",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Hold",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "halt_szene_sunset",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "Resume",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2"
+								},
+								"action" : "resume_szene_sunset",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}
+			]
+		}
+	]
+}

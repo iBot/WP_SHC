@@ -1,0 +1,192 @@
+{
+	"plugin_name" : "Curtains and Blinds",
+	"plugin_pointer" : "LP",
+	"plugin_server" : "172.16.0.200",
+	"plugin_port" : 12349,
+	"main_array" : [{
+			"location_path" : "LP.Lounge",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "Lounge Curtain",
+						"lp_label" : "lounge_curtain",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "open",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {},
+								"action" : "lounge_curtain_open",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "Lounge Curtain",
+						"lp_label" : "lounge_curtain",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "close",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {},
+								"action" : "lounge_curtain_close",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Sleeping.Hall",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "Sleeping Hall Curtain",
+						"lp_label" : "sleeping_hall_curtain",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "open",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {},
+								"action" : "sleeping_hall_curtain_open",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "Sleeping Hall Curtain",
+						"lp_label" : "sleeping_hall_curtain",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "close",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {},
+								"action" : "sleeping_hall_curtain_close",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Sleeping.Window",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "Sleeping Window Curtain",
+						"lp_label" : "sleeping_window_curtain",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "open",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {},
+								"action" : "sleeping_window_curtain_open",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "Sleeping Window Curtain",
+						"lp_label" : "sleeping_window_curtain",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "close",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {},
+								"action" : "sleeping_window_curtain_close",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "Blinds",
+						"lp_label" : "blinds",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "open",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {},
+								"action" : "blinds_open",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "Blinds",
+						"lp_label" : "blinds",
+						"group_array" : [{
+								"group_item_typ" : "Button",
+								"group_item_title" : "close",
+								"group_item_argument_array" : [""]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {},
+								"action" : "blinds_close",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}
+			]
+		}
+	]
+}

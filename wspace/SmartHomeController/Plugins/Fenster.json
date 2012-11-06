@@ -1,0 +1,316 @@
+{
+	"plugin_name" : "Windows",
+	"plugin_pointer" : "LP",
+	"plugin_server" : "172.16.0.200",
+	"plugin_port" : 12349,
+	"main_array" : [{
+			"location_path" : "LP",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "winAll",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Distance",
+								"group_item_argument_array" : ["0", "20", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "WINDOW.CONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"ALL" : ["param1", "FAST"]
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Dining",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "winDining",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Distance",
+								"group_item_argument_array" : ["0", "20", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "WINDOW.CONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"DINING" : ["param1", "FAST"]
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Dining.SeatLeft",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "winDining0",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Distance",
+								"group_item_argument_array" : ["0", "20", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "WINDOW.CONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"winDining0" : ["param1", "FAST"]
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Dining.SeatRight",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "winDining1",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Distance",
+								"group_item_argument_array" : ["0", "20", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "WINDOW.CONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"winDining1" : ["param1", "FAST"]
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Kitchen",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "winKitchen",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Distance",
+								"group_item_argument_array" : ["0", "20", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "WINDOW.CONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"KITCHEN" : ["param1", "FAST"]
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Kitchen.Left",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "winKitchen0",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Distance",
+								"group_item_argument_array" : ["0", "20", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "WINDOW.CONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"winKitchen0" : ["param1", "FAST"]
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Kitchen.Right",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "winKitchen1",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Distance",
+								"group_item_argument_array" : ["0", "20", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "WINDOW.CONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"winKitchen1" : ["param1", "FAST"]
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Lounge",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "winLounge",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Distance",
+								"group_item_argument_array" : ["0", "20", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "WINDOW.CONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"LOUNGE" : ["param1", "FAST"]
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Lounge.Window_0",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "winLounge0",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Distance",
+								"group_item_argument_array" : ["0", "20", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "WINDOW.CONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"winLounge0" : ["param1", "FAST"]
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Lounge.Window_1",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "winLounge1",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Distance",
+								"group_item_argument_array" : ["0", "20", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "WINDOW.CONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"winLounge1" : ["param1", "FAST"]
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Lounge.Window_2",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "winLounge2",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Distance",
+								"group_item_argument_array" : ["0", "20", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "WINDOW.CONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"winLounge2" : ["param1", "FAST"]
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Lounge.Window_3",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "winLounge3",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Distance",
+								"group_item_argument_array" : ["0", "20", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "WINDOW.CONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"winLounge3" : ["param1", "FAST"]
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Lounge.Window_4",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "winLounge4",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Distance",
+								"group_item_argument_array" : ["0", "20", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "WINDOW.CONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"winLounge4" : ["param1", "FAST"]
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Bathroom",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "",
+						"lp_label" : "winBathroom",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Distance",
+								"group_item_argument_array" : ["0", "20", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "WINDOW.CONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"winBathroom" : ["param1", "FAST"]
+							}
+						}
+					}
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,442 @@
+{
+	"plugin_name" : "Light",
+	"plugin_pointer" : "LP",
+	"plugin_server" : "172.16.0.200",
+	"plugin_port" : 12349,
+	"main_array" : [{
+			"location_path" : "LP.Lounge",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "Intensity",
+						"lp_label" : "lounge_light",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : " ",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "0",
+									"intensity" : "param1"
+								},
+								"action" : "lounge_light_on",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "Color",
+						"lp_label" : "lounge_light_color",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Red",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}, {
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Green",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}, {
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Blue",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "0",
+									"red" : "param1",
+									"blue" : "param3",
+									"green" : "param2"
+								},
+								"action" : "lounge_light_color",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Kitchen.Cooking",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "Intensity",
+						"lp_label" : "kitchen_cooking_light",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : " ",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "0",
+									"intensity" : "param1"
+								},
+								"action" : "kitchen_cooking_light_on",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "Color",
+						"lp_label" : "kitchen_cooking_color",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Red",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}, {
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Green",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}, {
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Blue",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "2",
+									"red" : "param1",
+									"blue" : "param3",
+									"green" : "param2"
+								},
+								"action" : "kitchen_cooking_light_color",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Kitchen.Main",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "Intensity",
+						"lp_label" : "kitchen_main_light",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : " ",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "0",
+									"intensity" : "param1"
+								},
+								"action" : "kitchen_main_light_on",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "Color",
+						"lp_label" : "kitchen_main_light_color",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Red",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}, {
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Green",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}, {
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Blue",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "0",
+									"red" : "param1",
+									"blue" : "param3",
+									"green" : "param2"
+								},
+								"action" : "kitchen_main_light_color",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Dining",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "Intensity",
+						"lp_label" : "dining_light",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : " ",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "0",
+									"intensity" : "param1"
+								},
+								"action" : "dining_light_on",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "Color",
+						"lp_label" : "dining_light_color",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Red",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}, {
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Green",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}, {
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Blue",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "0",
+									"red" : "param1",
+									"blue" : "param3",
+									"green" : "param2"
+								},
+								"action" : "dining_light_color",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Corridor",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "Intensity",
+						"lp_label" : "corridor_light",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : " ",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "0",
+									"intensity" : "param1"
+								},
+								"action" : "corridor_light_on",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "Color",
+						"lp_label" : "corridor_light_color",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Red",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}, {
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Green",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}, {
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Blue",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "0",
+									"red" : "param1",
+									"blue" : "param3",
+									"green" : "param2"
+								},
+								"action" : "corridor_light_color",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Sleeping",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "Intensity",
+						"lp_label" : "sleeping_light",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : " ",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "0",
+									"intensity" : "param1"
+								},
+								"action" : "sleeping_light_on",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "Color",
+						"lp_label" : "sleeping_light_color",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Red",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}, {
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Green",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}, {
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Blue",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "0",
+									"red" : "param1",
+									"blue" : "param3",
+									"green" : "param2"
+								},
+								"action" : "sleeping_light_color",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}
+			]
+		}, {
+			"location_path" : "LP.Bathroom",
+			"controls_array" : [{
+					"control_item" : {
+						"group_title" : "Intensity",
+						"lp_label" : "bathroom_light",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : " ",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "0",
+									"intensity" : "param1"
+								},
+								"action" : "bathroom_light_on",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}, {
+					"control_item" : {
+						"group_title" : "Color",
+						"lp_label" : "bathroom_light_color",
+						"group_array" : [{
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Red",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}, {
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Green",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}, {
+								"group_item_typ" : "Slider",
+								"group_item_title" : "Blue",
+								"group_item_argument_array" : ["0", "255", "0"]
+							}
+						],
+						"message" : {
+							"message_topic" : "LP.LIGHTCONTROL",
+							"message_typ" : "topic",
+							"message_value" : {
+								"values" : {
+									"fadeTime" : "0",
+									"red" : "param1",
+									"blue" : "param3",
+									"green" : "param2"
+								},
+								"action" : "bathroom_light_color",
+								"Id" : "controller_1",
+								"Version" : null
+							}
+						}
+					}
+				}
+			]
+		}
+	]
+}
