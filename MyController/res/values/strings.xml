@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="app_name">MyController</string>
+    <string name="title_room_detail">Room Detail</string>
+    <string name="title_room_list">Rooms</string>
+
+</resources>
