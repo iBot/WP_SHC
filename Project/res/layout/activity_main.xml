@@ -10,27 +10,36 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="36dp"
-        android:text="Licht"
+        android:text="@string/Licht"
         tools:context=".MainActivity" />
 
     <Button
-        android:id="@+id/buttonOff"
+        android:id="@+id/buttonRedLightDinning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="130dp"
-        android:text="Aus" 
-    	android:onClick="onClickButtonOff" />
+        android:layout_marginTop="75dp"
+        android:onClick="onClickButtonDinningRed"
+        android:text="@string/DinningRed" />
 
     <Button
         android:id="@+id/buttonOn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonOff"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="65dp"
-        android:text="An" 
-    	android:onClick="onClickButtonOn" />
+        android:layout_below="@+id/buttonRedLightDinning"
+        android:layout_marginTop="47dp"
+        android:layout_toRightOf="@+id/textView1"
+        android:onClick="lightAllOn"
+        android:text="@string/buttonOn" />
+
+    <Button
+        android:id="@+id/buttonOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonOn"
+        android:layout_alignBottom="@+id/buttonOn"
+        android:layout_toLeftOf="@+id/textView1"
+        android:onClick="lightAllOff"
+        android:text="@string/buttonOff" />
 
 </RelativeLayout>
