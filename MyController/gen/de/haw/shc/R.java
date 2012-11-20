@@ -14,20 +14,31 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int room_detail=0x7f060002;
-        public static final int room_detail_container=0x7f060000;
-        public static final int room_list=0x7f060001;
+        public static final int context_list=0x7f060000;
+        public static final int control=0x7f060002;
+        public static final int control_container=0x7f060001;
     }
     public static final class layout {
-        public static final int activity_room_detail=0x7f030000;
-        public static final int activity_room_list=0x7f030001;
-        public static final int activity_room_twopane=0x7f030002;
-        public static final int fragment_room_detail=0x7f030003;
+        public static final int activity_context_list=0x7f030000;
+        public static final int activity_context_twopane=0x7f030001;
+        public static final int activity_control=0x7f030002;
+        public static final int fragment_control=0x7f030003;
     }
     public static final class string {
+        public static final int allRooms=0x7f040003;
         public static final int app_name=0x7f040000;
-        public static final int title_room_detail=0x7f040001;
-        public static final int title_room_list=0x7f040002;
+        public static final int bedroom=0x7f040008;
+        public static final int blinds=0x7f04000c;
+        public static final int curtain=0x7f04000d;
+        public static final int dining=0x7f040004;
+        public static final int hall=0x7f040007;
+        public static final int heating=0x7f04000a;
+        public static final int kitchen=0x7f040006;
+        public static final int light=0x7f040009;
+        public static final int lounge=0x7f040005;
+        public static final int title_context_list=0x7f040002;
+        public static final int title_control=0x7f040001;
+        public static final int window=0x7f04000b;
     }
     public static final class style {
         public static final int AppTheme=0x7f050000;

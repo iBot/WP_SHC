@@ -1,7 +1,21 @@
 <resources>
 
     <string name="app_name">MyController</string>
-    <string name="title_room_detail">Room Detail</string>
-    <string name="title_room_list">Rooms</string>
+    <string name="title_control">Kontrollelemente</string>
+    <string name="title_context_list">MyController</string>
+    
+    <string name="allRooms">Alle Räume</string>
+    <string name="dining">Esszimmer</string>
+    <string name="lounge">Wohnzimmer</string>
+    <string name="kitchen">Kitchen</string>
+    <string name="hall">Flur</string>
+    <string name="bedroom">Schlafzimmer</string>
+    
+    <string name="light">Licht</string>
+    <string name="heating">Heizung</string>
+    <string name="window">Fenster</string>
+    <string name="blinds">Rollos</string>
+    <string name="curtain">Gardienen</string>
+
 
 </resources>

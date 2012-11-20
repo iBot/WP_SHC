@@ -1,0 +1,109 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (classFileParser.cpp:3494), pid=9096, tid=4652
+#  Error: ShouldNotReachHere()
+#
+# JRE version: 6.0_37-b06
+# Java VM: Java HotSpot(TM) Client VM (20.12-b01 mixed mode windows-x86 )
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x004c2c00):  JavaThread "Unknown thread" [_thread_in_vm, id=4652, stack(0x00260000,0x002b0000)]
+
+Stack: [0x00260000,0x002b0000],  sp=0x002af86c,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x13471a]
+V  [jvm.dll+0x12f20b]
+V  [jvm.dll+0x167de]
+V  [jvm.dll+0x1802f]
+V  [jvm.dll+0x275a5]
+V  [jvm.dll+0x27de6]
+V  [jvm.dll+0x28195]
+V  [jvm.dll+0x28229]
+V  [jvm.dll+0x282ec]
+V  [jvm.dll+0x2836a]
+V  [jvm.dll+0x2844d]
+V  [jvm.dll+0x28719]
+V  [jvm.dll+0x6ce03]
+V  [jvm.dll+0x6d1dc]
+V  [jvm.dll+0xfa6dc]
+V  [jvm.dll+0x11902b]
+V  [jvm.dll+0x9f4e0]
+C  [javaw.exe+0x1657]
+C  [javaw.exe+0x1e2c]
+C  [javaw.exe+0x8614]
+C  [kernel32.dll+0x133aa]  BaseThreadInitThunk+0x12
+C  [ntdll.dll+0x39ef2]  RtlInitializeExceptionChain+0x63
+C  [ntdll.dll+0x39ec5]  RtlInitializeExceptionChain+0x36
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x004c2c00 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=4652, stack(0x00260000,0x002b0000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Dynamic libraries:
+0x00400000 - 0x00425000 	C:\Program Files (x86)\Java\jdk1.6.0_37\bin\javaw.exe
+0x77d30000 - 0x77eb0000 	C:\Windows\SysWOW64\ntdll.dll
+0x76cc0000 - 0x76dd0000 	C:\Windows\syswow64\kernel32.dll
+0x75a30000 - 0x75a77000 	C:\Windows\syswow64\KERNELBASE.dll
+0x77470000 - 0x77510000 	C:\Windows\syswow64\ADVAPI32.dll
+0x75a80000 - 0x75b2c000 	C:\Windows\syswow64\msvcrt.dll
+0x77440000 - 0x77459000 	C:\Windows\SysWOW64\sechost.dll
+0x775d0000 - 0x776c0000 	C:\Windows\syswow64\RPCRT4.dll
+0x75890000 - 0x758f0000 	C:\Windows\syswow64\SspiCli.dll
+0x75880000 - 0x7588c000 	C:\Windows\syswow64\CRYPTBASE.dll
+0x771b0000 - 0x772b0000 	C:\Windows\syswow64\USER32.dll
+0x77350000 - 0x773e0000 	C:\Windows\syswow64\GDI32.dll
+0x77d00000 - 0x77d0a000 	C:\Windows\syswow64\LPK.dll
+0x76fb0000 - 0x7704d000 	C:\Windows\syswow64\USP10.dll
+0x76b70000 - 0x76bd0000 	C:\Windows\system32\IMM32.DLL
+0x77860000 - 0x7792c000 	C:\Windows\syswow64\MSCTF.dll
+0x74f10000 - 0x74f48000 	C:\PROGRA~2\Sophos\SOPHOS~1\SOPHOS~1.DLL
+0x768d0000 - 0x768d5000 	C:\Windows\syswow64\PSAPI.DLL
+0x7c340000 - 0x7c396000 	C:\Program Files (x86)\Java\jdk1.6.0_37\jre\bin\msvcr71.dll
+0x6d8c0000 - 0x6db70000 	C:\Program Files (x86)\Java\jdk1.6.0_37\jre\bin\client\jvm.dll
+0x73740000 - 0x73772000 	C:\Windows\system32\WINMM.dll
+0x74940000 - 0x7498c000 	C:\Windows\system32\apphelp.dll
+0x6d870000 - 0x6d87c000 	C:\Program Files (x86)\Java\jdk1.6.0_37\jre\bin\verify.dll
+0x6d3d0000 - 0x6d3ef000 	C:\Program Files (x86)\Java\jdk1.6.0_37\jre\bin\java.dll
+0x6d8b0000 - 0x6d8bf000 	C:\Program Files (x86)\Java\jdk1.6.0_37\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 -Xbootclasspath:C:\Program Files (x86)\Android\android-sdk\platforms\android-16\android.jar 
+java_command: de.wpsmarthome.bestpractices.Test
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=.;C:\Program Files (x86)\Java\jre6\lib\ext\QTJava.zip;C:\OpenCV10\data\haarcascades;C:\Program Files (x86)\OpenNI\Bin\org.OpenNI.jar
+USERNAME=birgit
+LD_LIBRARY_PATH=C:\Program Files (x86)\Android\android-sdk\tools\lib
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 37 Stepping 2, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 37 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 3985068k(648444k free), swap 7968284k(3839408k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.12-b01) for windows-x86 JRE (1.6.0_37-b06), built on Sep 24 2012 12:44:35 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Sun Nov 11 09:04:25 2012
+elapsed time: 0 seconds
+

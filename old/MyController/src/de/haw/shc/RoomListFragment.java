@@ -1,8 +1,6 @@
 package de.haw.shc;
 
-import de.haw.shc.rooms.RoomContent;
-import de.haw.shc.rooms.RoomContent.RoomItem;
-
+import de.haw.shc.rooms.RoomContext;
 import android.R;
 import android.app.Activity;
 import android.os.Bundle;
@@ -36,11 +34,10 @@ public class RoomListFragment extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setListAdapter(new ArrayAdapter<RoomContent.RoomItem>(getActivity(),
+        setListAdapter(new ArrayAdapter<RoomContext>(getActivity(),
                 R.layout.simple_list_item_activated_1,
                 R.id.text1,
-                RoomContent.ITEMS));
-        
+                RoomContext.values()));
     }
 
     @Override
@@ -71,7 +68,7 @@ public class RoomListFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView listView, View view, int position, long id) {
         super.onListItemClick(listView, view, position, id);
-        mCallbacks.onItemSelected(RoomContent.ITEMS.get(position).id);
+        mCallbacks.onItemSelected(RoomContext.values()[position].toString());
     }
 
     @Override

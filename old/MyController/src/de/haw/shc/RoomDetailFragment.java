@@ -1,6 +1,6 @@
 package de.haw.shc;
 
-import de.haw.shc.rooms.RoomContent;
+import de.haw.shc.rooms.RoomContext;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,7 +13,7 @@ public class RoomDetailFragment extends Fragment {
 
     public static final String ARG_ITEM_ID = "item_id";
 
-    RoomContent.RoomItem mItem;
+    RoomContext mItem;
 
     public RoomDetailFragment() {
     }
@@ -22,7 +22,7 @@ public class RoomDetailFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments().containsKey(ARG_ITEM_ID)) {
-            mItem = RoomContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            mItem = RoomContext.valueOf((getArguments().getString(ARG_ITEM_ID)));
         }
     }
 
@@ -31,7 +31,7 @@ public class RoomDetailFragment extends Fragment {
             Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_room_detail, container, false);
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.room_detail)).setText(mItem.content);
+            ((TextView) rootView.findViewById(R.id.room_detail)).setText(mItem.toString());
         }
         return rootView;
     }

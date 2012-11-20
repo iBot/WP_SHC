@@ -1,3 +1,3 @@
 <resources>
-    <item type="layout" name="activity_room_list">@layout/activity_room_twopane</item>
+    <item type="layout" name="activity_context_list">@layout/activity_context_twopane</item>
 </resources>
