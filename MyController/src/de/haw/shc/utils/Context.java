@@ -2,7 +2,7 @@ package de.haw.shc.utils;
 
 import static de.haw.shc.utils.Control.*;
 
-public enum Context {
+public enum Context{
 	
 	ALL("Alle Räume") {
 		@Override
@@ -41,6 +41,7 @@ public enum Context {
 		}
 	};
 	private String name;
+	
 
 	private Context(String name) {
 		this.name = name;

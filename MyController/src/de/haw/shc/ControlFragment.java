@@ -5,12 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
-
 import de.haw.shc.utils.Context;
 import de.haw.shc.utils.Control;
-import de.haw.shc.R;
 
 public class ControlFragment extends Fragment {
 
@@ -49,14 +45,38 @@ public class ControlFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.fragment_control, container,
-				false);
-		if (mContext != null && mControl != null) {
-			TextView tw = (TextView) rootView.findViewById(R.id.control);
-			tw.setText(mContext + " " + mControl);
-		}
+		
+		
+//		if (mContext != null && mControl != null) {
+//			TextView tw = (TextView) rootView.findViewById(R.id.control);
+//			tw.setText(mContext + " " + mControl);
+//		}
 
-		return rootView;
+		View view = null;
+				
+				
+		if(mControl == Control.LIGHT){
+			
+			view = inflater.inflate(R.layout.light_layout, container,false);
+		}
+		else if(mControl == Control.CURTAIN){
+			
+			view = inflater.inflate(R.layout.curtains_layout, container,false);
+		}
+		else if(mControl == Control.BLINDS){
+			
+			view = inflater.inflate(R.layout.blindy_layout, container,false);
+		}
+		else if(mControl == Control.WINDOW){
+			
+			view = inflater.inflate(R.layout.window_layout, container,false);
+		}
+		else if(mControl == Control.HEATING){
+			
+			view = inflater.inflate(R.layout.heatiny_layout, container,false);
+		}
+		
+		return view;
 	}
 
 }
