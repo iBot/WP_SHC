@@ -19,6 +19,8 @@ public class ContextDelegate {
 
 	private Context mContext;
 	private Control mControl;
+	
+	
 
 	private Map<Context, Control> ctxCtrlMap = new HashMap<Context, Control>();
 

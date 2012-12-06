@@ -7,12 +7,14 @@ public enum Control {
 	private String name;
 
 	private Control(String name) {
-		this.name = name;
+		this.name = rm.getStringValue(name);
 	}
 	
 	@Override
 	public String toString() {
 		return name;
 	}
+	
+	Resources.ResourceMap rm = Resources.getKeyValueMap("/res/values/strings.xml");
 
 }
