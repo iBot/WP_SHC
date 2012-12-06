@@ -15,14 +15,20 @@ public final class R {
     }
     public static final class id {
         public static final int context_list=0x7f060000;
-        public static final int control=0x7f060002;
+        public static final int control=0x7f060003;
         public static final int control_container=0x7f060001;
+        public static final int textView1=0x7f060002;
     }
     public static final class layout {
         public static final int activity_context_list=0x7f030000;
         public static final int activity_context_twopane=0x7f030001;
         public static final int activity_control=0x7f030002;
-        public static final int fragment_control=0x7f030003;
+        public static final int blindy_layout=0x7f030003;
+        public static final int curtains_layout=0x7f030004;
+        public static final int fragment_control=0x7f030005;
+        public static final int heatiny_layout=0x7f030006;
+        public static final int light_layout=0x7f030007;
+        public static final int window_layout=0x7f030008;
     }
     public static final class string {
         public static final int allRooms=0x7f040003;
