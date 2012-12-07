@@ -16,6 +16,20 @@
     <string name="window">Fenster</string>
     <string name="blinds">Rollos</string>
     <string name="curtain">Gardienen</string>
+    
+    
+    <string name="LightControlTitel">Lichtsteuerung</string>
+    <string name="ColorLightTitel">Farbauswahl</string>
+    <string name="ColorCommit">Übernehmen</string>
+    
+    <string name="whiteLightTitel">Licht</string>
+    
+    <string name="on">Ein</string>
+    <string name="off">Aus</string>
+    
+    
+	<string name="whiteLightDim">Dimmen</string>
 
-
+	
+	
 </resources>

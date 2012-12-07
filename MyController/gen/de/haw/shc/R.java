@@ -14,28 +14,38 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int button1=0x7f060005;
-        public static final int button2=0x7f060006;
+        public static final int ColorLightTitel=0x7f06000f;
+        public static final int WhiteLightDim=0x7f06000e;
+        public static final int WhiteLightDimTitel=0x7f06000d;
+        public static final int WhiteLightOff=0x7f06000c;
+        public static final int WhiteLightOn=0x7f06000b;
+        public static final int WhiteLightTitel=0x7f06000a;
+        public static final int button1=0x7f060006;
+        public static final int button2=0x7f060007;
         public static final int context_list=0x7f060000;
-        public static final int control=0x7f060003;
+        public static final int control=0x7f060008;
         public static final int control_container=0x7f060001;
+        public static final int lightTitel=0x7f060009;
         public static final int textView1=0x7f060002;
-        public static final int textView2=0x7f060004;
-        public static final int textView3=0x7f060007;
-        public static final int textView4=0x7f060008;
+        public static final int textView2=0x7f060003;
+        public static final int textView3=0x7f060004;
+        public static final int textView4=0x7f060005;
     }
     public static final class layout {
         public static final int activity_context_list=0x7f030000;
         public static final int activity_context_twopane=0x7f030001;
         public static final int activity_control=0x7f030002;
-        public static final int blindy_layout=0x7f030003;
+        public static final int blinds_layout=0x7f030003;
         public static final int curtains_layout=0x7f030004;
         public static final int fragment_control=0x7f030005;
-        public static final int heatiny_layout=0x7f030006;
+        public static final int heating_layout=0x7f030006;
         public static final int light_layout=0x7f030007;
         public static final int window_layout=0x7f030008;
     }
     public static final class string {
+        public static final int ColorCommit=0x7f040010;
+        public static final int ColorLightTitel=0x7f04000f;
+        public static final int LightControlTitel=0x7f04000e;
         public static final int allRooms=0x7f040003;
         public static final int app_name=0x7f040000;
         public static final int bedroom=0x7f040008;
@@ -47,8 +57,12 @@ public final class R {
         public static final int kitchen=0x7f040006;
         public static final int light=0x7f040009;
         public static final int lounge=0x7f040005;
+        public static final int off=0x7f040013;
+        public static final int on=0x7f040012;
         public static final int title_context_list=0x7f040002;
         public static final int title_control=0x7f040001;
+        public static final int whiteLightDim=0x7f040014;
+        public static final int whiteLightTitel=0x7f040011;
         public static final int window=0x7f04000b;
     }
     public static final class style {

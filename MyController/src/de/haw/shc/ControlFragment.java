@@ -65,7 +65,7 @@ public class ControlFragment extends Fragment {
 		}
 		else if(mControl == Control.BLINDS){
 			
-			view = inflater.inflate(R.layout.blindy_layout, container,false);
+			view = inflater.inflate(R.layout.blinds_layout, container,false);
 		}
 		else if(mControl == Control.WINDOW){
 			
@@ -73,7 +73,7 @@ public class ControlFragment extends Fragment {
 		}
 		else if(mControl == Control.HEATING){
 			
-			view = inflater.inflate(R.layout.heatiny_layout, container,false);
+			view = inflater.inflate(R.layout.heating_layout, container,false);
 		}
 		
 		return view;
