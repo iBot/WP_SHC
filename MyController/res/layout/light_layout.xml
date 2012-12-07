@@ -54,6 +54,7 @@
         		android:layout_width="wrap_content"
         		android:layout_height="wrap_content"
         		android:text="layoit2" />
+<<<<<<< HEAD
 
 	        <Button
 	            android:id="@+id/button3"
@@ -68,6 +69,8 @@
 	            android:text="Button" />
 
  />
+=======
+>>>>>>> 441d97230ef02297e89c2de670f51569e97f496c
 	        
 	    </LinearLayout>
         
@@ -81,7 +84,7 @@
 	            android:id="@+id/textView4"
         		android:layout_width="wrap_content"
         		android:layout_height="wrap_content"
-        		android:text="layout3" /> />
+        		android:text="layout3" />
 	    </LinearLayout>
 	    
 	    

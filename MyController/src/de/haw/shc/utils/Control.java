@@ -7,7 +7,8 @@ public enum Control {
 	private String name;
 
 	private Control(String name) {
-		this.name = rm.getStringValue(name);
+		//this.name = rm.getStringValue(name);
+		this.name = name;
 	}
 	
 	@Override
@@ -15,6 +16,6 @@ public enum Control {
 		return name;
 	}
 	
-	Resources.ResourceMap rm = Resources.getKeyValueMap("/res/values/strings.xml");
+	//Resources.ResourceMap rm = Resources.getKeyValueMap("res/values/strings.xml");
 
 }

@@ -29,7 +29,7 @@ public class ControlFragment extends Fragment {
 			if (getArguments().containsKey(CONTROL)) {
 				mControl = (Control) (getArguments().getSerializable(CONTROL));
 			}
-		} else {
+		} else { 
 			mContext = (Context) savedInstanceState.getSerializable(CONTEXT);
 			mControl = (Control) savedInstanceState.getSerializable(CONTROL);
 		}
