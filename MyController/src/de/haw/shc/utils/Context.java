@@ -5,7 +5,7 @@ import static de.haw.shc.utils.Control.*;
 
 public enum Context{
 	
-	ALL("Alle Räume") {
+	ALL("allRooms") {
 		@Override
 		public Control[] getControls() {
 			return new Control[] { LIGHT, CURTAIN, BLINDS, WINDOW, HEATING };
