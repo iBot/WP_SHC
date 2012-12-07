@@ -2,15 +2,10 @@ package de.haw.shc.utils;
 
 import static de.haw.shc.utils.Control.*; 
 
-<<<<<<< HEAD
-public enum Context {
-		
-	ALL("allRooms") {
-=======
+
 public enum Context{
 	
 	ALL("Alle Räume") {
->>>>>>> 4081ca1248c5a6358398d60441df71b6ae7d8340
 		@Override
 		public Control[] getControls() {
 			return new Control[] { LIGHT, CURTAIN, BLINDS, WINDOW, HEATING };
