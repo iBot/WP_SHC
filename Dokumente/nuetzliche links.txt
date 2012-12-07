@@ -1,0 +1,3 @@
+parse string.xml:
+
+http://stackoverflow.com/questions/6488489/android-file-not-found-exception 

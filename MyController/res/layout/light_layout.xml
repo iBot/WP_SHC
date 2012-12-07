@@ -16,17 +16,30 @@
         android:orientation="horizontal" >
         
         
+
 	    <LinearLayout 
 	        android:layout_width="0dp"
 	        android:layout_weight="1"
 	        android:layout_height="match_parent"
-	        android:orientation="horizontal">
+	        android:orientation="vertical">
 	        
 	        <TextView
 	            android:id="@+id/textView2"
         		android:layout_width="wrap_content"
         		android:layout_height="wrap_content"
-        		android:text="layout1" /> 
+        		android:text="layout1" />
+
+	        <Button
+	            android:id="@+id/button1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Button" />
+
+	        <Button
+	            android:id="@+id/button2"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Button" />
 	        
 	    </LinearLayout>
 	    
@@ -34,13 +47,27 @@
 	        android:layout_width="0dp"
 	          android:layout_weight="1"
 	        android:layout_height="match_parent"
-	        android:orientation="horizontal">
+	        android:orientation="vertical">
 	        
 	        <TextView
 	            android:id="@+id/textView3"
         		android:layout_width="wrap_content"
         		android:layout_height="wrap_content"
-        		android:text="layoit2" /> />
+        		android:text="layoit2" />
+
+	        <Button
+	            android:id="@+id/button3"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Button" />
+
+	        <Button
+	            android:id="@+id/button4"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Button" />
+
+ />
 	        
 	    </LinearLayout>
         
@@ -48,7 +75,7 @@
 	        android:layout_width="0dp"
 	          android:layout_weight="1"
 	        android:layout_height="match_parent"
-	        android:orientation="horizontal">
+	        android:orientation="vertical">
 	        
 	        <TextView
 	            android:id="@+id/textView4"
