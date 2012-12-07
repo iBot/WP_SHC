@@ -20,7 +20,7 @@
 	        android:layout_width="0dp"
 	        android:layout_weight="1"
 	        android:layout_height="match_parent"
-	        android:orientation="horizontal">
+	        android:orientation="vertical">
 	        
 	        <TextView
 	            android:id="@+id/textView2"
@@ -34,13 +34,13 @@
 	        android:layout_width="0dp"
 	          android:layout_weight="1"
 	        android:layout_height="match_parent"
-	        android:orientation="horizontal">
+	        android:orientation="vertical">
 	        
 	        <TextView
 	            android:id="@+id/textView3"
         		android:layout_width="wrap_content"
         		android:layout_height="wrap_content"
-        		android:text="layoit2" /> />
+        		android:text="layoit2" />
 	        
 	    </LinearLayout>
         
@@ -48,13 +48,13 @@
 	        android:layout_width="0dp"
 	          android:layout_weight="1"
 	        android:layout_height="match_parent"
-	        android:orientation="horizontal">
+	        android:orientation="vertical">
 	        
 	        <TextView
 	            android:id="@+id/textView4"
         		android:layout_width="wrap_content"
         		android:layout_height="wrap_content"
-        		android:text="layout3" /> />
+        		android:text="layout3" />
 	    </LinearLayout>
 	    
 	    
