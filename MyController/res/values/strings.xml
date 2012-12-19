@@ -21,15 +21,26 @@
     <string name="LightControlTitel">Lichtsteuerung</string>
     <string name="ColorLightTitel">Farbauswahl</string>
     <string name="ColorCommit">Übernehmen</string>
-    
     <string name="whiteLightTitel">Licht</string>
-    
+    <string name="whiteLightDim">Dimmen</string>
+
     <string name="on">Ein</string>
     <string name="off">Aus</string>
     
-    
-	<string name="whiteLightDim">Dimmen</string>
+    <string name="open">öffnen</string>
+    <string name="close">schließen</string>
 
-	
-	
+    <string name="heatingTitel">Heizung</string>
+    <string name="heatingColdText">kalt</string>
+    <string name="heatingWarmText">warm</string>
+
+    <string name="curtainstitel">Gardienen</string>
+    <string name="curtainsOpen">auf</string>
+	<string name="curtainsClose">zu</string>
+
+    <string name="blindsTitel">Rollos</string>
+    <string name="blindsOpen">auf</string>
+    <string name="blindsClose">zu</string>
+
+
 </resources>

@@ -58,6 +58,7 @@ public class ControlFragment extends Fragment {
 		if(mControl == Control.LIGHT){
 			
 			view = inflater.inflate(R.layout.light_layout, container,false);
+            view
 		}
 		else if(mControl == Control.CURTAIN){
 			

@@ -67,12 +67,13 @@
 	            android:text="@string/whiteLightDim"
 	            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-	         <SeekBar
-	             android:id="@+id/WhiteLightDim"
-	             android:layout_marginTop="50dp"
-	             android:layout_marginBottom="50dp"
-	             android:layout_width="match_parent"
-	             android:layout_height="wrap_content" />
+            <SeekBar
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:id="@+id/seekBar" android:indeterminate="false"/>
+
 	        
 	    </LinearLayout>
 	    

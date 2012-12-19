@@ -5,10 +5,10 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/CurtainsTitel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="curtains_layout_dummy" />
+        android:text="@string/curtainstitel" />
     
     <LinearLayout 
         android:layout_width="match_parent"
@@ -22,26 +22,20 @@
 	        android:layout_weight="1"
 	        android:layout_height="match_parent"
 	        android:orientation="vertical">
-	        
-	        <TextView
-	            android:id="@+id/textView2"
-        		android:layout_width="wrap_content"
-        		android:layout_height="wrap_content"
-        		android:text="layout1" />
 
-	        <Button
-	            android:id="@+id/button1"
+            <Button
+	            android:id="@+id/CurtainsOpen"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:layout_gravity="center"
-	            android:text="Button" />
+	            android:text="@string/curtainsOpen" />
 
 	        <Button
-	            android:id="@+id/button2"
+	            android:id="@+id/CurtainsClose"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:layout_gravity="center"
-	            android:text="Button" />
+	            android:text="@string/curtainsClose" />
 	        
 	    </LinearLayout>
 	    
