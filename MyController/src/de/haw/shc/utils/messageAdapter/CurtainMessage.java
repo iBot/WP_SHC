@@ -1,6 +1,6 @@
 package de.haw.shc.utils.messageAdapter;
 
-public class CurtainMessage implements Message{
+class CurtainMessage implements Message{
 
 	@Override
 	public String getContent() {

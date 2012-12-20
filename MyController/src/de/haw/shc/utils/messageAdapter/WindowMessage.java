@@ -1,6 +1,6 @@
 package de.haw.shc.utils.messageAdapter;
 
-public class WindowMessage implements Message {
+class WindowMessage implements Message {
 
 	@Override
 	public String getContent() {

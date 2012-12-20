@@ -1,6 +1,6 @@
 package de.haw.shc.utils.messageAdapter;
 
-public class HeatingMessage implements Message {
+class HeatingMessage implements Message {
 
 	@Override
 	public String getContent() {
