@@ -19,7 +19,7 @@ class LightMessage implements Message {
 		return TOPIC_LIGHTCONTROL;
 	}
 	
-	public LightMessage(String action,Map<String, Object> valueMap){
+	LightMessage(String action,Map<String, Object> valueMap){
 		JSONObject jsonValues = new JSONObject(valueMap);
 		Map<String, Object> contentMap = new HashMap<String, Object>();
 		contentMap.put("values", jsonValues);

@@ -5,21 +5,17 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-class CurtainMessage implements Message{
+/**
+ * Created with IntelliJ IDEA.
+ * User: Tobi
+ * Date: 21.12.12
+ * Time: 14:09
+ */
+class BlindsMessage implements Message {
 
     private final JSONObject messageContent;
 
-	@Override
-	public String getContent() {
-		return this.messageContent.toString();
-	}
-
-	@Override
-	public String getTopic() {
-		return TOPIC_CURTAINCONTROL;
-	}
-
-    public CurtainMessage(String action){
+    public BlindsMessage(String action) {
         JSONObject jsonValues = new JSONObject(new HashMap<String, Object>());
         Map<String, Object> contentMap = new HashMap<String, Object>();
         contentMap.put("values", jsonValues);
@@ -30,4 +26,13 @@ class CurtainMessage implements Message{
         this.messageContent = new JSONObject(contentMap);
     }
 
+    @Override
+    public String getContent() {
+        return messageContent.toString();
+    }
+
+    @Override
+    public String getTopic() {
+        return TOPIC_BLINDSCONTROL;
+    }
 }
