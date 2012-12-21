@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import de.haw.shc.utils.Context;
 import de.haw.shc.utils.Control;
+
+import java.util.ArrayList;
 
 public class ControlFragment extends Fragment {
 
@@ -54,10 +57,17 @@ public class ControlFragment extends Fragment {
 
 		View view = null;
 				
-				
+
+        List<Button> buttonList = new ArrayList<Button>();
+
+
 		if(mControl == Control.LIGHT){
 			
 			view = inflater.inflate(R.layout.light_layout, container,false);
+            view.findViewById()
+
+
+
 		}
 		else if(mControl == Control.CURTAIN){
 			
