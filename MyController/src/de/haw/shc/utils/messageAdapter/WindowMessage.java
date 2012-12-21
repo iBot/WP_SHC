@@ -1,8 +1,16 @@
 package de.haw.shc.utils.messageAdapter;
 
+import org.json.JSONObject;
+
 class WindowMessage implements Message {
 
-	@Override
+    private final JSONObject messageContent;
+
+    WindowMessage() {
+        this.messageContent = null;
+    }
+
+    @Override
 	public String getContent() {
 		// TODO Auto-generated method stub
 		return null;

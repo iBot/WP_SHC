@@ -5,12 +5,11 @@ import java.io.IOException;
 import de.haw.publisher.AndroidPublisher;
 import android.os.AsyncTask;
 import android.util.Log;
+import static de.haw.shc.utils.messageAdapter.Values.*;
 
 public class MessageSender {
 	
-	private static final String IP = "172.16.0.200";
-	private static final String PORT = "12349";
-	private static final String TOPIC = "Topic";
+
 
 	
 	private static final MessageSender messageSender = new MessageSender();
