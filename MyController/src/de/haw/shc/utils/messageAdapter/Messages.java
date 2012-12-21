@@ -6,6 +6,15 @@ import java.util.Map;
 //public static final Message 
 
 public final class Messages {
+
+
+    //Konstanten für Fenster-Geschwindigkeit
+    public static final String WINDOW_SPEED_FAST = "FAST";
+    public static final String WINDOW_SPEED_SLOW = "SLOW";
+    public static final String WINDOW_SPEED_STOP = "STOP";
+    public static final String WINDOW_SPEED_NSTP = "NSTP";
+
+
     //Light Messages - Küche:
     public static final Message MSG_LIGHT_KITCHEN_MAIN_LIGHT_OFF = createLightMessage("kitchen_main_light_off", getNoLightMap());
     public static final Message MSG_LIGHT_KITCHEN_MAIN_LIGHT_ON = createLightMessage("kitchen_main_light_on", getIntensityMap());
@@ -45,11 +54,21 @@ public final class Messages {
     //Blinds Message
     public static final Message MSG_BLINDS_ALLROOMS_BLINDS_OPEN = createBlindsMessage("blinds_open");
     public static final Message MSG_BLINDS_ALLROOMS_BLINDS_CLOSE = createBlindsMessage("blinds_close");
+    //
+    //Window Messages
+    public static final Message MSG_WINDOW_ALLROOMS_WINDOW_OPEN = createWindowMessage("ALL", 10, WINDOW_SPEED_FAST);
+    public static final Message MSG_WINDOW_ALLROOMS_WINDOW_CLOSE = createWindowMessage("ALL", 0, WINDOW_SPEED_FAST);
+    public static final Message MSG_WINDOW_KITCHEN_WINDOW_OPEN = createWindowMessage("KITCHEN", 10, WINDOW_SPEED_FAST);
+    public static final Message MSG_WINDOW_KITCHEN_WINDOW_CLOSE = createWindowMessage("KITCHEN", 0, WINDOW_SPEED_FAST);
+    public static final Message MSG_WINDOW_DINING_WINDOW_OPEN = createWindowMessage("DINING", 10, WINDOW_SPEED_FAST);
+    public static final Message MSG_WINDOW_DINING_WINDOW_CLOSE = createWindowMessage("DINING", 0, WINDOW_SPEED_FAST);
+    public static final Message MSG_WINDOW_LOUNGE_WINDOW_OPEN = createWindowMessage("LOUNGE", 10, WINDOW_SPEED_FAST);
+    public static final Message MSG_WINDOW_LOUNGE_WINDOW_CLOSE = createWindowMessage("LOUNGE", 0, WINDOW_SPEED_FAST);
 
     private Messages() {
     }
 
-    //Light Messages - Neu erstellen
+    //Messages manuell erstellen
     public static Message createLightMessage(String action, Map<String, Object> valueMap) {
         return new LightMessage(action, valueMap);
     }
@@ -58,8 +77,8 @@ public final class Messages {
         throw new Error("Not implemented yet!");
     }
 
-    public static Message createWindowMessage() {
-        throw new Error("Not implemented yet!");
+    public static Message createWindowMessage(String windowID, int targetPosition, String speed) {
+        return new WindowMessage(windowID, targetPosition,speed);
     }
 
     public static Message createCurtainMessage(String action) {
@@ -70,7 +89,8 @@ public final class Messages {
         return new BlindsMessage(action);
     }
 
-    private static final Map<String, Object> getNoLightMap() {
+    //Private Hilfsmethoden
+    private static Map<String, Object> getNoLightMap() {
         Map<String, Object> valueMap = new HashMap<String, Object>();
         valueMap.put("red", 0);
         valueMap.put("green", 0);
@@ -79,7 +99,7 @@ public final class Messages {
         return valueMap;
     }
 
-    private static final Map<String, Object> getRedLightMap() {
+    private static Map<String, Object> getRedLightMap() {
         Map<String, Object> valueMap = new HashMap<String, Object>();
         valueMap.put("red", 255);
         valueMap.put("green", 0);
@@ -88,7 +108,7 @@ public final class Messages {
         return valueMap;
     }
 
-    private static final Map<String, Object> getGreenLightMap() {
+    private static Map<String, Object> getGreenLightMap() {
         Map<String, Object> valueMap = new HashMap<String, Object>();
         valueMap.put("red", 0);
         valueMap.put("green", 255);
@@ -97,7 +117,7 @@ public final class Messages {
         return valueMap;
     }
 
-    private static final Map<String, Object> getBlueLightMap() {
+    private static Map<String, Object> getBlueLightMap() {
         Map<String, Object> valueMap = new HashMap<String, Object>();
         valueMap.put("red", 0);
         valueMap.put("green", 0);
@@ -106,7 +126,7 @@ public final class Messages {
         return valueMap;
     }
 
-    private static final Map<String, Object> getAllLightMap() {
+    private static Map<String, Object> getAllLightMap() {
         Map<String, Object> valueMap = new HashMap<String, Object>();
         valueMap.put("red", 255);
         valueMap.put("green", 255);
@@ -115,20 +135,20 @@ public final class Messages {
         return valueMap;
     }
 
-    private static final Map<String, Object> getIntensityMap() {
+    private static Map<String, Object> getIntensityMap() {
         Map<String, Object> valueMap = new HashMap<String, Object>();
         valueMap.put("intensity", 255);
         return valueMap;
     }
 
-    private static final Map<String, Object> getIntensityFadeMap() {
+    private static Map<String, Object> getIntensityFadeMap() {
         Map<String, Object> valueMap = new HashMap<String, Object>();
         valueMap.put("fadeTime", 10);
         valueMap.put("intensity", 255);
         return valueMap;
     }
 
-    private static final Map<String, Object> getFadeMap() {
+    private static Map<String, Object> getFadeMap() {
         Map<String, Object> valueMap = new HashMap<String, Object>();
         valueMap.put("fadeTime", 10);
         valueMap.put("intensity", 255);

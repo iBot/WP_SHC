@@ -8,10 +8,7 @@ import android.util.Log;
 import static de.haw.shc.utils.messageAdapter.Values.*;
 
 public class MessageSender {
-	
 
-
-	
 	private static final MessageSender messageSender = new MessageSender();
 	
 	private static final void lightControl(Message message){
@@ -32,11 +29,11 @@ public class MessageSender {
 		throw new Error("Not implemented yet!");
 	}
 	
-	private MessageSender(){};
+	private MessageSender(){}
 	
 	private class Sender extends AsyncTask<String, Void, String> {
 		
-		Sender(){};
+		Sender(){}
 
 		@Override
 		protected String doInBackground(String... params) {
