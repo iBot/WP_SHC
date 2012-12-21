@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:layout_marginTop="30dp" >
+        android:layout_marginTop="30dp" android:baselineAligned="false">
 		        
         
 
@@ -60,7 +60,7 @@
 	        </LinearLayout>
 
 	         <TextView
-	            android:id="@+id/WhiteLightDimTitel"
+	            android:id="@+id/WhiteLightDimmTitel"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:layout_gravity="center"
@@ -72,7 +72,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="20dp"
-                    android:id="@+id/seekBar" android:indeterminate="false"/>
+                    android:id="@+id/dimmbar"
+                    android:indeterminate="false"/>
 
 	        
 	    </LinearLayout>

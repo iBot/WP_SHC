@@ -2,6 +2,7 @@ package de.haw.shc;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +11,11 @@ import de.haw.shc.utils.Context;
 import de.haw.shc.utils.Control;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ControlFragment extends Fragment {
+
+    private static final String LOG_TAG = "ControlFragment";
 
 	public static final String CONTEXT = "context";
 	public static final String CONTROL = "control";
@@ -56,18 +60,16 @@ public class ControlFragment extends Fragment {
 //		}
 
 		View view = null;
-				
-
+        Button button;
         List<Button> buttonList = new ArrayList<Button>();
 
+
+        Log.d(LOG_TAG, "Ausgabe");
+        Log.d(LOG_TAG, mContext.name());
 
 		if(mControl == Control.LIGHT){
 			
 			view = inflater.inflate(R.layout.light_layout, container,false);
-            view.findViewById()
-
-
-
 		}
 		else if(mControl == Control.CURTAIN){
 			
