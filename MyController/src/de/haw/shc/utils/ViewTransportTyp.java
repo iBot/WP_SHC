@@ -9,16 +9,16 @@ import android.view.View;
  * Time: 14:02
  * To change this template use File | Settings | File Templates.
  */
-public class ButtonContextTransportTyp {
+public class ViewTransportTyp {
 
-    private String context;
+    private Context context;
     private Control[] controls;
     private View view;
 
     //private String name;
 
 
-    public ButtonContextTransportTyp(String context, Control[] controls, View view){
+    public ViewTransportTyp(Context context, Control[] controls, View view){
         this.context = context;
         this.controls = controls;
         this.view = view;
@@ -26,7 +26,7 @@ public class ButtonContextTransportTyp {
 
     }
 
-    public String getContext() {
+    public Context getContext() {
         return context;
     }
 
