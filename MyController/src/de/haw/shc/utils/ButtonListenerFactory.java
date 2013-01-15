@@ -34,23 +34,23 @@ public class ButtonListenerFactory {
         List<Control> controlList = Arrays.asList(viewTransportTyp.getControls());
 
         if (controlList.contains(Control.LIGHT)) {
-            createLighLisener();
+            createLighListener();
         } else if (controlList.contains(Control.BLINDS)) {
-            createBlindsLisener();
+            createBlindsListener();
 
         } else if (controlList.contains(Control.CURTAIN)) {
-              createCurtainsLisener();
+              createCurtainsListener();
 
         } else if (controlList.contains(Control.HEATING)) {
-               createHeatingLisener();
+               createHeatingListener();
 
         } else if (controlList.contains(Control.WINDOW)) {
-                createWindowsLisener();
+                createWindowsListener();
 
         }
     }
 
-    private void createWindowsLisener() {
+    private void createWindowsListener() {
         final Context  context = viewTransportTyp.getContext();
         View view =   viewTransportTyp.getView();
         Button button;
@@ -74,7 +74,7 @@ public class ButtonListenerFactory {
         });
     }
 
-    private void createHeatingLisener() {
+    private void createHeatingListener() {
         final Context  context = viewTransportTyp.getContext();
         View view =   viewTransportTyp.getView();
         SeekBar seekBar;
@@ -100,7 +100,7 @@ public class ButtonListenerFactory {
 
     }
 
-    private void createCurtainsLisener() {
+    private void createCurtainsListener() {
         final Context  context = viewTransportTyp.getContext();
         View view =   viewTransportTyp.getView();
         Button button;
@@ -123,7 +123,7 @@ public class ButtonListenerFactory {
 
     }
 
-    private void createBlindsLisener() {
+    private void createBlindsListener() {
         final Context  context = viewTransportTyp.getContext();
         View view =   viewTransportTyp.getView();
         Button button;
@@ -147,7 +147,7 @@ public class ButtonListenerFactory {
 
     }
 
-    private void createLighLisener() {
+    private void createLighListener() {
         View view =   viewTransportTyp.getView();
         Button button;
         SeekBar seekBar;

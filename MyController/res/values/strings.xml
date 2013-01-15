@@ -23,6 +23,7 @@
     <string name="ColorCommit">Übernehmen</string>
     <string name="whiteLightTitel">Licht</string>
     <string name="whiteLightDim">Dimmen</string>
+    <string name="ColorPicker">Farbe wählen</string>
 
     <string name="on">Ein</string>
     <string name="off">Aus</string>

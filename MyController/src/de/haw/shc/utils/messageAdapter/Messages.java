@@ -14,6 +14,7 @@ import java.util.Map;
  */
 public final class Messages {
 
+    static final String LOG_TAG = "Messages";
 
     //Konstanten für Fenster-
     /**
@@ -118,7 +119,7 @@ public final class Messages {
             result = MSG_LIGHT_LOUNGE_LIGHT_ON;
         } else {
             result = null;
-            Log.w("Message", String.format("%s is not a valid Context for Light Control!", room));
+            Log.w(LOG_TAG, String.format("%s is not a valid Context for Light Control!", room));
         }
         return result;
     }
@@ -152,7 +153,7 @@ public final class Messages {
                 result = createLightMessage("lounge_light_on", getIntensityMap(intensity));
             } else {
                 result = null;
-                Log.w("Message", String.format("%s is not a valid Context for Light Control!", room));
+                Log.w(LOG_TAG, String.format("%s is not a valid Context for Light Control!", room));
             }
         }
         return result;
@@ -178,7 +179,7 @@ public final class Messages {
             result = MSG_LIGHT_LOUNGE_LIGHT_OFF;
         } else {
             result = null;
-            Log.w("Message", String.format("%s is not a valid Context for Light Control!", room));
+            Log.w(LOG_TAG, String.format("%s is not a valid Context for Light Control!", room));
         }
         return result;
     }
