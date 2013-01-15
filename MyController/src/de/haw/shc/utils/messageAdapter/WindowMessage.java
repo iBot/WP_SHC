@@ -19,8 +19,7 @@ class WindowMessage implements Message {
 
     @Override
     public String getContent() {
-        // TODO Auto-generated method stub
-        return null;
+        return messageContent.toString();
     }
 
     @Override
