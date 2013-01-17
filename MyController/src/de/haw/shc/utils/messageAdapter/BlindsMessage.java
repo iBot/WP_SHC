@@ -35,4 +35,11 @@ class BlindsMessage implements Message {
     public String getTopic() {
         return TOPIC_BLINDSCONTROL;
     }
+
+    @Override
+    public String toString() {
+        return "BlindsMessage{" +
+                "messageContent=" + messageContent.toString() +
+                '}';
+    }
 }

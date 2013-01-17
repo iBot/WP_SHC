@@ -30,4 +30,10 @@ class LightMessage implements Message {
 		this.messageContent = new JSONObject(contentMap);
 	}
 
+    @Override
+    public String toString() {
+        return "LightMessage{" +
+                "messageContent=" + messageContent +
+                '}';
+    }
 }

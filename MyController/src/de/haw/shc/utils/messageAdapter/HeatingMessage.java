@@ -8,11 +8,11 @@ import java.util.Arrays;
 class HeatingMessage implements Message {
 
     private final JSONObject messageContent;
-    private final String messageforat = "{\"%s\":\"%s\"}";
+    private final String messageformat = "{\"%s\":\"%s\"}";
 
     HeatingMessage(String heatingModule, String valueAsHexString) {
         try {
-            this.messageContent = new JSONObject(String.format(messageforat, heatingModule, valueAsHexString));
+            this.messageContent = new JSONObject(String.format(messageformat, heatingModule, valueAsHexString));
         } catch (JSONException e) {
             e.printStackTrace();
             throw new Error(e);
@@ -29,4 +29,10 @@ class HeatingMessage implements Message {
 		return TOPIC_HEATINGCONTROL;
 	}
 
+    @Override
+    public String toString() {
+        return "HeatingMessage{" +
+                "messageContent=" + messageContent +
+                '}';
+    }
 }

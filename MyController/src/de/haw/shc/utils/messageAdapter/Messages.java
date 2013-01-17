@@ -89,6 +89,14 @@ public final class Messages {
     //Blinds Message
     public static final BlindsMessage MSG_BLINDS_ALLROOMS_BLINDS_OPEN = createBlindsMessage("blinds_open");
     public static final BlindsMessage MSG_BLINDS_ALLROOMS_BLINDS_CLOSE = createBlindsMessage("blinds_close");
+    public static final BlindsMessage MSG_BLINDS_KITCHEN_BLINDS_OPEN = createBlindsMessage("blinds_dining_kitchen_open");
+    public static final BlindsMessage MSG_BLINDS_KITCHEN_BLINDS_CLOSE = createBlindsMessage("blinds_dining_kitchen_close");
+    public static final BlindsMessage MSG_BLINDS_DINING_BLINDS_OPEN = MSG_BLINDS_KITCHEN_BLINDS_OPEN;
+    public static final BlindsMessage MSG_BLINDS_DINING_BLINDS_CLOSE = MSG_BLINDS_KITCHEN_BLINDS_CLOSE;
+    public static final BlindsMessage MSG_BLINDS_LOUNGE_BLINDS_OPEN = createBlindsMessage("blinds_lounge_open");
+    public static final BlindsMessage MSG_BLINDS_LOUNGE_BLINDS_CLOSE = createBlindsMessage("blinds_lounge_close");
+    public static final BlindsMessage MSG_BLINDS_SLEEPING_BLINDS_OPEN = createBlindsMessage("blinds_sleeping_open");
+    public static final BlindsMessage MSG_BLINDS_SLEEPING_BLINDS_CLOSE = createBlindsMessage("blinds_sleeping_close");
     //
     //Window Messages
     public static final WindowMessage MSG_WINDOW_ALLROOMS_WINDOW_OPEN = createWindowMessage("ALL", 10, WINDOW_SPEED_FAST);
@@ -140,6 +148,110 @@ public final class Messages {
         } else {
             result = null;
             Log.w(LOG_TAG, String.format("%s is not a valid Context for Light Control!", room));
+        }
+        return result;
+    }
+
+
+    public static BlindsMessage createBlindsOpenMessage(Context room) {
+        BlindsMessage result;
+        if (room == Context.ALL) {
+            result = MSG_BLINDS_ALLROOMS_BLINDS_OPEN;
+        } else if (room == Context.KITCHEN) {
+            result = MSG_BLINDS_KITCHEN_BLINDS_OPEN;
+        } else if (room == Context.BEDROOM) {
+            result = MSG_BLINDS_SLEEPING_BLINDS_OPEN;
+        } else if (room == Context.DINING) {
+            result = MSG_BLINDS_DINING_BLINDS_OPEN;
+        } else if (room == Context.LOUNGE) {
+            result = MSG_BLINDS_LOUNGE_BLINDS_OPEN;
+        } else {
+            result = null;
+            Log.w(LOG_TAG, String.format("%s is not a valid Context for Blinds Control!", room));
+        }
+        return result;
+    }
+
+
+    public static BlindsMessage createBlindsCloseMessage(Context room) {
+        BlindsMessage result;
+        if (room == Context.ALL) {
+            result = MSG_BLINDS_ALLROOMS_BLINDS_CLOSE;
+        } else if (room == Context.KITCHEN) {
+            result = MSG_BLINDS_KITCHEN_BLINDS_CLOSE;
+        } else if (room == Context.BEDROOM) {
+            result = MSG_BLINDS_SLEEPING_BLINDS_CLOSE;
+        } else if (room == Context.DINING) {
+            result = MSG_BLINDS_DINING_BLINDS_CLOSE;
+        } else if (room == Context.LOUNGE) {
+            result = MSG_BLINDS_LOUNGE_BLINDS_CLOSE;
+        } else {
+            result = null;
+            Log.w(LOG_TAG, String.format("%s is not a valid Context for Blinds Control!", room));
+        }
+        return result;
+    }
+
+    public static CurtainMessage createCurtainsOpenMessage(Context room) {
+        CurtainMessage result;
+        if (room == Context.LOUNGE) {
+            result = MSG_CURTAIN_LOUNGE_CURTAIN_OPEN;
+        } else if (room == Context.BEDROOM) {
+            result = MSG_CURTAIN_SLEEPING_HALL_CURTAIN_OPEN;
+        } else if (room == Context.HALL) {
+            result = MSG_CURTAIN_SLEEPING_HALL_CURTAIN_OPEN;
+        } else {
+            result = null;
+            Log.w(LOG_TAG, String.format("%s is not a valid Context for Curtain Control!", room));
+        }
+        return result;
+    }
+
+    public static CurtainMessage createCurtainsCloseMessage(Context room) {
+        CurtainMessage result;
+        if (room == Context.LOUNGE) {
+            result = MSG_CURTAIN_LOUNGE_CURTAIN_CLOSE;
+        } else if (room == Context.BEDROOM) {
+            result = MSG_CURTAIN_SLEEPING_HALL_CURTAIN_CLOSE;
+        } else if (room == Context.HALL) {
+            result = MSG_CURTAIN_SLEEPING_HALL_CURTAIN_CLOSE;
+        } else {
+            result = null;
+            Log.w(LOG_TAG, String.format("%s is not a valid Context for Curtain Control!", room));
+        }
+        return result;
+    }
+
+    public static WindowMessage createWindowOpenMessage(Context room) {
+        WindowMessage result;
+        if (room == Context.ALL) {
+            result = MSG_WINDOW_ALLROOMS_WINDOW_OPEN;
+        } else if (room == Context.DINING) {
+            result = MSG_WINDOW_DINING_WINDOW_OPEN;
+        } else if (room == Context.KITCHEN) {
+            result = MSG_WINDOW_KITCHEN_WINDOW_OPEN;
+        } else if (room == Context.LOUNGE) {
+            result = MSG_WINDOW_LOUNGE_WINDOW_OPEN;
+        } else {
+            result = null;
+            Log.w(LOG_TAG, String.format("%s is not a valid Context for Curtain Control!", room));
+        }
+        return result;
+    }
+
+    public static WindowMessage createWindowCloseMessage(Context room) {
+        WindowMessage result;
+        if (room == Context.ALL) {
+            result = MSG_WINDOW_ALLROOMS_WINDOW_CLOSE;
+        } else if (room == Context.DINING) {
+            result = MSG_WINDOW_DINING_WINDOW_CLOSE;
+        } else if (room == Context.KITCHEN) {
+            result = MSG_WINDOW_KITCHEN_WINDOW_CLOSE;
+        } else if (room == Context.LOUNGE) {
+            result = MSG_WINDOW_LOUNGE_WINDOW_CLOSE;
+        } else {
+            result = null;
+            Log.w(LOG_TAG, String.format("%s is not a valid Context for Curtain Control!", room));
         }
         return result;
     }

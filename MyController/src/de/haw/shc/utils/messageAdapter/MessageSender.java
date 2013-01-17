@@ -41,27 +41,27 @@ public class MessageSender {
         }
     }
 
-    public static final void lightControl(LightMessage message) {
+    public static final void lightControl(Message message) {
         MessageSender.Sender sender = messageSender.new Sender();
         sender.doInBackground(IP, PORT, message.getTopic(), TOPIC, message.getContent());
     }
 
-    public static final void windowControl(WindowMessage message) {
+    public static final void windowControl(Message message) {
         MessageSender.Sender sender = messageSender.new Sender();
         sender.doInBackground(IP, PORT, message.getTopic(), TOPIC, message.getContent());
     }
 
-    public static final void curtainControl(CurtainMessage message) {
+    public static final void curtainControl(Message message) {
         MessageSender.Sender sender = messageSender.new Sender();
         sender.doInBackground(IP, PORT, message.getTopic(), TOPIC, message.getContent());
     }
 
-    public static final void heatingControl(HeatingMessage message) {
+    public static final void heatingControl(Message message) {
         MessageSender.Sender sender = messageSender.new Sender();
         sender.doInBackground(IP, PORT, message.getTopic(), TOPIC, message.getContent());
     }
 
-    public static final void blindsControl(BlindsMessage message) {
+    public static final void blindsControl(Message message) {
         MessageSender.Sender sender = messageSender.new Sender();
         sender.doInBackground(IP, PORT, message.getTopic(), TOPIC, message.getContent());
     }
@@ -82,7 +82,8 @@ public class MessageSender {
                 } else {
                     publisher.publishToQueue();
                 }
-            } catch (IOException e) {
+            } catch (Exception e) {
+                Log.e(LOGTAG, e.toString());
                 Log.e(LOGTAG, "Can't publish the message");
             }
             return null;

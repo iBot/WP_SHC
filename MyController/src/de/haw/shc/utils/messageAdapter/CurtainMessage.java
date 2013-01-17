@@ -30,4 +30,10 @@ class CurtainMessage implements Message{
         this.messageContent = new JSONObject(contentMap);
     }
 
+    @Override
+    public String toString() {
+        return "CurtainMessage{" +
+                "messageContent=" + messageContent +
+                '}';
+    }
 }

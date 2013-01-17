@@ -5,6 +5,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import de.haw.shc.R;
+import de.haw.shc.utils.messageAdapter.Message;
+import de.haw.shc.utils.messageAdapter.MessageSender;
+import de.haw.shc.utils.messageAdapter.Messages;
 
 import java.io.Serializable;
 
@@ -30,41 +33,22 @@ public class ButtonListenerFactory implements Serializable{
 
 
     public void checkControlls(ViewTransportTyp viewTransportTyp) {
-       // List<Control> controlList = Arrays.asList(viewTransportTyp.getControl());
-          /*
-        if (controlList.contains(Control.LIGHT)) {
 
-            createLighLisener(viewTransportTyp);
-        } else if (controlList.contains(Control.BLINDS)) {
-            createBlindsLisener(viewTransportTyp);
-
-        } else if (controlList.contains(Control.CURTAIN)) {
-              createCurtainsLisener(viewTransportTyp);
-
-        } else if (controlList.contains(Control.HEATING)) {
-               createHeatingLisener(viewTransportTyp);
-
-        } else if (controlList.contains(Control.WINDOW)) {
-                createWindowsLisener(viewTransportTyp);
-
-
-        }
-        */
         switch (viewTransportTyp.getControl()){
             case LIGHT:
-                createLighLisener(viewTransportTyp);
+                createLighListener(viewTransportTyp);
                 break;
             case BLINDS:
-                createBlindsLisener(viewTransportTyp);
+                createBlindsListener(viewTransportTyp);
                 break;
             case CURTAIN:
-                createCurtainsLisener(viewTransportTyp);
+                createCurtainsListener(viewTransportTyp);
                 break;
             case HEATING:
-                createHeatingLisener(viewTransportTyp);
+                createHeatingListener(viewTransportTyp);
                 break;
             case WINDOW:
-                createWindowsLisener(viewTransportTyp);
+                createWindowsListener(viewTransportTyp);
                 break;
         }
 
@@ -72,7 +56,7 @@ public class ButtonListenerFactory implements Serializable{
 
     }
 
-    private void createWindowsLisener(ViewTransportTyp viewTransportTyp) {
+    private void createWindowsListener(ViewTransportTyp viewTransportTyp) {
 
         final Context  context = viewTransportTyp.getContext();
         View view =   viewTransportTyp.getView();
@@ -84,6 +68,9 @@ public class ButtonListenerFactory implements Serializable{
             @Override
             public void onClick(View v) {
                 Log.d(LOG_TAG,"Open windows in " + context);
+                Message message = Messages.createWindowOpenMessage(context);
+                Log.d(LOG_TAG,"Message" + message);
+                MessageSender.windowControl(message);
             }
         });
 
@@ -93,12 +80,15 @@ public class ButtonListenerFactory implements Serializable{
             @Override
             public void onClick(View v) {
                 Log.d(LOG_TAG,"Close windows in "+ context);
+                Message message = Messages.createWindowCloseMessage(context);
+                Log.d(LOG_TAG,"Message" + message);
+                MessageSender.windowControl(message);
             }
         });
     }
 
 
-    private void createHeatingLisener(ViewTransportTyp viewTransportTyp) {
+    private void createHeatingListener(ViewTransportTyp viewTransportTyp) {
 
         final Context  context = viewTransportTyp.getContext();
         View view =   viewTransportTyp.getView();
@@ -126,7 +116,7 @@ public class ButtonListenerFactory implements Serializable{
     }
 
 
-    private void createCurtainsLisener(ViewTransportTyp viewTransportTyp) {
+    private void createCurtainsListener(ViewTransportTyp viewTransportTyp) {
 
         final Context  context = viewTransportTyp.getContext();
         View view =   viewTransportTyp.getView();
@@ -137,6 +127,9 @@ public class ButtonListenerFactory implements Serializable{
             @Override
             public void onClick(View v) {
                 Log.d(LOG_TAG,"Curtains open in "+context);
+                Message message = Messages.createCurtainsOpenMessage(context);
+                Log.d(LOG_TAG,"Message" + message);
+                MessageSender.curtainControl(message);
             }
         });
 
@@ -145,13 +138,16 @@ public class ButtonListenerFactory implements Serializable{
             @Override
             public void onClick(View v) {
                 Log.d(LOG_TAG,"Curtains close in "+context);
+                Message message = Messages.createCurtainsCloseMessage(context);
+                Log.d(LOG_TAG,"Message" + message);
+                MessageSender.curtainControl(message);
             }
         });
 
     }
 
 
-    private void createBlindsLisener(ViewTransportTyp viewTransportTyp) {
+    private void createBlindsListener(ViewTransportTyp viewTransportTyp) {
 
         final Context  context = viewTransportTyp.getContext();
         View view =   viewTransportTyp.getView();
@@ -163,6 +159,9 @@ public class ButtonListenerFactory implements Serializable{
             @Override
             public void onClick(View v) {
                Log.d(LOG_TAG,"blinds open in " + context);
+                Message message = Messages.createBlindsOpenMessage(context);
+                Log.d(LOG_TAG,"Message" + message);
+                MessageSender.blindsControl(message);
             }
         });
 
@@ -171,13 +170,16 @@ public class ButtonListenerFactory implements Serializable{
             @Override
             public void onClick(View v) {
               Log.d(LOG_TAG,"blinds close in "+context);
+              Message message = Messages.createBlindsCloseMessage(context);
+              Log.d(LOG_TAG,"Message" + message);
+              MessageSender.blindsControl(message);
             }
         });
 
     }
 
 
-    private void createLighLisener(ViewTransportTyp viewTransportTyp) {
+    private void createLighListener(ViewTransportTyp viewTransportTyp) {
 
         View view =   viewTransportTyp.getView();
         Button button;
@@ -189,6 +191,9 @@ public class ButtonListenerFactory implements Serializable{
             @Override
             public void onClick(View v) {
                 Log.d(LOG_TAG,"whitelight on in " + context);
+                Message message = Messages.createLightOnMessage(context);
+                Log.d(LOG_TAG,"Message" + message);
+                MessageSender.lightControl(message);
             }
         });
 
@@ -197,10 +202,14 @@ public class ButtonListenerFactory implements Serializable{
             @Override
             public void onClick(View v) {
                 Log.d(LOG_TAG,"whitelight off in " + context);
+                Message message = Messages.createLightOffMessage(context);
+                Log.d(LOG_TAG,"Message" + message);
+                MessageSender.lightControl(message);
             }
         });
 
         seekBar =  (SeekBar)view.findViewById(R.id.dimmbar);
+        seekBar.setMax(100);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -215,6 +224,9 @@ public class ButtonListenerFactory implements Serializable{
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                Log.d(LOG_TAG,"whitelight dim to "+ seekBar.getProgress() + " in " + context);
+                Message message = Messages.createLightIntesityMessage(context,seekBar.getProgress());
+                Log.d(LOG_TAG,"Message" + message);
+                MessageSender.lightControl(message);
             }
 
               //TODO COLOR
