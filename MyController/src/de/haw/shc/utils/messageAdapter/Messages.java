@@ -4,8 +4,7 @@ package de.haw.shc.utils.messageAdapter;
 import android.util.Log;
 import de.haw.shc.utils.Context;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 //public static final Message 
 
@@ -14,31 +13,6 @@ import java.util.Map;
  */
 public final class Messages {
 
-    static final String LOG_TAG = "Messages";
-
-    //Enum für Heizung
-    public static enum Heating{
-        HEAT_DINING("heatModule0", "01"),
-        HEAT_SLEEP("heatModule0", "02"),
-        HEAT_LOUNGE_1("heatModule1", "01"),
-        HEAT_LOUNGE_0("heatModule1", "02"),
-        HEAT_BATHROOM("heatModule1", "04");
-
-        private final String module;
-        private final String value;
-
-        private Heating(String module, String value){
-            this.module = module;
-            this.value = value;
-        }
-
-        public String getModule(){
-            return this.module;
-        }
-        public String getValue(){
-            return this.value;
-        }
-    }
     //Konstanten für Fenster-Steuerung
     public static final String WINDOW_SPEED_FAST = "FAST";
     public static final String WINDOW_SPEED_SLOW = "SLOW";
@@ -107,6 +81,7 @@ public final class Messages {
     public static final WindowMessage MSG_WINDOW_DINING_WINDOW_CLOSE = createWindowMessage("DINING", 0, WINDOW_SPEED_FAST);
     public static final WindowMessage MSG_WINDOW_LOUNGE_WINDOW_OPEN = createWindowMessage("LOUNGE", 10, WINDOW_SPEED_FAST);
     public static final WindowMessage MSG_WINDOW_LOUNGE_WINDOW_CLOSE = createWindowMessage("LOUNGE", 0, WINDOW_SPEED_FAST);
+    static final String LOG_TAG = "Messages";
 
     /**
      * Private constructor - not used, because it's an utility-class
@@ -114,7 +89,6 @@ public final class Messages {
     private Messages() {
         throw new Error("THIS IS AN UTILITY CLASS!!! DO NOT CREATE INSTANCES OF THIS!!!");
     }
-
 
     /**
      * This method should be used to create messages for light control
@@ -152,6 +126,17 @@ public final class Messages {
         return result;
     }
 
+    public static Collection<LightMessage> createAllLightOnMessage() {
+        Set<LightMessage> lightMessages = new TreeSet<LightMessage>();
+
+        return lightMessages;
+    }
+
+    public static Collection<LightMessage> createAllLightOffMessage() {
+        Set<LightMessage> lightMessages = new TreeSet<LightMessage>();
+
+        return lightMessages;
+    }
 
     public static BlindsMessage createBlindsOpenMessage(Context room) {
         BlindsMessage result;
@@ -171,7 +156,6 @@ public final class Messages {
         }
         return result;
     }
-
 
     public static BlindsMessage createBlindsCloseMessage(Context room) {
         BlindsMessage result;
@@ -358,8 +342,6 @@ public final class Messages {
         return new BlindsMessage(action);
     }
 
-    //Private Hilfsmethoden
-
     /**
      * Create an Map with all colors = 0 and fadeTime = 0
      *
@@ -373,6 +355,8 @@ public final class Messages {
         valueMap.put("fadeTime", 0);
         return valueMap;
     }
+
+    //Private Hilfsmethoden
 
     /**
      * Create an Map with red color = 255, other colors = 0 and fadeTime = 0
@@ -480,7 +464,7 @@ public final class Messages {
     /**
      * calculates an fitting int value between 0 and 255 for the given per cent parameter value
      * 100% = 255
-     *   0% =   0
+     * 0% =   0
      *
      * @param perCent
      * @return
@@ -495,6 +479,30 @@ public final class Messages {
             result = (255 * perCent) / 100;
         }
         return result;
+    }
+
+    //Enum für Heizung
+    public static enum Heating {
+        HEAT_DINING("heatModule0", "01"),
+        HEAT_SLEEP("heatModule0", "02"),
+        HEAT_LOUNGE_1("heatModule1", "01"),
+        HEAT_LOUNGE_0("heatModule1", "02"),
+        HEAT_BATHROOM("heatModule1", "04");
+        private final String module;
+        private final String value;
+
+        private Heating(String module, String value) {
+            this.module = module;
+            this.value = value;
+        }
+
+        public String getModule() {
+            return this.module;
+        }
+
+        public String getValue() {
+            return this.value;
+        }
     }
 
 
