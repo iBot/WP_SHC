@@ -35,6 +35,7 @@ public class ControlFragment extends Fragment {
 		super.onCreate(savedInstanceState);
 		if (savedInstanceState == null) {
             //TODO warum getArguments?
+            Log.d(LOG_TAG,"erstelle die factory");
             buttonListenerFactory = new ButtonListenerFactory();
 			if (getArguments().containsKey(CONTEXT)) {
 				mContext = (Context) (getArguments().getSerializable(CONTEXT));
@@ -79,26 +80,37 @@ public class ControlFragment extends Fragment {
 		if(mControl == Control.LIGHT){
 			
 			view = inflater.inflate(R.layout.light_layout, container,false);
-
+            createListenerForView(view);
 		}
 		else if(mControl == Control.CURTAIN){
 			
 			view = inflater.inflate(R.layout.curtains_layout, container,false);
+            createListenerForView(view);
 		}
 		else if(mControl == Control.BLINDS){
 			
 			view = inflater.inflate(R.layout.blinds_layout, container,false);
+            createListenerForView(view);
 		}
 		else if(mControl == Control.WINDOW){
 			
 			view = inflater.inflate(R.layout.window_layout, container,false);
+            createListenerForView(view);
 		}
 		else if(mControl == Control.HEATING){
 			
 			view = inflater.inflate(R.layout.heating_layout, container,false);
+            createListenerForView(view);
 		}
-        buttonListenerFactory.checkControlls(new ViewTransportTyp(mContext,mContext.getControls(),view));
+
+
 		return view;
 	}
+
+
+    private void createListenerForView(View view){
+        Log.d(LOG_TAG,"rufe factory auf mit Context " +mContext.toString() + " Controls " + mContext.getControls());
+        buttonListenerFactory.checkControlls(new ViewTransportTyp(mContext,mControl,view));
+    }
 
 }

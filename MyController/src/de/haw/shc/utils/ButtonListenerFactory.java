@@ -7,8 +7,6 @@ import android.widget.SeekBar;
 import de.haw.shc.R;
 
 import java.io.Serializable;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -32,8 +30,8 @@ public class ButtonListenerFactory implements Serializable{
 
 
     public void checkControlls(ViewTransportTyp viewTransportTyp) {
-        List<Control> controlList = Arrays.asList(viewTransportTyp.getControls());
-
+       // List<Control> controlList = Arrays.asList(viewTransportTyp.getControl());
+          /*
         if (controlList.contains(Control.LIGHT)) {
 
             createLighLisener(viewTransportTyp);
@@ -51,6 +49,27 @@ public class ButtonListenerFactory implements Serializable{
 
 
         }
+        */
+        switch (viewTransportTyp.getControl()){
+            case LIGHT:
+                createLighLisener(viewTransportTyp);
+                break;
+            case BLINDS:
+                createBlindsLisener(viewTransportTyp);
+                break;
+            case CURTAIN:
+                createCurtainsLisener(viewTransportTyp);
+                break;
+            case HEATING:
+                createHeatingLisener(viewTransportTyp);
+                break;
+            case WINDOW:
+                createWindowsLisener(viewTransportTyp);
+                break;
+        }
+
+
+
     }
 
     private void createWindowsLisener(ViewTransportTyp viewTransportTyp) {
@@ -121,7 +140,7 @@ public class ButtonListenerFactory implements Serializable{
             }
         });
 
-        button = (Button)view.findViewById(R.id.blindsClose);
+        button = (Button)view.findViewById(R.id.CurtainsClose);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

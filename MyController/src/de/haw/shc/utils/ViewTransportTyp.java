@@ -12,15 +12,15 @@ import android.view.View;
 public class ViewTransportTyp {
 
     private Context context;
-    private Control[] controls;
+    private Control control;
     private View view;
 
     //private String name;
 
 
-    public ViewTransportTyp(Context context, Control[] controls, View view){
+    public ViewTransportTyp(Context context, Control control, View view){
         this.context = context;
-        this.controls = controls;
+        this.control = control;
         this.view = view;
        //this.name = name;
 
@@ -30,8 +30,8 @@ public class ViewTransportTyp {
         return context;
     }
 
-    public Control[] getControls() {
-        return controls;
+    public Control getControl() {
+        return control;
     }
 
     public View getView() {
