@@ -1,0 +1,22 @@
+NEW:
+
+
+ 
+
+
+Refactor:
+
+
+- buttonlistenerfactory
+	nicht den transporttyp nach unten weitergben
+
+
+buttonlistenerfactory:
+- createMessage(Context context) für allRooms
+
+
+Layout:
+
+-all layouts schön machen
+- Blinds half open + message + buttonlistener
+
