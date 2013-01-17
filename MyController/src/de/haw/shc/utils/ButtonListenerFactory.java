@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import de.haw.shc.R;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,41 +17,41 @@ import java.util.List;
  * Time: 13:58
  * To change this template use File | Settings | File Templates.
  */
-public class ButtonListenerFactory {
+public class ButtonListenerFactory implements Serializable{
 
     static final String LOG_TAG = "ButtonFactory";
 
 
 
-    private ViewTransportTyp viewTransportTyp;
+    //private ViewTransportTyp viewTransportTyp;
 
 
-    public ButtonListenerFactory(ViewTransportTyp viewTransportTyp) {
-        this.viewTransportTyp = viewTransportTyp;
+    public ButtonListenerFactory() {
+        //this.viewTransportTyp = viewTransportTyp;
     }
 
 
-    private void checkControlls() {
+    public void checkControlls(ViewTransportTyp viewTransportTyp) {
         List<Control> controlList = Arrays.asList(viewTransportTyp.getControls());
 
         if (controlList.contains(Control.LIGHT)) {
-            createLighLisener();
+            createLighLisener(viewTransportTyp);
         } else if (controlList.contains(Control.BLINDS)) {
-            createBlindsLisener();
+            createBlindsLisener(viewTransportTyp);
 
         } else if (controlList.contains(Control.CURTAIN)) {
-              createCurtainsLisener();
+              createCurtainsLisener(viewTransportTyp);
 
         } else if (controlList.contains(Control.HEATING)) {
-               createHeatingLisener();
+               createHeatingLisener(viewTransportTyp);
 
         } else if (controlList.contains(Control.WINDOW)) {
-                createWindowsLisener();
+                createWindowsLisener(viewTransportTyp);
 
         }
     }
 
-    private void createWindowsLisener() {
+    private void createWindowsLisener(ViewTransportTyp viewTransportTyp) {
         final Context  context = viewTransportTyp.getContext();
         View view =   viewTransportTyp.getView();
         Button button;
@@ -74,7 +75,7 @@ public class ButtonListenerFactory {
         });
     }
 
-    private void createHeatingLisener() {
+    private void createHeatingLisener(ViewTransportTyp viewTransportTyp) {
         final Context  context = viewTransportTyp.getContext();
         View view =   viewTransportTyp.getView();
         SeekBar seekBar;
@@ -100,7 +101,7 @@ public class ButtonListenerFactory {
 
     }
 
-    private void createCurtainsLisener() {
+    private void createCurtainsLisener(ViewTransportTyp viewTransportTyp) {
         final Context  context = viewTransportTyp.getContext();
         View view =   viewTransportTyp.getView();
         Button button;
@@ -123,7 +124,7 @@ public class ButtonListenerFactory {
 
     }
 
-    private void createBlindsLisener() {
+    private void createBlindsLisener(ViewTransportTyp viewTransportTyp) {
         final Context  context = viewTransportTyp.getContext();
         View view =   viewTransportTyp.getView();
         Button button;
@@ -147,7 +148,7 @@ public class ButtonListenerFactory {
 
     }
 
-    private void createLighLisener() {
+    private void createLighLisener(ViewTransportTyp viewTransportTyp) {
         View view =   viewTransportTyp.getView();
         Button button;
         SeekBar seekBar;

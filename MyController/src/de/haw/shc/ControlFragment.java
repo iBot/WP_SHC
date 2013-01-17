@@ -7,8 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import de.haw.shc.utils.ButtonListenerFactory;
 import de.haw.shc.utils.Context;
 import de.haw.shc.utils.Control;
+import de.haw.shc.utils.ViewTransportTyp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,9 +21,11 @@ public class ControlFragment extends Fragment {
 
 	public static final String CONTEXT = "context";
 	public static final String CONTROL = "control";
+    private  static final  String BUTTONFACTORY = "BUTTONFACTORY";
 
-	Context mContext;
-	Control mControl;
+	private Context mContext;
+	private Control mControl;
+    private ButtonListenerFactory buttonListenerFactory;
 
 	public ControlFragment() {
 	}
@@ -30,13 +34,16 @@ public class ControlFragment extends Fragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		if (savedInstanceState == null) {
+            //TODO warum getArguments?
+            buttonListenerFactory = new ButtonListenerFactory();
 			if (getArguments().containsKey(CONTEXT)) {
 				mContext = (Context) (getArguments().getSerializable(CONTEXT));
 			}
 			if (getArguments().containsKey(CONTROL)) {
 				mControl = (Control) (getArguments().getSerializable(CONTROL));
 			}
-		} else { 
+		} else {
+            buttonListenerFactory =  (ButtonListenerFactory) savedInstanceState.getSerializable(BUTTONFACTORY);
 			mContext = (Context) savedInstanceState.getSerializable(CONTEXT);
 			mControl = (Control) savedInstanceState.getSerializable(CONTROL);
 		}
@@ -45,6 +52,8 @@ public class ControlFragment extends Fragment {
 	@Override
 	public void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
+
+        outState.putSerializable(BUTTONFACTORY,buttonListenerFactory);
 		outState.putSerializable(CONTEXT, mContext);
 		outState.putSerializable(CONTROL, mControl);
 	}
@@ -70,6 +79,7 @@ public class ControlFragment extends Fragment {
 		if(mControl == Control.LIGHT){
 			
 			view = inflater.inflate(R.layout.light_layout, container,false);
+
 		}
 		else if(mControl == Control.CURTAIN){
 			
@@ -87,7 +97,7 @@ public class ControlFragment extends Fragment {
 			
 			view = inflater.inflate(R.layout.heating_layout, container,false);
 		}
-		
+        buttonListenerFactory.checkControlls(new ViewTransportTyp(mContext,mContext.getControls(),view));
 		return view;
 	}
 
