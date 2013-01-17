@@ -1,24 +1,30 @@
 NEW:
-
+####
 
  
 
 
 Refactor:
-
+#########
 
 - buttonlistenerfactory
 	nicht den transporttyp nach unten weitergben
 
 
 buttonlistenerfactory:
+
 - createMessage(Context context) f�r allRooms
+
     In Messages wurden dazu die Methode createAllLightOnMessage() und createAllLightOFFMessage() hinzugefügt.
     Die Rückgabewerte result der Methoden können mit MessageSender.messageBatch(result) gepublished werden.
 
-
 Layout:
+#######
 
--all layouts sch�n machen
+- all layouts sch�n machen
+
 - Blinds half open + message + buttonlistener
+
+    In Messages wurde dazu die Methode createBlindsHalfOpenMessage(contest) implementiert.
+
 

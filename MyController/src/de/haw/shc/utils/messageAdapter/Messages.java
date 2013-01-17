@@ -62,14 +62,19 @@ public final class Messages {
     //
     //Blinds Message
     public static final BlindsMessage MSG_BLINDS_ALLROOMS_BLINDS_OPEN = createBlindsMessage("blinds_open");
+    public static final BlindsMessage MSG_BLINDS_ALLROOMS_BLINDS_HALF = createBlindsMessage("blinds_half");
     public static final BlindsMessage MSG_BLINDS_ALLROOMS_BLINDS_CLOSE = createBlindsMessage("blinds_close");
     public static final BlindsMessage MSG_BLINDS_KITCHEN_BLINDS_OPEN = createBlindsMessage("blinds_dining_kitchen_open");
+    public static final BlindsMessage MSG_BLINDS_KITCHEN_BLINDS_HALF = createBlindsMessage("blinds_dining_kitchen_half");
     public static final BlindsMessage MSG_BLINDS_KITCHEN_BLINDS_CLOSE = createBlindsMessage("blinds_dining_kitchen_close");
     public static final BlindsMessage MSG_BLINDS_DINING_BLINDS_OPEN = MSG_BLINDS_KITCHEN_BLINDS_OPEN;
+    public static final BlindsMessage MSG_BLINDS_DINING_BLINDS_HALF = MSG_BLINDS_KITCHEN_BLINDS_HALF;
     public static final BlindsMessage MSG_BLINDS_DINING_BLINDS_CLOSE = MSG_BLINDS_KITCHEN_BLINDS_CLOSE;
     public static final BlindsMessage MSG_BLINDS_LOUNGE_BLINDS_OPEN = createBlindsMessage("blinds_lounge_open");
+    public static final BlindsMessage MSG_BLINDS_LOUNGE_BLINDS_HALF = createBlindsMessage("blinds_lounge_half");
     public static final BlindsMessage MSG_BLINDS_LOUNGE_BLINDS_CLOSE = createBlindsMessage("blinds_lounge_close");
     public static final BlindsMessage MSG_BLINDS_SLEEPING_BLINDS_OPEN = createBlindsMessage("blinds_sleeping_open");
+    public static final BlindsMessage MSG_BLINDS_SLEEPING_BLINDS_HALF = createBlindsMessage("blinds_sleeping_half");
     public static final BlindsMessage MSG_BLINDS_SLEEPING_BLINDS_CLOSE = createBlindsMessage("blinds_sleeping_close");
     //
     //Window Messages
@@ -158,6 +163,25 @@ public final class Messages {
             result = MSG_BLINDS_DINING_BLINDS_OPEN;
         } else if (room == Context.LOUNGE) {
             result = MSG_BLINDS_LOUNGE_BLINDS_OPEN;
+        } else {
+            result = null;
+            Log.w(LOG_TAG, String.format("%s is not a valid Context for Blinds Control!", room));
+        }
+        return result;
+    }
+
+    public static BlindsMessage createBlindsHalfOpenMessage(Context room) {
+        BlindsMessage result;
+        if (room == Context.ALL) {
+            result = MSG_BLINDS_ALLROOMS_BLINDS_HALF;
+        } else if (room == Context.KITCHEN) {
+            result = MSG_BLINDS_KITCHEN_BLINDS_HALF;
+        } else if (room == Context.BEDROOM) {
+            result = MSG_BLINDS_SLEEPING_BLINDS_HALF;
+        } else if (room == Context.DINING) {
+            result = MSG_BLINDS_DINING_BLINDS_HALF;
+        } else if (room == Context.LOUNGE) {
+            result = MSG_BLINDS_LOUNGE_BLINDS_HALF;
         } else {
             result = null;
             Log.w(LOG_TAG, String.format("%s is not a valid Context for Blinds Control!", room));
