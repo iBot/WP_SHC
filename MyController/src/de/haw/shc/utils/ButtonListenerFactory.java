@@ -35,6 +35,7 @@ public class ButtonListenerFactory implements Serializable{
         List<Control> controlList = Arrays.asList(viewTransportTyp.getControls());
 
         if (controlList.contains(Control.LIGHT)) {
+<<<<<<< HEAD
             createLighLisener(viewTransportTyp);
         } else if (controlList.contains(Control.BLINDS)) {
             createBlindsLisener(viewTransportTyp);
@@ -47,11 +48,29 @@ public class ButtonListenerFactory implements Serializable{
 
         } else if (controlList.contains(Control.WINDOW)) {
                 createWindowsLisener(viewTransportTyp);
+=======
+            createLighListener();
+        } else if (controlList.contains(Control.BLINDS)) {
+            createBlindsListener();
+
+        } else if (controlList.contains(Control.CURTAIN)) {
+              createCurtainsListener();
+
+        } else if (controlList.contains(Control.HEATING)) {
+               createHeatingListener();
+
+        } else if (controlList.contains(Control.WINDOW)) {
+                createWindowsListener();
+>>>>>>> 9ebcc24813df4ec5a6b812cfeca46cbebae15034
 
         }
     }
 
+<<<<<<< HEAD
     private void createWindowsLisener(ViewTransportTyp viewTransportTyp) {
+=======
+    private void createWindowsListener() {
+>>>>>>> 9ebcc24813df4ec5a6b812cfeca46cbebae15034
         final Context  context = viewTransportTyp.getContext();
         View view =   viewTransportTyp.getView();
         Button button;
@@ -75,7 +94,11 @@ public class ButtonListenerFactory implements Serializable{
         });
     }
 
+<<<<<<< HEAD
     private void createHeatingLisener(ViewTransportTyp viewTransportTyp) {
+=======
+    private void createHeatingListener() {
+>>>>>>> 9ebcc24813df4ec5a6b812cfeca46cbebae15034
         final Context  context = viewTransportTyp.getContext();
         View view =   viewTransportTyp.getView();
         SeekBar seekBar;
@@ -101,7 +124,11 @@ public class ButtonListenerFactory implements Serializable{
 
     }
 
+<<<<<<< HEAD
     private void createCurtainsLisener(ViewTransportTyp viewTransportTyp) {
+=======
+    private void createCurtainsListener() {
+>>>>>>> 9ebcc24813df4ec5a6b812cfeca46cbebae15034
         final Context  context = viewTransportTyp.getContext();
         View view =   viewTransportTyp.getView();
         Button button;
@@ -124,7 +151,11 @@ public class ButtonListenerFactory implements Serializable{
 
     }
 
+<<<<<<< HEAD
     private void createBlindsLisener(ViewTransportTyp viewTransportTyp) {
+=======
+    private void createBlindsListener() {
+>>>>>>> 9ebcc24813df4ec5a6b812cfeca46cbebae15034
         final Context  context = viewTransportTyp.getContext();
         View view =   viewTransportTyp.getView();
         Button button;
@@ -148,7 +179,11 @@ public class ButtonListenerFactory implements Serializable{
 
     }
 
+<<<<<<< HEAD
     private void createLighLisener(ViewTransportTyp viewTransportTyp) {
+=======
+    private void createLighListener() {
+>>>>>>> 9ebcc24813df4ec5a6b812cfeca46cbebae15034
         View view =   viewTransportTyp.getView();
         Button button;
         SeekBar seekBar;

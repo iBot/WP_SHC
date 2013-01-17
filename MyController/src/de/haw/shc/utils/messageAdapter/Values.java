@@ -9,7 +9,7 @@ package de.haw.shc.utils.messageAdapter;
  * Diese Klasse enthält Konstanzen für die Konfiguation des MessageAdapters.
  * Hier sollten alle Werte für die Konfig gespeichert werden (Single Point Of Control)
  */
-public class Values {
+class Values {
 
     static final String IP = "172.16.0.200";
     static final String PORT = "12349";
