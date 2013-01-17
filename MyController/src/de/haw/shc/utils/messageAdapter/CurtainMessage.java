@@ -36,4 +36,21 @@ class CurtainMessage implements Message{
                 "messageContent=" + messageContent +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        CurtainMessage that = (CurtainMessage) o;
+
+        if (!messageContent.equals(that.messageContent)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return messageContent.hashCode();
+    }
 }

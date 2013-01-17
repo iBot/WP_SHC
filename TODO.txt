@@ -12,11 +12,13 @@ Refactor:
 
 
 buttonlistenerfactory:
-- createMessage(Context context) für allRooms
+- createMessage(Context context) fï¿½r allRooms
+    In Messages wurden dazu die Methode createAllLightOnMessage() und createAllLightOFFMessage() hinzugefÃ¼gt.
+    Die RÃ¼ckgabewerte result der Methoden kÃ¶nnen mit MessageSender.messageBatch(result) gepublished werden.
 
 
 Layout:
 
--all layouts schön machen
+-all layouts schï¿½n machen
 - Blinds half open + message + buttonlistener
 

@@ -128,13 +128,21 @@ public final class Messages {
 
     public static Collection<LightMessage> createAllLightOnMessage() {
         Set<LightMessage> lightMessages = new TreeSet<LightMessage>();
-
+        lightMessages.add(MSG_LIGHT_KITCHEN_MAIN_LIGHT_ON);
+        lightMessages.add(MSG_LIGHT_SLEEPING_LIGHT_ON);
+        lightMessages.add(MSG_LIGHT_DINING_LIGHT_ON);
+        lightMessages.add(MSG_LIGHT_CORRIDOR_LIGHT_ON);
+        lightMessages.add(MSG_LIGHT_LOUNGE_LIGHT_ON);
         return lightMessages;
     }
 
     public static Collection<LightMessage> createAllLightOffMessage() {
         Set<LightMessage> lightMessages = new TreeSet<LightMessage>();
-
+        lightMessages.add(MSG_LIGHT_KITCHEN_MAIN_LIGHT_OFF);
+        lightMessages.add(MSG_LIGHT_SLEEPING_LIGHT_OFF);
+        lightMessages.add(MSG_LIGHT_DINING_LIGHT_OFF);
+        lightMessages.add(MSG_LIGHT_CORRIDOR_LIGHT_OFF);
+        lightMessages.add(MSG_LIGHT_LOUNGE_LIGHT_OFF);
         return lightMessages;
     }
 

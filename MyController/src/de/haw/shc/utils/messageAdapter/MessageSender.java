@@ -22,7 +22,7 @@ public class MessageSender {
     private MessageSender() {
     }
 
-    public static final void messageBatch(Collection<Message> messages) {
+    public static final void messageBatch(Collection<? extends Message> messages) {
         Collection<Message> messagesToSend = new ArrayList<Message>(messages);
         for (Message msg : messagesToSend) {
             if (msg instanceof BlindsMessage) {
