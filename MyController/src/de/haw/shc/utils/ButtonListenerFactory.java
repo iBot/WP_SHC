@@ -1,10 +1,15 @@
 package de.haw.shc.utils;
 
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.text.AndroidCharacter;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import de.haw.shc.R;
+import de.haw.shc.utils.colorPicker.ColorPickerDialog;
 import de.haw.shc.utils.messageAdapter.Message;
 import de.haw.shc.utils.messageAdapter.MessageSender;
 import de.haw.shc.utils.messageAdapter.Messages;
@@ -174,11 +179,14 @@ public class ButtonListenerFactory implements Serializable {
 
     private void createLighListener(ViewTransportTyp viewTransportTyp) {
 
-        View view = viewTransportTyp.getView();
         Button button;
         SeekBar seekBar;
 
+        final View view = viewTransportTyp.getView();
+        final Paint mPaint = new Paint();
         final Context context = viewTransportTyp.getContext();
+
+
         button = (Button) view.findViewById(R.id.WhiteLightOn);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -225,12 +233,32 @@ public class ButtonListenerFactory implements Serializable {
                 Log.d(LOG_TAG, "Message" + message);
                 MessageSender.lightControl(message);
             }
-
-            //TODO COLOR
-
-
         });
 
+        final TextView colorPreview = (TextView) view.findViewById(R.id.ColorPreview);
+        button = (Button) view.findViewById(R.id.CallColorPicker);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ColorPickerDialog colorPickerDialog = new ColorPickerDialog(view.getContext() ,new ColorPickerDialog.OnColorChangedListener() {
+                    @Override
+                    public void colorChanged(int color) {
+                        colorPreview.setBackgroundColor(color);
+                        int red = Color.red(color);
+                        int green = Color.green(color);
+                        int blue = Color.blue(color);
+
+                        Log.d(LOG_TAG,"Color changGGGE event");
+                        Message message = Messages.createColorLightMessage(context,red,green,blue);
+                        Log.d(LOG_TAG,"Message :" + message);
+                        MessageSender.lightControl(message);
+
+                    }
+                },mPaint.getColor());
+                colorPickerDialog.show();
+
+            }
+        });
     }
 
 

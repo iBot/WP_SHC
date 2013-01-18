@@ -107,6 +107,37 @@ public final class Messages {
     }
 
     /**
+     * @param room
+     * @param red
+     * @param green
+     * @param blue
+     * @return
+     */
+    public static Message createColorLightMessage(Context room, int red, int green, int blue) {
+        Map<String, Object> colors = new HashMap<String, Object>();
+        colors.put("red", red);
+        colors.put("green", green);
+        colors.put("blue", blue);
+
+        LightMessage result;
+        if (room == Context.KITCHEN) {
+            result = createLightMessage("kitchen_main_light_color", colors);
+        } else if (room == Context.BEDROOM) {
+            result = createLightMessage("sleeping_main_light_color", colors);
+        } else if (room == Context.DINING) {
+            result = createLightMessage("dining_main_light_color", colors);
+        } else if (room == Context.HALL) {
+            result = createLightMessage("corridor_main_light_color", colors);
+        } else if (room == Context.LOUNGE) {
+            result = createLightMessage("lounge_main_light_color", colors);
+        } else {
+            result = null;
+            Log.w(LOG_TAG, String.format("%s is not a valid Context for Light Control!", room));
+        }
+        return result;
+    }
+
+    /**
      * This method should be used to create a message to switch the main light of a room on and set it to full intensity
      *
      * @param room
@@ -503,7 +534,7 @@ public final class Messages {
      */
     private static int intensityPerCentToInt(int perCent) {
         int result;
-        if (perCent <= 0) {
+        if (perCent >= 0) {
             result = 0;
         } else if (perCent >= 100) {
             result = 255;
@@ -512,6 +543,7 @@ public final class Messages {
         }
         return result;
     }
+
 
     //Enum für Heizung
     public static enum Heating {

@@ -97,14 +97,21 @@
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                           android:layout_marginTop="50dp" android:layout_marginBottom="50dp"
                           android:orientation="horizontal" android:id="@+id/linearLayout">
-                <Button android:id="@+id/CallColorPicker" android:layout_width="0dp" android:layout_height="wrap_content"
-                        android:layout_weight="1" android:text="@string/ColorPicker"/>
+                <Button android:id="@+id/CallColorPicker"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/ColorPicker"/>
                 <TextView
                         android:layout_width="0dp"
                         android:layout_height="fill_parent"
-                        android:id="@+id/textView" android:layout_weight="1" android:layout_marginTop="1dp"
+                        android:id="@+id/ColorPreview"
+                        android:layout_weight="1"
+                        android:layout_marginTop="1dp"
                         android:background="#47ff40"
-                        android:enabled="false" android:focusable="false" android:focusableInTouchMode="false"
+                        android:enabled="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
                         android:layout_margin="4dp"/>
             </LinearLayout>
         </LinearLayout>
