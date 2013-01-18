@@ -34,7 +34,8 @@ public class ControlFragment extends Fragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		if (savedInstanceState == null) {
-            //TODO warum getArguments?
+
+
             Log.d(LOG_TAG,"erstelle die factory");
             buttonListenerFactory = new ButtonListenerFactory();
 			if (getArguments().containsKey(CONTEXT)) {
@@ -70,38 +71,38 @@ public class ControlFragment extends Fragment {
 //		}
 
 		View view = null;
-        Button button;
-        List<Button> buttonList = new ArrayList<Button>();
 
 
-        Log.d(LOG_TAG, "Ausgabe");
-        Log.d(LOG_TAG, mContext.name());
 
-		if(mControl == Control.LIGHT){
+
+        Log.d(LOG_TAG,"Before if Context:" + mContext + " Control:" + mControl + " view:"+view);
+		if(mControl.equals(Control.LIGHT)){
 			
 			view = inflater.inflate(R.layout.light_layout, container,false);
             createListenerForView(view);
 		}
-		else if(mControl == Control.CURTAIN){
+		else if(mControl.equals(Control.CURTAIN)){
 			
 			view = inflater.inflate(R.layout.curtains_layout, container,false);
             createListenerForView(view);
 		}
-		else if(mControl == Control.BLINDS){
+		else if(mControl.equals(Control.BLINDS)){
 			
 			view = inflater.inflate(R.layout.blinds_layout, container,false);
             createListenerForView(view);
 		}
-		else if(mControl == Control.WINDOW){
+		else if(mControl.equals(Control.WINDOW)){
 			
 			view = inflater.inflate(R.layout.window_layout, container,false);
             createListenerForView(view);
 		}
-		else if(mControl == Control.HEATING){
+		else if(mControl.equals(Control.HEATING)){
 			
 			view = inflater.inflate(R.layout.heating_layout, container,false);
             createListenerForView(view);
-		}
+		}else {
+            Log.d(LOG_TAG,"CANT MATCH mControl value " + mControl);
+        }
 
 
 		return view;
@@ -109,7 +110,7 @@ public class ControlFragment extends Fragment {
 
 
     private void createListenerForView(View view){
-        Log.d(LOG_TAG,"rufe factory auf mit Context " +mContext.toString() + " Controls " + mContext.getControls());
+        Log.d(LOG_TAG,"rufe factory auf mit Context:" +mContext + " Controls:" +  mControl + " view:"+view);
         buttonListenerFactory.checkControlls(new ViewTransportTyp(mContext,mControl,view));
     }
 

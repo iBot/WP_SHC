@@ -69,9 +69,12 @@ public class ButtonListenerFactory implements Serializable {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(LOG_TAG, "Open windows in " + context);
                 Message message = Messages.createWindowOpenMessage(context);
-                Log.d(LOG_TAG, "Message" + message);
+
+                //debug log
+                //Log.d(LOG_TAG, "Open windows in " + context);
+                //Log.d(LOG_TAG, "Message" + message);
+
                 MessageSender.windowControl(message);
             }
         });
@@ -81,9 +84,13 @@ public class ButtonListenerFactory implements Serializable {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(LOG_TAG, "Close windows in " + context);
+
                 Message message = Messages.createWindowCloseMessage(context);
-                Log.d(LOG_TAG, "Message" + message);
+
+                //debug log
+                //Log.d(LOG_TAG, "Close windows in " + context);
+                //Log.d(LOG_TAG, "Message" + message);
+
                 MessageSender.windowControl(message);
             }
         });
@@ -126,9 +133,13 @@ public class ButtonListenerFactory implements Serializable {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(LOG_TAG, "Curtains open in " + context);
+
                 Message message = Messages.createCurtainsOpenMessage(context);
-                Log.d(LOG_TAG, "Message" + message);
+
+                //debug log
+                //Log.d(LOG_TAG, "Curtains open in " + context);
+                //Log.d(LOG_TAG, "Message" + message);
+
                 MessageSender.curtainControl(message);
             }
         });
@@ -157,9 +168,13 @@ public class ButtonListenerFactory implements Serializable {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(LOG_TAG, "blinds open in " + context);
+
                 Message message = Messages.createBlindsOpenMessage(context);
-                Log.d(LOG_TAG, "Message" + message);
+
+                //debug log
+                //Log.d(LOG_TAG, "blinds open in " + context);
+                //Log.d(LOG_TAG, "Message" + message);
+
                 MessageSender.blindsControl(message);
             }
         });
@@ -192,9 +207,12 @@ public class ButtonListenerFactory implements Serializable {
             @Override
             public void onClick(View v) {
 
-                Log.d(LOG_TAG, "whitelight on in " + context);
                 Message message = Messages.createLightOnMessage(context);
+
+                //debug log
+                Log.d(LOG_TAG, "whitelight on in " + context);
                 Log.d(LOG_TAG, "Message" + message);
+
                 MessageSender.lightControl(message);
 
             }
@@ -205,9 +223,13 @@ public class ButtonListenerFactory implements Serializable {
             @Override
             public void onClick(View v) {
 
-                Log.d(LOG_TAG, "whitelight off in " + context);
+
                 Message message = Messages.createLightOffMessage(context);
-                Log.d(LOG_TAG, "Message" + message);
+
+                //debug
+                //Log.d(LOG_TAG, "whitelight off in " + context);
+                //Log.d(LOG_TAG, "Message" + message);
+
                 MessageSender.lightControl(message);
 
             }
@@ -228,9 +250,13 @@ public class ButtonListenerFactory implements Serializable {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                Log.d(LOG_TAG, "whitelight dim to " + seekBar.getProgress() + " in " + context);
+
                 Message message = Messages.createLightIntesityMessage(context, seekBar.getProgress());
-                Log.d(LOG_TAG, "Message" + message);
+
+                //debug log
+                //Log.d(LOG_TAG, "whitelight dim to " + seekBar.getProgress() + " in " + context);
+                //Log.d(LOG_TAG, "Message" + message);
+
                 MessageSender.lightControl(message);
             }
         });
@@ -248,9 +274,11 @@ public class ButtonListenerFactory implements Serializable {
                         int green = Color.green(color);
                         int blue = Color.blue(color);
 
-                        Log.d(LOG_TAG,"Color changGGGE event");
                         Message message = Messages.createColorLightMessage(context,red,green,blue);
-                        Log.d(LOG_TAG,"Message :" + message);
+
+                        //debug log
+                        //Log.d(LOG_TAG,"Color changGGGE event");
+                        // Log.d(LOG_TAG,"Message :" + message);
                         MessageSender.lightControl(message);
 
                     }
@@ -262,33 +290,4 @@ public class ButtonListenerFactory implements Serializable {
     }
 
 
-    /*
-    public void createButtons() {
-
-
-        //TODO prüfen ob  controll in controlls vorhanden ist
-        // buttons aus views suchen
-        // butonlistener erstellen
-
-
-        switch (viewTransportTyp.getContext()) {
-            case BEDROOM:
-                break;
-            case DINING:
-                break;
-            case HALL:
-                break;
-            case KITCHEN:
-                break;
-            case LOUNGE:
-                break;
-            case ALL:
-                break;
-
-
-        }
-
-
-    }
-     */
 }
