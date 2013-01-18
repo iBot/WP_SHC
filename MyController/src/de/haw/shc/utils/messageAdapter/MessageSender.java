@@ -50,23 +50,19 @@ public class MessageSender {
     }
 
     public static final void windowControl(Message message) {
-        MessageSender.Sender sender = messageSender.new Sender();
         send(IP, PORT, message.getTopic(), TOPIC, message.getContent());
     }
 
     public static final void curtainControl(Message message) {
-        MessageSender.Sender sender = messageSender.new Sender();
         send(IP, PORT, message.getTopic(), TOPIC, message.getContent());
     }
 
     public static final void heatingControl(Message message) {
-        MessageSender.Sender sender = messageSender.new Sender();
         send(IP, PORT, message.getTopic(), TOPIC, message.getContent());
     }
 
     public static final void blindsControl(Message message) {
-        MessageSender.Sender sender = messageSender.new Sender();
-        sender.execute(IP, PORT, message.getTopic(), TOPIC, message.getContent());
+        send(IP, PORT, message.getTopic(), TOPIC, message.getContent());
     }
 
     private class Sender extends AsyncTask<String, Void, String> {

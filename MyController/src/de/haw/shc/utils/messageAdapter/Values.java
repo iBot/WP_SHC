@@ -13,5 +13,5 @@ class Values {
 
     static final String IP = "172.16.0.200";
     static final String PORT = "12349";
-    static final String TOPIC = "Topic";
+    static final String TOPIC = "topic";
 }

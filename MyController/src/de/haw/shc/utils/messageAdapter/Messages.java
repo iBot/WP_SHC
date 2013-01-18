@@ -503,7 +503,7 @@ public final class Messages {
      */
     private static int intensityPerCentToInt(int perCent) {
         int result;
-        if (perCent >= 0) {
+        if (perCent <= 0) {
             result = 0;
         } else if (perCent >= 100) {
             result = 255;
