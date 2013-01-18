@@ -41,29 +41,32 @@ public class MessageSender {
         }
     }
 
+    private static final void send( String ip, String port, String messageTopic, String queueTopic, String messageContext){
+        (messageSender.new Sender()).execute(ip, port, messageTopic,queueTopic, messageContext);
+    }
+
     public static final void lightControl(Message message) {
-        MessageSender.Sender sender = messageSender.new Sender();
-        sender.doInBackground(IP, PORT, message.getTopic(), TOPIC, message.getContent());
+        send(IP, PORT, message.getTopic(), TOPIC, message.getContent());
     }
 
     public static final void windowControl(Message message) {
         MessageSender.Sender sender = messageSender.new Sender();
-        sender.doInBackground(IP, PORT, message.getTopic(), TOPIC, message.getContent());
+        send(IP, PORT, message.getTopic(), TOPIC, message.getContent());
     }
 
     public static final void curtainControl(Message message) {
         MessageSender.Sender sender = messageSender.new Sender();
-        sender.doInBackground(IP, PORT, message.getTopic(), TOPIC, message.getContent());
+        send(IP, PORT, message.getTopic(), TOPIC, message.getContent());
     }
 
     public static final void heatingControl(Message message) {
         MessageSender.Sender sender = messageSender.new Sender();
-        sender.doInBackground(IP, PORT, message.getTopic(), TOPIC, message.getContent());
+        send(IP, PORT, message.getTopic(), TOPIC, message.getContent());
     }
 
     public static final void blindsControl(Message message) {
         MessageSender.Sender sender = messageSender.new Sender();
-        sender.doInBackground(IP, PORT, message.getTopic(), TOPIC, message.getContent());
+        sender.execute(IP, PORT, message.getTopic(), TOPIC, message.getContent());
     }
 
     private class Sender extends AsyncTask<String, Void, String> {
@@ -73,6 +76,7 @@ public class MessageSender {
 
         @Override
         protected String doInBackground(String... params) {
+            Log.d(LOGTAG, "doInBackground(...) wurde aufgerufen!");
             try {
                 AndroidPublisher publisher = new AndroidPublisher(params[0],
                         Integer.valueOf(params[1]), params[2]);
@@ -82,7 +86,8 @@ public class MessageSender {
                 } else {
                     publisher.publishToQueue();
                 }
-            } catch (Exception e) {
+                Log.i(LOGTAG, "Message sent...");
+            } catch (IOException e) {
                 Log.e(LOGTAG, e.toString());
                 Log.e(LOGTAG, "Can't publish the message");
             }
