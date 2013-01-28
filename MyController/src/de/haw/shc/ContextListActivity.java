@@ -7,9 +7,8 @@ import android.util.Log;
 
 
 
-import de.haw.shc.utils.Context;
-import de.haw.shc.utils.ContextDelegate;
-import de.haw.shc.R;
+import de.haw.shc.utils.context.Context;
+import de.haw.shc.utils.context.ContextDelegate;
 
 public class ContextListActivity extends Activity implements
 		ContextListFragment.Callbacks {

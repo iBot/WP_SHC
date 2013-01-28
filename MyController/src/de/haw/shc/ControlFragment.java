@@ -6,10 +6,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import de.haw.shc.utils.ButtonListenerFactory;
-import de.haw.shc.utils.Context;
-import de.haw.shc.utils.Control;
-import de.haw.shc.utils.ViewTransportTyp;
+import de.haw.shc.utils.buttonFactory.ButtonListenerFactory;
+import de.haw.shc.utils.context.Context;
+import de.haw.shc.utils.control.Control;
+import de.haw.shc.utils.buttonFactory.ViewTransportTyp;
 
 public class ControlFragment extends Fragment {
 
@@ -71,7 +71,7 @@ public class ControlFragment extends Fragment {
 
 
 
-        Log.d(LOG_TAG,"Before if Context:" + mContext + " Control:" + mControl + " view:"+view);
+        Log.d(LOG_TAG,"Before if context:" + mContext + " Control:" + mControl + " view:"+view);
 		if(mControl.equals(Control.LIGHT)){
 			
 			view = inflater.inflate(R.layout.light_layout, container,false);
@@ -106,7 +106,7 @@ public class ControlFragment extends Fragment {
 
 
     private void createListenerForView(View view){
-        Log.d(LOG_TAG,"rufe factory auf mit Context:" +mContext + " Controls:" +  mControl + " view:"+view);
+        Log.d(LOG_TAG,"rufe factory auf mit context:" +mContext + " Controls:" +  mControl + " view:"+view);
         buttonListenerFactory.setListenerForView(new ViewTransportTyp(mContext, mControl, view));
     }
 

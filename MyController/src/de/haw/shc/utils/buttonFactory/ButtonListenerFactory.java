@@ -1,4 +1,4 @@
-package de.haw.shc.utils;
+package de.haw.shc.utils.buttonFactory;
 
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import de.haw.shc.R;
+import de.haw.shc.utils.context.Context;
 import de.haw.shc.utils.colorPicker.ColorPickerDialog;
 import de.haw.shc.utils.messageAdapter.Message;
 import de.haw.shc.utils.messageAdapter.MessageSender;

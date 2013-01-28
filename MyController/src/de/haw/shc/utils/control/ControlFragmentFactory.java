@@ -1,4 +1,4 @@
-package de.haw.shc.utils;
+package de.haw.shc.utils.control;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,6 +9,8 @@ import android.os.Bundle;
 
 
 import de.haw.shc.ControlFragment;
+import de.haw.shc.utils.context.Context;
+
 public class ControlFragmentFactory {
 
 	private static Map<Context, Map<Control,Fragment>>  fragmentMap = new HashMap<Context, Map<Control,Fragment>>();

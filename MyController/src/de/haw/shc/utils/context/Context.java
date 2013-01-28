@@ -1,6 +1,8 @@
-package de.haw.shc.utils;
+package de.haw.shc.utils.context;
 
-import static de.haw.shc.utils.Control.*; 
+import de.haw.shc.utils.control.Control;
+
+import static de.haw.shc.utils.control.Control.*;
 
 
 public enum Context{

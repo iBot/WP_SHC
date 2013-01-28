@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 
-import de.haw.shc.utils.Context;
+import de.haw.shc.utils.context.Context;
 
 public class ContextListFragment extends ListFragment {
 

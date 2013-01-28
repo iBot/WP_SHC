@@ -2,7 +2,7 @@
 package de.haw.shc.utils.messageAdapter;
 
 import android.util.Log;
-import de.haw.shc.utils.Context;
+import de.haw.shc.utils.context.Context;
 
 import java.util.*;
 
@@ -132,7 +132,7 @@ public final class Messages {
             result = createLightMessage("lounge_main_light_color", colors);
         } else {
             result = null;
-            Log.w(LOG_TAG, String.format("%s is not a valid Context for Light Control!", room));
+            Log.w(LOG_TAG, String.format("%s is not a valid context for Light Control!", room));
         }
         return result;
     }
@@ -157,7 +157,7 @@ public final class Messages {
             result = MSG_LIGHT_LOUNGE_LIGHT_ON;
         } else {
             result = null;
-            Log.w(LOG_TAG, String.format("%s is not a valid Context for Light Control!", room));
+            Log.w(LOG_TAG, String.format("%s is not a valid context for Light Control!", room));
         }
         return result;
     }
@@ -196,7 +196,7 @@ public final class Messages {
             result = MSG_BLINDS_LOUNGE_BLINDS_OPEN;
         } else {
             result = null;
-            Log.w(LOG_TAG, String.format("%s is not a valid Context for Blinds Control!", room));
+            Log.w(LOG_TAG, String.format("%s is not a valid context for Blinds Control!", room));
         }
         return result;
     }
@@ -215,7 +215,7 @@ public final class Messages {
             result = MSG_BLINDS_LOUNGE_BLINDS_HALF;
         } else {
             result = null;
-            Log.w(LOG_TAG, String.format("%s is not a valid Context for Blinds Control!", room));
+            Log.w(LOG_TAG, String.format("%s is not a valid context for Blinds Control!", room));
         }
         return result;
     }
@@ -234,7 +234,7 @@ public final class Messages {
             result = MSG_BLINDS_LOUNGE_BLINDS_CLOSE;
         } else {
             result = null;
-            Log.w(LOG_TAG, String.format("%s is not a valid Context for Blinds Control!", room));
+            Log.w(LOG_TAG, String.format("%s is not a valid context for Blinds Control!", room));
         }
         return result;
     }
@@ -249,7 +249,7 @@ public final class Messages {
             result = MSG_CURTAIN_SLEEPING_HALL_CURTAIN_OPEN;
         } else {
             result = null;
-            Log.w(LOG_TAG, String.format("%s is not a valid Context for Curtain Control!", room));
+            Log.w(LOG_TAG, String.format("%s is not a valid context for Curtain Control!", room));
         }
         return result;
     }
@@ -264,7 +264,7 @@ public final class Messages {
             result = MSG_CURTAIN_SLEEPING_HALL_CURTAIN_CLOSE;
         } else {
             result = null;
-            Log.w(LOG_TAG, String.format("%s is not a valid Context for Curtain Control!", room));
+            Log.w(LOG_TAG, String.format("%s is not a valid context for Curtain Control!", room));
         }
         return result;
     }
@@ -281,7 +281,7 @@ public final class Messages {
             result = MSG_WINDOW_LOUNGE_WINDOW_OPEN;
         } else {
             result = null;
-            Log.w(LOG_TAG, String.format("%s is not a valid Context for Curtain Control!", room));
+            Log.w(LOG_TAG, String.format("%s is not a valid context for Curtain Control!", room));
         }
         return result;
     }
@@ -298,7 +298,7 @@ public final class Messages {
             result = MSG_WINDOW_LOUNGE_WINDOW_CLOSE;
         } else {
             result = null;
-            Log.w(LOG_TAG, String.format("%s is not a valid Context for Curtain Control!", room));
+            Log.w(LOG_TAG, String.format("%s is not a valid context for Curtain Control!", room));
         }
         return result;
     }
@@ -332,7 +332,7 @@ public final class Messages {
                 result = createLightMessage("lounge_light_on", getIntensityMap(intensity));
             } else {
                 result = null;
-                Log.w(LOG_TAG, String.format("%s is not a valid Context for Light Control!", room));
+                Log.w(LOG_TAG, String.format("%s is not a valid context for Light Control!", room));
             }
         }
         return result;
@@ -358,7 +358,7 @@ public final class Messages {
             result = MSG_LIGHT_LOUNGE_LIGHT_OFF;
         } else {
             result = null;
-            Log.w(LOG_TAG, String.format("%s is not a valid Context for Light Control!", room));
+            Log.w(LOG_TAG, String.format("%s is not a valid context for Light Control!", room));
         }
         return result;
     }

@@ -5,9 +5,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 
-import de.haw.shc.utils.Context;
-import de.haw.shc.utils.ContextDelegate;
-import de.haw.shc.R;
+import de.haw.shc.utils.context.Context;
+import de.haw.shc.utils.context.ContextDelegate;
 
 
 public class ControlActivity extends Activity {

@@ -1,4 +1,4 @@
-package de.haw.shc.utils;
+package de.haw.shc.utils.control;
 
 public enum Control {
 	LIGHT("Licht"), HEATING("Heizung"), WINDOW("Fenster"), BLINDS("Rolos"), CURTAIN(

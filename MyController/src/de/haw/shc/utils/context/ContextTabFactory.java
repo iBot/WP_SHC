@@ -1,7 +1,8 @@
-package de.haw.shc.utils;
+package de.haw.shc.utils.context;
 
 import android.app.ActionBar;
 import android.app.ActionBar.TabListener;
+import de.haw.shc.utils.control.Control;
 
 
 public class ContextTabFactory {

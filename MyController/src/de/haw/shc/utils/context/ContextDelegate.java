@@ -1,4 +1,4 @@
-package de.haw.shc.utils;
+package de.haw.shc.utils.context;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -14,6 +14,8 @@ import android.app.FragmentTransaction;
 
 import de.haw.shc.ControlFragment;
 import de.haw.shc.R;
+import de.haw.shc.utils.control.Control;
+import de.haw.shc.utils.control.ControlFragmentFactory;
 
 public class ContextDelegate {
 
@@ -47,7 +49,7 @@ public class ContextDelegate {
 						.replace(
 								R.id.control_container,
 								ControlFragmentFactory.getInstance(id,
-										(Control) tab.getTag())).commit();
+                                        (Control) tab.getTag())).commit();
 			}
 
 			public void onTabUnselected(Tab tab, FragmentTransaction ft) {

@@ -1,6 +1,8 @@
-package de.haw.shc.utils;
+package de.haw.shc.utils.buttonFactory;
 
 import android.view.View;
+import de.haw.shc.utils.context.Context;
+import de.haw.shc.utils.control.Control;
 
 /**
  * Created with IntelliJ IDEA.
