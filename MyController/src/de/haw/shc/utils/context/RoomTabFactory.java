@@ -5,11 +5,11 @@ import android.app.ActionBar.TabListener;
 import de.haw.shc.utils.control.Control;
 
 
-public class ContextTabFactory {
+public class RoomTabFactory {
 
 	
-	public static void createTabs(ActionBar actionBar, Context context, TabListener tabListener) {
-		for (Control control : context.getControls()) {
+	public static void createTabs(ActionBar actionBar, Room room, TabListener tabListener) {
+		for (Control control : room.getControls()) {
 			actionBar.addTab(actionBar.newTab()
 						.setText(control.toString())
 						.setTabListener(tabListener).setTag(control));

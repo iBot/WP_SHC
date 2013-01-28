@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import de.haw.shc.utils.buttonFactory.ButtonListenerFactory;
-import de.haw.shc.utils.context.Context;
+import de.haw.shc.utils.context.Room;
 import de.haw.shc.utils.control.Control;
 import de.haw.shc.utils.buttonFactory.ViewTransportTyp;
 
@@ -19,7 +19,7 @@ public class ControlFragment extends Fragment {
 	public static final String CONTROL = "control";
     private  static final  String BUTTONFACTORY = "BUTTONFACTORY";
 
-	private Context mContext;
+	private Room mContext;
 	private Control mControl;
     private ButtonListenerFactory buttonListenerFactory;
 
@@ -35,14 +35,14 @@ public class ControlFragment extends Fragment {
             Log.d(LOG_TAG,"erstelle die factory");
             buttonListenerFactory = new ButtonListenerFactory();
 			if (getArguments().containsKey(CONTEXT)) {
-				mContext = (Context) (getArguments().getSerializable(CONTEXT));
+				mContext = (Room) (getArguments().getSerializable(CONTEXT));
 			}
 			if (getArguments().containsKey(CONTROL)) {
 				mControl = (Control) (getArguments().getSerializable(CONTROL));
 			}
 		} else {
             buttonListenerFactory =  (ButtonListenerFactory) savedInstanceState.getSerializable(BUTTONFACTORY);
-			mContext = (Context) savedInstanceState.getSerializable(CONTEXT);
+			mContext = (Room) savedInstanceState.getSerializable(CONTEXT);
 			mControl = (Control) savedInstanceState.getSerializable(CONTROL);
 		}
 	}

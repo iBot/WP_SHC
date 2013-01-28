@@ -17,31 +17,31 @@ import de.haw.shc.R;
 import de.haw.shc.utils.control.Control;
 import de.haw.shc.utils.control.ControlFragmentFactory;
 
-public class ContextDelegate {
+public class RoomDelegate {
 
-	private Context mContext;
+	private Room mRoom;
 	private Control mControl;
 	
 	
 
-	private Map<Context, Control> ctxCtrlMap = new HashMap<Context, Control>();
+	private Map<Room, Control> ctxCtrlMap = new HashMap<Room, Control>();
 
-	public void onItemSelected(final Context id,
+	public void onItemSelected(final Room id,
 			final Activity activity) {
 
 		final ActionBar actionBar = activity.getActionBar();
 		// Specify that tabs should be displayed in the action bar.
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-		if (mContext != null && mControl != null) {
-			ctxCtrlMap.put(mContext, mControl);
+		if (mRoom != null && mControl != null) {
+			ctxCtrlMap.put(mRoom, mControl);
 		}
 		actionBar.removeAllTabs();
 
 		ActionBar.TabListener tabListener = new ActionBar.TabListener() {
 
 			public void onTabSelected(Tab tab, FragmentTransaction ft) {
-				mContext = id;
+				mRoom = id;
 				mControl = (Control) tab.getTag();
 
 				activity.getFragmentManager()
@@ -60,7 +60,7 @@ public class ContextDelegate {
 
 		};
 
-		ContextTabFactory.createTabs(actionBar, id, tabListener);
+		RoomTabFactory.createTabs(actionBar, id, tabListener);
 
 		if (ctxCtrlMap.containsKey(id)) {
 			int pos = Arrays.asList(id.getControls()).indexOf(
@@ -74,18 +74,18 @@ public class ContextDelegate {
 	public void restoreFrom(Bundle savedInstanceState,
 			Activity activity) {
 		if (savedInstanceState.containsKey(ControlFragment.CONTEXT)) {
-			Context context = (Context) savedInstanceState
+			Room room = (Room) savedInstanceState
 					.getSerializable(ControlFragment.CONTEXT);
-			if (context != null) {
-				onItemSelected(context, activity);
+			if (room != null) {
+				onItemSelected(room, activity);
 				if (savedInstanceState.containsKey(ControlFragment.CONTROL)) {
 					Control control = (Control) savedInstanceState
 							.getSerializable(ControlFragment.CONTROL);
 					if (control != null) {
 						activity.getActionBar()
 								.setSelectedNavigationItem(
-										Arrays.asList(context.getControls())
-												.indexOf(control));
+                                        Arrays.asList(room.getControls())
+                                                .indexOf(control));
 					}
 				}
 			}
@@ -93,8 +93,8 @@ public class ContextDelegate {
 	}
 
 	public void onSaveInstanceState(Bundle outState) {
-		if (mContext != null) {
-			outState.putSerializable(ControlFragment.CONTEXT, mContext);
+		if (mRoom != null) {
+			outState.putSerializable(ControlFragment.CONTEXT, mRoom);
 		}
 		if (mControl != null) {
 			outState.putSerializable(ControlFragment.CONTROL, mControl);

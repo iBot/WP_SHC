@@ -41,8 +41,8 @@ public class MessageSender {
         }
     }
 
-    private static final void send( String ip, String port, String messageTopic, String queueTopic, String messageContext){
-        (messageSender.new Sender()).execute(ip, port, messageTopic,queueTopic, messageContext);
+    private static final void send( String ip, String port, String messageTopic, String queueTopic, String messageContent){
+        (messageSender.new Sender()).execute(ip, port, messageTopic,queueTopic, messageContent);
     }
 
     public static final void lightControl(Message message) {

@@ -5,13 +5,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 
-import de.haw.shc.utils.context.Context;
-import de.haw.shc.utils.context.ContextDelegate;
+import de.haw.shc.utils.context.Room;
+import de.haw.shc.utils.context.RoomDelegate;
 
 
 public class ControlActivity extends Activity {
 
-	private ContextDelegate clfDelegate;
+	private RoomDelegate clfDelegate;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,14 +20,14 @@ public class ControlActivity extends Activity {
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
-		clfDelegate = new ContextDelegate();
+		clfDelegate = new RoomDelegate();
 		if (savedInstanceState == null) {		
 			Bundle b = getIntent().getExtras();
-			Context context = (Context)b.getSerializable(ControlFragment.CONTEXT);
+			Room context = (Room)b.getSerializable(ControlFragment.CONTEXT);
 			setTitle(context.toString());
 			clfDelegate.onItemSelected(context, this);
 		} else{
-			Context context = (Context)savedInstanceState.getSerializable(ControlFragment.CONTEXT);
+			Room context = (Room)savedInstanceState.getSerializable(ControlFragment.CONTEXT);
 			setTitle(context.toString());
 			clfDelegate.restoreFrom(savedInstanceState,this);
 		}

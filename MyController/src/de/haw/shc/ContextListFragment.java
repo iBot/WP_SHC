@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 
-import de.haw.shc.utils.context.Context;
+import de.haw.shc.utils.context.Room;
 
 public class ContextListFragment extends ListFragment {
 
@@ -20,22 +20,22 @@ public class ContextListFragment extends ListFragment {
 
 	public interface Callbacks {
 
-		public void onItemSelected(Context id);
+		public void onItemSelected(Room id);
 
 	}
 
 	private static Callbacks sDummyCallbacks = new Callbacks() {
 		@Override
-		public void onItemSelected(Context id) {
+		public void onItemSelected(Room id) {
 		}
 	};
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setListAdapter(new ArrayAdapter<Context>(getActivity(),
+		setListAdapter(new ArrayAdapter<Room>(getActivity(),
 				R.layout.simple_list_item_activated_1, R.id.text1,
-				Context.values()));
+				Room.values()));
 	}
 
 	@Override
@@ -69,7 +69,7 @@ public class ContextListFragment extends ListFragment {
 	public void onListItemClick(ListView listView, View view, int position,
 			long id) {
 		super.onListItemClick(listView, view, position, id);
-		mCallbacks.onItemSelected(Context.values()[position]);
+		mCallbacks.onItemSelected(Room.values()[position]);
 	}
 
 	@Override
