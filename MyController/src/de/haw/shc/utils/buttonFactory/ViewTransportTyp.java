@@ -1,7 +1,7 @@
 package de.haw.shc.utils.buttonFactory;
 
 import android.view.View;
-import de.haw.shc.utils.context.Context;
+import de.haw.shc.utils.context.Room;
 import de.haw.shc.utils.control.Control;
 
 /**
@@ -13,18 +13,18 @@ import de.haw.shc.utils.control.Control;
  */
 public class ViewTransportTyp {
 
-    private Context room;
+    private Room room;
     private Control control;
     private View view;
 
-    public ViewTransportTyp(Context room, Control control, View view){
+    public ViewTransportTyp(Room room, Control control, View view){
         this.room = room;
         this.control = control;
         this.view = view;
 
     }
 
-    public Context getRoom() {
+    public Room getRoom() {
         return room;
     }
 

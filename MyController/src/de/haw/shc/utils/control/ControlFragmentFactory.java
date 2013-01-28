@@ -9,19 +9,19 @@ import android.os.Bundle;
 
 
 import de.haw.shc.ControlFragment;
-import de.haw.shc.utils.context.Context;
+import de.haw.shc.utils.context.Room;
 
 public class ControlFragmentFactory {
 
-	private static Map<Context, Map<Control,Fragment>>  fragmentMap = new HashMap<Context, Map<Control,Fragment>>();
+	private static Map<Room, Map<Control,Fragment>>  fragmentMap = new HashMap<Room, Map<Control,Fragment>>();
 
 	static{
 		
-		for (Context c: Context.values()) {
+		for (Room c: Room.values()) {
 			fragmentMap.put(c,null);
 		}
 	}
-	public static Fragment getInstance(Context context, Control control) {
+	public static Fragment getInstance(Room context, Control control) {
 		if (fragmentMap.get(context) == null){
 			fragmentMap.put(context, new HashMap<Control, Fragment>());
 		}

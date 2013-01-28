@@ -5,9 +5,9 @@ import de.haw.shc.utils.control.Control;
 import static de.haw.shc.utils.control.Control.*;
 
 
-public enum Context{
+public enum Room {
 	
-	ALL("allRooms","allRooms") {
+	ALL("allRooms","all") {
 		@Override
 		public Control[] getControls() {
 			return new Control[] { LIGHT, CURTAIN, BLINDS, WINDOW, HEATING };
@@ -25,7 +25,7 @@ public enum Context{
 			return new Control[] { LIGHT, BLINDS, WINDOW };
 		}
 	},
-	HALL("hall","hall") {
+	CORRIDOR("corridor","corridor") {
 		@Override
 		public Control[] getControls() {
 			return new Control[] { LIGHT, CURTAIN };
@@ -49,7 +49,7 @@ public enum Context{
     private String value;
 	
 
-	private Context(String name, String value) {
+	private Room(String name, String value) {
 //		this.name = rm.getStringValue(name);
 		this.name = name;
         this.value = value;

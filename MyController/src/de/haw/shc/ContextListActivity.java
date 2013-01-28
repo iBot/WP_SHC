@@ -7,14 +7,14 @@ import android.util.Log;
 
 
 
-import de.haw.shc.utils.context.Context;
-import de.haw.shc.utils.context.ContextDelegate;
+import de.haw.shc.utils.context.Room;
+import de.haw.shc.utils.context.RoomDelegate;
 
 public class ContextListActivity extends Activity implements
 		ContextListFragment.Callbacks {
 
 	private boolean mTwoPane;
-	private ContextDelegate clfDelegate = new ContextDelegate();
+	private RoomDelegate clfDelegate = new RoomDelegate();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class ContextListActivity extends Activity implements
 	}
 	
 	@Override
-	public void onItemSelected(final Context id) {
+	public void onItemSelected(final Room id) {
 		if (mTwoPane) {
 			clfDelegate.onItemSelected(id, this);
 		} else {
