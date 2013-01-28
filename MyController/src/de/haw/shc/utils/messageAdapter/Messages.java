@@ -122,7 +122,7 @@ public final class Messages {
         LightMessage result;
         if (room == Context.KITCHEN) {
             result = createLightMessage("kitchen_main_light_color", colors);
-        } else if (room == Context.BEDROOM) {
+        } else if (room == Context.SLEEPING) {
             result = createLightMessage("sleeping_main_light_color", colors);
         } else if (room == Context.DINING) {
             result = createLightMessage("dining_main_light_color", colors);
@@ -147,7 +147,7 @@ public final class Messages {
         LightMessage result;
         if (room == Context.KITCHEN) {
             result = MSG_LIGHT_KITCHEN_MAIN_LIGHT_ON;
-        } else if (room == Context.BEDROOM) {
+        } else if (room == Context.SLEEPING) {
             result = MSG_LIGHT_SLEEPING_LIGHT_ON;
         } else if (room == Context.DINING) {
             result = MSG_LIGHT_DINING_LIGHT_ON;
@@ -188,7 +188,7 @@ public final class Messages {
             result = MSG_BLINDS_ALLROOMS_BLINDS_OPEN;
         } else if (room == Context.KITCHEN) {
             result = MSG_BLINDS_KITCHEN_BLINDS_OPEN;
-        } else if (room == Context.BEDROOM) {
+        } else if (room == Context.SLEEPING) {
             result = MSG_BLINDS_SLEEPING_BLINDS_OPEN;
         } else if (room == Context.DINING) {
             result = MSG_BLINDS_DINING_BLINDS_OPEN;
@@ -207,7 +207,7 @@ public final class Messages {
             result = MSG_BLINDS_ALLROOMS_BLINDS_HALF;
         } else if (room == Context.KITCHEN) {
             result = MSG_BLINDS_KITCHEN_BLINDS_HALF;
-        } else if (room == Context.BEDROOM) {
+        } else if (room == Context.SLEEPING) {
             result = MSG_BLINDS_SLEEPING_BLINDS_HALF;
         } else if (room == Context.DINING) {
             result = MSG_BLINDS_DINING_BLINDS_HALF;
@@ -226,7 +226,7 @@ public final class Messages {
             result = MSG_BLINDS_ALLROOMS_BLINDS_CLOSE;
         } else if (room == Context.KITCHEN) {
             result = MSG_BLINDS_KITCHEN_BLINDS_CLOSE;
-        } else if (room == Context.BEDROOM) {
+        } else if (room == Context.SLEEPING) {
             result = MSG_BLINDS_SLEEPING_BLINDS_CLOSE;
         } else if (room == Context.DINING) {
             result = MSG_BLINDS_DINING_BLINDS_CLOSE;
@@ -243,7 +243,7 @@ public final class Messages {
         CurtainMessage result;
         if (room == Context.LOUNGE) {
             result = MSG_CURTAIN_LOUNGE_CURTAIN_OPEN;
-        } else if (room == Context.BEDROOM) {
+        } else if (room == Context.SLEEPING) {
             result = MSG_CURTAIN_SLEEPING_HALL_CURTAIN_OPEN;
         } else if (room == Context.HALL) {
             result = MSG_CURTAIN_SLEEPING_HALL_CURTAIN_OPEN;
@@ -258,7 +258,7 @@ public final class Messages {
         CurtainMessage result;
         if (room == Context.LOUNGE) {
             result = MSG_CURTAIN_LOUNGE_CURTAIN_CLOSE;
-        } else if (room == Context.BEDROOM) {
+        } else if (room == Context.SLEEPING) {
             result = MSG_CURTAIN_SLEEPING_HALL_CURTAIN_CLOSE;
         } else if (room == Context.HALL) {
             result = MSG_CURTAIN_SLEEPING_HALL_CURTAIN_CLOSE;
@@ -322,7 +322,7 @@ public final class Messages {
         } else {
             if (room == Context.KITCHEN) {
                 result = createLightMessage("kitchen_main_light_on", getIntensityMap(intensity));
-            } else if (room == Context.BEDROOM) {
+            } else if (room == Context.SLEEPING) {
                 result = createLightMessage("sleeping_light_on", getIntensityMap(intensity));
             } else if (room == Context.DINING) {
                 result = createLightMessage("dining_light_on", getIntensityMap(intensity));
@@ -348,7 +348,7 @@ public final class Messages {
         LightMessage result;
         if (room == Context.KITCHEN) {
             result = MSG_LIGHT_KITCHEN_MAIN_LIGHT_OFF;
-        } else if (room == Context.BEDROOM) {
+        } else if (room == Context.SLEEPING) {
             result = MSG_LIGHT_SLEEPING_LIGHT_OFF;
         } else if (room == Context.DINING) {
             result = MSG_LIGHT_DINING_LIGHT_OFF;

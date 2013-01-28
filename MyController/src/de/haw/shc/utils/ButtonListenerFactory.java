@@ -2,7 +2,6 @@ package de.haw.shc.utils;
 
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.text.AndroidCharacter;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -35,7 +34,7 @@ public class ButtonListenerFactory implements Serializable {
         //this.viewTransportTyp = viewTransportTyp;
     }
 
-    public void checkControlls(ViewTransportTyp viewTransportTyp) {
+    public void setListenerForView(ViewTransportTyp viewTransportTyp) {
 
         switch (viewTransportTyp.getControl()) {
             case LIGHT:
@@ -60,7 +59,7 @@ public class ButtonListenerFactory implements Serializable {
 
     private void createWindowsListener(ViewTransportTyp viewTransportTyp) {
 
-        final Context context = viewTransportTyp.getContext();
+        final Context context = viewTransportTyp.getRoom();
         View view = viewTransportTyp.getView();
         Button button;
 
@@ -98,7 +97,7 @@ public class ButtonListenerFactory implements Serializable {
 
     private void createHeatingListener(ViewTransportTyp viewTransportTyp) {
 
-        final Context context = viewTransportTyp.getContext();
+        final Context context = viewTransportTyp.getRoom();
         View view = viewTransportTyp.getView();
         SeekBar seekBar;
 
@@ -125,7 +124,7 @@ public class ButtonListenerFactory implements Serializable {
 
     private void createCurtainsListener(ViewTransportTyp viewTransportTyp) {
 
-        final Context context = viewTransportTyp.getContext();
+        final Context context = viewTransportTyp.getRoom();
         View view = viewTransportTyp.getView();
         Button button;
 
@@ -159,7 +158,7 @@ public class ButtonListenerFactory implements Serializable {
 
     private void createBlindsListener(ViewTransportTyp viewTransportTyp) {
 
-        final Context context = viewTransportTyp.getContext();
+        final Context context = viewTransportTyp.getRoom();
         View view = viewTransportTyp.getView();
         Button button;
 
@@ -199,7 +198,7 @@ public class ButtonListenerFactory implements Serializable {
 
         final View view = viewTransportTyp.getView();
         final Paint mPaint = new Paint();
-        final Context context = viewTransportTyp.getContext();
+        final Context context = viewTransportTyp.getRoom();
 
 
         button = (Button) view.findViewById(R.id.WhiteLightOn);

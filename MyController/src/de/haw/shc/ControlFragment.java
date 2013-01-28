@@ -6,14 +6,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import de.haw.shc.utils.ButtonListenerFactory;
 import de.haw.shc.utils.Context;
 import de.haw.shc.utils.Control;
 import de.haw.shc.utils.ViewTransportTyp;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ControlFragment extends Fragment {
 
@@ -111,7 +107,7 @@ public class ControlFragment extends Fragment {
 
     private void createListenerForView(View view){
         Log.d(LOG_TAG,"rufe factory auf mit Context:" +mContext + " Controls:" +  mControl + " view:"+view);
-        buttonListenerFactory.checkControlls(new ViewTransportTyp(mContext,mControl,view));
+        buttonListenerFactory.setListenerForView(new ViewTransportTyp(mContext, mControl, view));
     }
 
 }

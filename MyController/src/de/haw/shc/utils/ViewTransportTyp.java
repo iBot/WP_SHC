@@ -11,23 +11,19 @@ import android.view.View;
  */
 public class ViewTransportTyp {
 
-    private Context context;
+    private Context room;
     private Control control;
     private View view;
 
-    //private String name;
-
-
-    public ViewTransportTyp(Context context, Control control, View view){
-        this.context = context;
+    public ViewTransportTyp(Context room, Control control, View view){
+        this.room = room;
         this.control = control;
         this.view = view;
-       //this.name = name;
 
     }
 
-    public Context getContext() {
-        return context;
+    public Context getRoom() {
+        return room;
     }
 
     public Control getControl() {
