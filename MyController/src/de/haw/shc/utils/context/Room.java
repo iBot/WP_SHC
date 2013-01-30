@@ -10,13 +10,13 @@ public enum Room {
 	ALL("allRooms","all") {
 		@Override
 		public Control[] getControls() {
-			return new Control[] { LIGHT, CURTAIN, BLINDS, WINDOW, HEATING };
+			return new Control[] { LIGHT, CURTAIN, BLINDS, WINDOW/**, HEATING*/ };
 		}
 	},
 	LOUNGE("lounge","lounge") {
 		@Override
 		public Control[] getControls() {
-			return new Control[] { LIGHT, CURTAIN, BLINDS, HEATING };
+			return new Control[] { LIGHT, CURTAIN, BLINDS, WINDOW/**, HEATING*/ };
 		}
 	},
 	KITCHEN("kitchen","kitchen") {
@@ -34,13 +34,13 @@ public enum Room {
 	SLEEPING("sleeping","sleeping") {
 		@Override
 		public Control[] getControls() {
-			return new Control[] { LIGHT, CURTAIN, BLINDS, HEATING };
+			return new Control[] { LIGHT, CURTAIN, BLINDS/**, HEATING*/ };
 		}
 	},
 	DINING("dining","dining") {
 		@Override
 		public Control[] getControls() {
-			return new Control[] { LIGHT, BLINDS, WINDOW, HEATING };
+			return new Control[] { LIGHT, BLINDS, WINDOW/**, HEATING*/ };
 		}
 	};
 	

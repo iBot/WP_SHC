@@ -20,7 +20,6 @@ public final class Messages {
     public static final String WINDOW_SPEED_SLOW = "SLOW";
     public static final String WINDOW_SPEED_STOP = "STOP";
     public static final String WINDOW_SPEED_NSTP = "NSTP";
-
     private static final String LOG_TAG = "Messages";
 
     /**
@@ -58,18 +57,18 @@ public final class Messages {
         if (room == Room.KITCHEN) {
             result = createLightMessage("kitchen_main_light_color", colors);
         } else if (room == Room.SLEEPING) {
-            result = createLightMessage("sleeping_main_light_color", colors);
+            result = createLightMessage("sleeping_light_color", colors);
         } else if (room == Room.DINING) {
-            result = createLightMessage("dining_main_light_color", colors);
+            result = createLightMessage("dining_light_color", colors);
         } else if (room == Room.CORRIDOR) {
-            result = createLightMessage("corridor_main_light_color", colors);
+            result = createLightMessage("corridor_light_color", colors);
         } else if (room == Room.LOUNGE) {
-            result = createLightMessage("lounge_main_light_color", colors);
+            result = createLightMessage("lounge_light_color", colors);
         } else {
             result = null;
             Log.w(LOG_TAG, String.format("%s is not a valid room for Light Control!", room));
         }
-        Log.d(LOG_TAG, String.format("The following messag-Set has been created: ", result));
+        Log.d(LOG_TAG, String.format("The following Message has been created: ", result));
         return result;
     }
 
@@ -90,8 +89,8 @@ public final class Messages {
         return result;
     }
 
-    public static Collection<LightMessage> createAllLightOnMessage() {
-        Set<LightMessage> lightMessages = new TreeSet<LightMessage>();
+    public static Collection<Message> createAllLightOnMessage() {
+        Set<Message> lightMessages = new HashSet<Message>();
         lightMessages.add(createLightOnMessage(KITCHEN));
         lightMessages.add(createLightOnMessage(SLEEPING));
         lightMessages.add(createLightOnMessage(DINING));
@@ -101,8 +100,19 @@ public final class Messages {
         return lightMessages;
     }
 
-    public static Collection<LightMessage> createAllLightOffMessage() {
-        Set<LightMessage> lightMessages = new TreeSet<LightMessage>();
+    public static Collection<Message> createAllLightColorMessages(int red, int green, int blue) {
+        Set<Message> lightMessages = new HashSet<Message>();
+        lightMessages.add(createColorLightMessage(KITCHEN, red, green, blue));
+        lightMessages.add(createColorLightMessage(LOUNGE, red, green, blue));
+        lightMessages.add(createColorLightMessage(CORRIDOR, red, green, blue));
+        lightMessages.add(createColorLightMessage(SLEEPING, red, green, blue));
+        lightMessages.add(createColorLightMessage(DINING, red, green, blue));
+        Log.d(LOG_TAG, String.format("The following messag-Set has been created: ", lightMessages));
+        return lightMessages;
+    }
+
+    public static Collection<Message> createAllLightOffMessage() {
+        Set<Message> lightMessages = new HashSet<Message>();
         lightMessages.add(createLightOffMessage(KITCHEN));
         lightMessages.add(createLightOffMessage(SLEEPING));
         lightMessages.add(createLightOffMessage(DINING));
@@ -158,12 +168,57 @@ public final class Messages {
         return result;
     }
 
+    public static Collection<Message> createAllBlindsOpenMessages(){
+        Collection<Message> messages = new HashSet<Message>();
+        messages.add(createBlindsOpenMessage(LOUNGE));
+        messages.add(createBlindsOpenMessage(DINING));
+        messages.add(createBlindsOpenMessage(SLEEPING));
+        messages.add(createBlindsOpenMessage(ALL));
+        return messages;
+    }
+
+    public static Collection<Message> createAllBlindsCloseMessages(){
+        Collection<Message> messages = new HashSet<Message>();
+        messages.add(createBlindsCloseMessage(LOUNGE));
+        messages.add(createBlindsCloseMessage(DINING));
+        messages.add(createBlindsCloseMessage(SLEEPING));
+        messages.add(createBlindsCloseMessage(ALL));
+        return messages;
+    }
+
+    public static Collection<Message> createAllBlindsHalfMessages(){
+        Collection<Message> messages = new HashSet<Message>();
+        messages.add(createBlindsHalfOpenMessage(LOUNGE));
+        messages.add(createBlindsHalfOpenMessage(DINING));
+        messages.add(createBlindsHalfOpenMessage(SLEEPING));
+        messages.add(createBlindsHalfOpenMessage(ALL));
+        return messages;
+    }
+
+    public static Collection<Message> createAllCurtainsOpen() {
+        Collection<Message> messages = new HashSet<Message>();
+        messages.add(createCurtainsOpenMessage(LOUNGE));
+        messages.add(createCurtainsOpenMessage(CORRIDOR));
+        messages.add(createCurtainsOpenMessage(SLEEPING));
+        return messages;
+    }
+
+    public static Collection<Message> createAllCurtainsClose() {
+        Collection<Message> messages = new HashSet<Message>();
+        messages.add(createCurtainsCloseMessage(LOUNGE));
+        messages.add(createCurtainsCloseMessage(CORRIDOR));
+        messages.add(createCurtainsCloseMessage(SLEEPING));
+        return messages;
+    }
+
     public static CurtainMessage createCurtainsOpenMessage(Room room) {
         CurtainMessage result;
         if (room == Room.LOUNGE) {
             result = createCurtainMessage("lounge_curtain_open");
-        } else if (room == Room.SLEEPING || room == Room.CORRIDOR) {
+        } else if (room == Room.CORRIDOR) {
             result = createCurtainMessage("sleeping_hall_curtain_open");
+        } else if (room == SLEEPING) {
+            result = createCurtainMessage("sleeping_window_curtain_open");
         } else {
             result = null;
             Log.w(LOG_TAG, String.format("%s is not a valid room for Curtain Control!", room));
@@ -176,8 +231,10 @@ public final class Messages {
         CurtainMessage result;
         if (room == Room.LOUNGE) {
             result = createCurtainMessage("lounge_curtain_close");
-        } else if (room == Room.SLEEPING || room == Room.CORRIDOR) {
+        } else if (room == Room.CORRIDOR) {
             result = createCurtainMessage("sleeping_hall_curtain_close");
+        } else if (room == Room.SLEEPING) {
+            result = createCurtainMessage("sleeping_window_curtain_close");
         } else {
             result = null;
             Log.w(LOG_TAG, String.format("%s is not a valid room for Curtain Control!", room));
@@ -239,6 +296,16 @@ public final class Messages {
         return result;
     }
 
+    public static Collection<Message> createAllLightIntesityMessage(int percent){
+        Collection<Message> messages = new HashSet<Message>();
+        messages.add(createLightIntesityMessage(LOUNGE, percent));
+        messages.add(createLightIntesityMessage(KITCHEN, percent));
+        messages.add(createLightIntesityMessage(CORRIDOR, percent));
+        messages.add(createLightIntesityMessage(SLEEPING, percent));
+        messages.add(createLightIntesityMessage(DINING, percent));
+        return messages;
+    }
+
     /**
      * This method should be used to create a message to switch the main light of a room off
      *
@@ -249,7 +316,7 @@ public final class Messages {
         LightMessage result;
         String addString = "";
         if (room == KITCHEN) {
-            addString = "main";
+            addString = "_main";
         }
         result = createLightMessage(room.getValue() + addString + "_light_off", getIntensityMap());
         Log.d(LOG_TAG, String.format("The following message has been created: ", result));
@@ -427,13 +494,14 @@ public final class Messages {
      */
     private static int intensityPerCentToInt(int perCent) {
         int result;
-        if (perCent >= 0) {
+        if (perCent <= 0) {
             result = 0;
         } else if (perCent >= 100) {
             result = 255;
         } else {
             result = (255 * perCent) / 100;
         }
+        Log.d(LOG_TAG,"Dim Value after calc: "+result);
         return result;
     }
 
