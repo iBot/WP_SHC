@@ -89,21 +89,12 @@ public class ControlFragment extends Fragment {
             view = inflater.inflate(R.layout.light_layout, container, false);
             createListenerForView(view);
 
+            view.findViewById(R.id.ColorFav1).setBackgroundColor(colorPrefs.getInt("color0",-65465));
+            view.findViewById(R.id.ColorFav2).setBackgroundColor(colorPrefs.getInt("color1",-65465));
+            view.findViewById(R.id.ColorFav3).setBackgroundColor(colorPrefs.getInt("color2",-65465));
+            view.findViewById(R.id.ColorFav4).setBackgroundColor(colorPrefs.getInt("color3",-65465));
 
-            View color1view = view.findViewById(R.id.ColorFav1);
-            color1view.setBackgroundColor(colorPrefs.getInt("color1",0x00FF00));
-            view.findViewById(R.id.ColorFav2).setBackgroundColor(0X00FF00);
-//            view.findViewById(R.id.ColorFav3).setBackgroundColor(colorPrefs.getInt("color2",0xFF0000));
-//            view.findViewById(R.id.ColorFav4).setBackgroundColor(colorPrefs.getInt("color3",0xFF0000));
-
-            Log.d(LOG_TAG,"vale is in pref?" + colorPrefs.contains("color1"));
-
-            Log.d(LOG_TAG,"color1 after set is "  +  ((ColorDrawable)color1view.getBackground()).getColor() );
-
-
-            Log.d(LOG_TAG,"colors1 pref is  "+ colorPrefs.getInt("color1",0xFF0000));
-
-
+            Log.d(LOG_TAG,"loaded value is "+ colorPrefs.getInt("color0",0xFF0000));
 
         } else if (mControl.equals(Control.CURTAIN)) {
 
