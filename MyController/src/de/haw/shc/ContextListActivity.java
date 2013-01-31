@@ -1,6 +1,7 @@
 package de.haw.shc;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,10 +16,16 @@ public class ContextListActivity extends Activity implements
 
 	private boolean mTwoPane;
 	private RoomDelegate clfDelegate = new RoomDelegate();
+    private static Context AppContext;
+
+    public static Context getAppContext(){
+        return AppContext;
+    }
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+        AppContext = getApplication().getApplicationContext();
 		setContentView(R.layout.activity_context_twopane);
 
 		if (findViewById(R.id.control_container) != null) {
