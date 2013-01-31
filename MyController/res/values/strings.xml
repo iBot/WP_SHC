@@ -18,12 +18,14 @@
     <string name="curtain">Gardienen</string>
     
     
-    <string name="LightControlTitel">Lichtsteuerung</string>
+    <string name="LightControlTitel">Licht</string>
     <string name="ColorLightTitel">Farbauswahl</string>
     <string name="ColorCommit">Übernehmen</string>
     <string name="whiteLightTitel">Licht</string>
     <string name="whiteLightDim">Dimmen</string>
-    <string name="ColorPicker">Farbe wählen</string>
+
+    <string name="ColorPicker">Neue Farbe wählen</string>
+    <string name="SaveColor">Farbe speichern</string>
 
     <string name="on">Ein</string>
     <string name="off">Aus</string>
