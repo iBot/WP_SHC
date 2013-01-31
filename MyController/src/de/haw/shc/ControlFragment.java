@@ -10,6 +10,7 @@ import de.haw.shc.utils.buttonFactory.ButtonListenerFactory;
 import de.haw.shc.utils.context.Room;
 import de.haw.shc.utils.control.Control;
 import de.haw.shc.utils.buttonFactory.ViewTransportTyp;
+import de.haw.shc.utils.fileAgent.FileAgent;
 
 public class ControlFragment extends Fragment {
 
@@ -22,13 +23,13 @@ public class ControlFragment extends Fragment {
 	private Room mContext;
 	private Control mControl;
     private ButtonListenerFactory buttonListenerFactory;
-
+    private FileAgent fileAgent;
 	public ControlFragment() {
 	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);
 		if (savedInstanceState == null) {
 
 
@@ -41,6 +42,7 @@ public class ControlFragment extends Fragment {
 				mControl = (Control) (getArguments().getSerializable(CONTROL));
 			}
 		} else {
+
             buttonListenerFactory =  (ButtonListenerFactory) savedInstanceState.getSerializable(BUTTONFACTORY);
 			mContext = (Room) savedInstanceState.getSerializable(CONTEXT);
 			mControl = (Control) savedInstanceState.getSerializable(CONTROL);
