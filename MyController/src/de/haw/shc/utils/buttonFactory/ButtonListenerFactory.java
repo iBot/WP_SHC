@@ -1,12 +1,20 @@
 package de.haw.shc.utils.buttonFactory;
 
+import android.content.ClipData;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
+import android.view.DragEvent;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import de.haw.shc.ContextListActivity;
 import de.haw.shc.R;
 import de.haw.shc.utils.colorPicker.ColorPickerDialog;
 import de.haw.shc.utils.context.Room;
@@ -27,6 +35,7 @@ import java.util.Collection;
 public class ButtonListenerFactory implements Serializable {
 
     static final String LOG_TAG = "ButtonFactory";
+    private Color color= null;
 
 
     //private ViewTransportTyp viewTransportTyp;
@@ -60,12 +69,11 @@ public class ButtonListenerFactory implements Serializable {
     }
 
     private void createWindowsListener(ViewTransportTyp viewTransportTyp) {
-
         final Room room = viewTransportTyp.getRoom();
         View view = viewTransportTyp.getView();
+
+
         Button button;
-
-
         button = (Button) view.findViewById(R.id.windowOpen);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -228,6 +236,194 @@ public class ButtonListenerFactory implements Serializable {
         final Paint mPaint = new Paint();
         final Room room = viewTransportTyp.getRoom();
 
+        final TextView tvColorPreview = (TextView) view.findViewById(R.id.ColorPreview);
+        tvColorPreview.setOnTouchListener(new View.OnTouchListener() {
+            /**
+             * Called when a touch event is dispatched to a view. This allows listeners to
+             * get a chance to respond before the target view.
+             *
+             * @param v     The view the touch event has been dispatched to.
+             * @param event The MotionEvent object containing full information about
+             *              the event.
+             * @return True if the listener has consumed the event, false otherwise.
+             */
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    Log.d(LOG_TAG, "MotionEvent Action_Down");
+                    ClipData data = ClipData.newPlainText("", "");
+                    View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
+                    v.startDrag(data, shadowBuilder, v, 0);
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        });
+
+        TextView tvColorFav1 = (TextView) view.findViewById(R.id.ColorFav1);
+        tvColorFav1.setOnDragListener( new View.OnDragListener(){
+
+              /**
+             * Called when a drag event is dispatched to a view. This allows listeners
+             * to get a chance to override base View behavior.
+             *
+             * @param v     The View that received the drag event.
+             * @param event The {@link android.view.DragEvent} object for the drag event.
+             * @return {@code true} if the drag event was handled successfully, or {@code false}
+             *         if the drag event was not handled. Note that {@code false} will trigger the View
+             *         to call its {link #onDragEvent(android.view.DragEvent) onDragEvent()} handler.
+             */
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                int action = event.getAction();
+                View dragView = (View) event.getLocalState();
+                switch (event.getAction()) {
+//                    case DragEvent.ACTION_DRAG_STARTED:
+//                        Log.d(LOG_TAG, "ACTION_DRAG_STARTED");
+//                        break;
+//                    case DragEvent.ACTION_DRAG_ENTERED:
+//                        Log.d(LOG_TAG, "ACTION_DRAG_ENTERED");
+//                        break;
+//                    case DragEvent.ACTION_DRAG_EXITED:
+//                        Log.d(LOG_TAG, "ACTION_DRAG_EXITED");
+//                        break;
+                    case DragEvent.ACTION_DROP:
+                        Log.d(LOG_TAG, "ACTION_DROP");
+                        v.setBackgroundColor(((ColorDrawable)dragView.getBackground()).getColor());
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+//                        Log.d(LOG_TAG, "ACTION_DRAG_ENDED");
+//                        break;
+                    default:
+                        break;
+                }
+                return true;
+            }
+        });
+
+        TextView tvColorFav2 = (TextView) view.findViewById(R.id.ColorFav2);
+        tvColorFav2.setOnDragListener( new View.OnDragListener(){
+
+            /**
+             * Called when a drag event is dispatched to a view. This allows listeners
+             * to get a chance to override base View behavior.
+             *
+             * @param v     The View that received the drag event.
+             * @param event The {@link android.view.DragEvent} object for the drag event.
+             * @return {@code true} if the drag event was handled successfully, or {@code false}
+             *         if the drag event was not handled. Note that {@code false} will trigger the View
+             *         to call its {link #onDragEvent(android.view.DragEvent) onDragEvent()} handler.
+             */
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                int action = event.getAction();
+                View dragView = (View) event.getLocalState();
+                switch (event.getAction()) {
+//                    case DragEvent.ACTION_DRAG_STARTED:
+//                        Log.d(LOG_TAG, "ACTION_DRAG_STARTED");
+//                        break;
+//                    case DragEvent.ACTION_DRAG_ENTERED:
+//                        Log.d(LOG_TAG, "ACTION_DRAG_ENTERED");
+//                        break;
+//                    case DragEvent.ACTION_DRAG_EXITED:
+//                        Log.d(LOG_TAG, "ACTION_DRAG_EXITED");
+//                        break;
+                    case DragEvent.ACTION_DROP:
+                        Log.d(LOG_TAG, "ACTION_DROP");
+                        v.setBackgroundColor(((ColorDrawable)dragView.getBackground()).getColor());
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+//                        Log.d(LOG_TAG, "ACTION_DRAG_ENDED");
+//                        break;
+                    default:
+                        break;
+                }
+                return true;
+            }
+        });
+
+        TextView tvColorFav3 = (TextView) view.findViewById(R.id.ColorFav3);
+        tvColorFav3.setOnDragListener( new View.OnDragListener(){
+
+            /**
+             * Called when a drag event is dispatched to a view. This allows listeners
+             * to get a chance to override base View behavior.
+             *
+             * @param v     The View that received the drag event.
+             * @param event The {@link android.view.DragEvent} object for the drag event.
+             * @return {@code true} if the drag event was handled successfully, or {@code false}
+             *         if the drag event was not handled. Note that {@code false} will trigger the View
+             *         to call its {link #onDragEvent(android.view.DragEvent) onDragEvent()} handler.
+             */
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                int action = event.getAction();
+                View dragView = (View) event.getLocalState();
+                switch (event.getAction()) {
+//                    case DragEvent.ACTION_DRAG_STARTED:
+//                        Log.d(LOG_TAG, "ACTION_DRAG_STARTED");
+//                        break;
+//                    case DragEvent.ACTION_DRAG_ENTERED:
+//                        Log.d(LOG_TAG, "ACTION_DRAG_ENTERED");
+//                        break;
+//                    case DragEvent.ACTION_DRAG_EXITED:
+//                        Log.d(LOG_TAG, "ACTION_DRAG_EXITED");
+//                        break;
+                    case DragEvent.ACTION_DROP:
+                        Log.d(LOG_TAG, "ACTION_DROP");
+                        v.setBackgroundColor(((ColorDrawable)dragView.getBackground()).getColor());
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+//                        Log.d(LOG_TAG, "ACTION_DRAG_ENDED");
+//                        break;
+                    default:
+                        break;
+                }
+                return true;
+            }
+        });
+
+        TextView tvColorFav4 = (TextView) view.findViewById(R.id.ColorFav4);
+        tvColorFav4.setOnDragListener( new View.OnDragListener(){
+
+            /**
+             * Called when a drag event is dispatched to a view. This allows listeners
+             * to get a chance to override base View behavior.
+             *
+             * @param v     The View that received the drag event.
+             * @param event The {@link android.view.DragEvent} object for the drag event.
+             * @return {@code true} if the drag event was handled successfully, or {@code false}
+             *         if the drag event was not handled. Note that {@code false} will trigger the View
+             *         to call its {link #onDragEvent(android.view.DragEvent) onDragEvent()} handler.
+             */
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                int action = event.getAction();
+                View dragView = (View) event.getLocalState();
+                switch (event.getAction()) {
+//                    case DragEvent.ACTION_DRAG_STARTED:
+//                        Log.d(LOG_TAG, "ACTION_DRAG_STARTED");
+//                        break;
+//                    case DragEvent.ACTION_DRAG_ENTERED:
+//                        Log.d(LOG_TAG, "ACTION_DRAG_ENTERED");
+//                        break;
+//                    case DragEvent.ACTION_DRAG_EXITED:
+//                        Log.d(LOG_TAG, "ACTION_DRAG_EXITED");
+//                        break;
+                    case DragEvent.ACTION_DROP:
+                        Log.d(LOG_TAG, "ACTION_DROP");
+                        v.setBackgroundColor(((ColorDrawable)dragView.getBackground()).getColor());
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+//                        Log.d(LOG_TAG, "ACTION_DRAG_ENDED");
+//                        break;
+                    default:
+                        break;
+                }
+                return true;
+            }
+        });
 
         button = (Button) view.findViewById(R.id.WhiteLightOn);
         button.setOnClickListener(new View.OnClickListener() {
