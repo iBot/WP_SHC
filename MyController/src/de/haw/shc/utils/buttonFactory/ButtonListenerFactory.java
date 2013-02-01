@@ -236,7 +236,7 @@ public class ButtonListenerFactory implements Serializable {
         final Paint mPaint = new Paint();
         final Room room = viewTransportTyp.getRoom();
 
-        final TextView tvColorPreview = (TextView) view.findViewById(R.id.ColorPreview);
+        TextView tvColorPreview = (TextView) view.findViewById(R.id.ColorPreview);
         tvColorPreview.setOnTouchListener(new View.OnTouchListener() {
             /**
              * Called when a touch event is dispatched to a view. This allows listeners to
@@ -422,6 +422,131 @@ public class ButtonListenerFactory implements Serializable {
                         break;
                 }
                 return true;
+            }
+        });
+
+        TextView textView = (TextView) view.findViewById(R.id.ColorFav1);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int color = ((ColorDrawable)v.getBackground()).getColor();
+
+                int red = Color.red(color);
+                int green = Color.green(color);
+                int blue = Color.blue(color);
+
+
+                //debug log
+                Log.d(LOG_TAG, "Color changged by Fav-Button-1");
+                if (room == Room.ALL) {
+                    Collection<Message> messages = Messages.createAllLightColorMessages(red, green, blue);
+                    MessageSender.messageBatch(messages);
+                } else {
+                    Message message = Messages.createColorLightMessage(room, red, green, blue);
+                    Log.d(LOG_TAG, "Message :" + message);
+                    MessageSender.lightControl(message);
+                }
+
+            }
+        });
+
+        textView = (TextView) view.findViewById(R.id.ColorFav2);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int color = ((ColorDrawable)v.getBackground()).getColor();
+
+                int red = Color.red(color);
+                int green = Color.green(color);
+                int blue = Color.blue(color);
+
+
+                //debug log
+                Log.d(LOG_TAG, "Color changged by Fav-Button-2");
+                if (room == Room.ALL) {
+                    Collection<Message> messages = Messages.createAllLightColorMessages(red, green, blue);
+                    MessageSender.messageBatch(messages);
+                } else {
+                    Message message = Messages.createColorLightMessage(room, red, green, blue);
+                    Log.d(LOG_TAG, "Message :" + message);
+                    MessageSender.lightControl(message);
+                }
+
+            }
+        });
+
+        textView = (TextView) view.findViewById(R.id.ColorFav3);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int color = ((ColorDrawable)v.getBackground()).getColor();
+
+                int red = Color.red(color);
+                int green = Color.green(color);
+                int blue = Color.blue(color);
+
+
+                //debug log
+                Log.d(LOG_TAG, "Color changged by Fav-Button-3");
+                if (room == Room.ALL) {
+                    Collection<Message> messages = Messages.createAllLightColorMessages(red, green, blue);
+                    MessageSender.messageBatch(messages);
+                } else {
+                    Message message = Messages.createColorLightMessage(room, red, green, blue);
+                    Log.d(LOG_TAG, "Message :" + message);
+                    MessageSender.lightControl(message);
+                }
+
+            }
+        });
+
+        textView = (TextView) view.findViewById(R.id.ColorFav4);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int color = ((ColorDrawable)v.getBackground()).getColor();
+
+                int red = Color.red(color);
+                int green = Color.green(color);
+                int blue = Color.blue(color);
+
+
+                //debug log
+                Log.d(LOG_TAG, "Color changged by Fav-Button-4");
+                if (room == Room.ALL) {
+                    Collection<Message> messages = Messages.createAllLightColorMessages(red, green, blue);
+                    MessageSender.messageBatch(messages);
+                } else {
+                    Message message = Messages.createColorLightMessage(room, red, green, blue);
+                    Log.d(LOG_TAG, "Message :" + message);
+                    MessageSender.lightControl(message);
+                }
+
+            }
+        });
+
+        textView = (TextView) view.findViewById(R.id.ColorPreview);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int color = ((ColorDrawable)v.getBackground()).getColor();
+
+                int red = Color.red(color);
+                int green = Color.green(color);
+                int blue = Color.blue(color);
+
+
+                //debug log
+                Log.d(LOG_TAG, "Color changged by ColorPreview-Button");
+                if (room == Room.ALL) {
+                    Collection<Message> messages = Messages.createAllLightColorMessages(red, green, blue);
+                    MessageSender.messageBatch(messages);
+                } else {
+                    Message message = Messages.createColorLightMessage(room, red, green, blue);
+                    Log.d(LOG_TAG, "Message :" + message);
+                    MessageSender.lightControl(message);
+                }
+
             }
         });
 
