@@ -675,6 +675,30 @@ public class ButtonListenerFactory implements Serializable {
             }
         });
 
+        button = (Button)view.findViewById(R.id.ColorButtonOff);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                int red = 0x00;
+                int green = 0x00;
+                int blue = 0x00;
+
+
+                //debug log
+                Log.d(LOG_TAG, "Color changged by ColorPreview-Button");
+                if (mRoom == Room.ALL) {
+                    Collection<Message> messages = Messages.createAllLightColorMessages(red, green, blue);
+                    MessageSender.messageBatch(messages);
+                } else {
+                    Message message = Messages.createColorLightMessage(mRoom, red, green, blue);
+                    Log.d(LOG_TAG, "Message :" + message);
+                    MessageSender.lightControl(message);
+                }
+
+            }
+        });
+
 
     }
 

@@ -110,8 +110,8 @@
                         android:layout_marginTop="1dp"
                         android:background="#123456"
                         android:enabled="true"
-                        android:focusable="true"
-                        android:focusableInTouchMode="true"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
                         android:layout_margin="4dp" android:editable="false" android:clickable="true"
                         android:visibility="visible"/>
             </LinearLayout>
@@ -149,8 +149,8 @@
                     android:layout_marginTop="1dp"
                     android:background="#000000"
                     android:enabled="true"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
                     android:layout_margin="8dp"/>
             <TextView
                     android:layout_width="0dp"
@@ -160,8 +160,8 @@
                     android:layout_marginTop="1dp"
                     android:background="#FF0000"
                     android:enabled="true"
-                    android:focusable="true"
-                    android:focusableInTouchMode="true"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
                     android:layout_margin="8dp"/>
 
 
@@ -178,8 +178,8 @@
                         android:layout_marginTop="1dp"
                         android:background="#00FF00"
                         android:enabled="true"
-                        android:focusable="true"
-                        android:focusableInTouchMode="true"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
                         android:layout_margin="8dp"/>
                 <TextView
                         android:layout_width="0dp"
@@ -189,8 +189,8 @@
                         android:layout_marginTop="1dp"
                         android:background="#0000FF"
                         android:enabled="true"
-                        android:focusable="true"
-                        android:focusableInTouchMode="true"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
                         android:layout_margin="8dp"/>
                 </LinearLayout>
 <!--
