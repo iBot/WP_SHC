@@ -36,14 +36,14 @@ import java.util.Collection;
 public class ButtonListenerFactory implements Serializable {
 
     static final String LOG_TAG = "ButtonFactory";
-    private Color color= null;
 
 
-    //private ViewTransportTyp viewTransportTyp;
+
+
 
 
     public ButtonListenerFactory() {
-        //this.viewTransportTyp = viewTransportTyp;
+
     }
 
     public void setListenerForView(View view, Control control, Room room) {
