@@ -513,6 +513,7 @@ public class ButtonListenerFactory implements Serializable {
 
                 //debug log
                 Log.d(LOG_TAG, "Color changged by Fav-Button-4");
+
                 if (room == Room.ALL) {
                     Collection<Message> messages = Messages.createAllLightColorMessages(red, green, blue);
                     MessageSender.messageBatch(messages);
