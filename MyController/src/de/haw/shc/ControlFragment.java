@@ -84,7 +84,11 @@ public class ControlFragment extends Fragment {
 
 
         Log.d(LOG_TAG, "Before if context:" + mContext + " Control:" + mControl + " view:" + view);
-        if (mControl.equals(Control.LIGHT)) {
+        if(mControl.equals(Control.LIGHT) && mContext.equals(Room.CORRIDOR)){
+            view = inflater.inflate(R.layout.hall_light_layout,container,false);
+            createListenerForView(view);
+
+        } else if (mControl.equals(Control.LIGHT)) {
 
             view = inflater.inflate(R.layout.light_layout, container, false);
             createListenerForView(view);

@@ -28,6 +28,8 @@
             <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="50dp"
                     android:text="@string/open"
                     android:id="@+id/windowOpen"
                     android:layout_gravity="center"/>
@@ -43,6 +45,8 @@
             <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="50dp"
                     android:text="@string/close"
                     android:id="@+id/windowClose"
                     android:layout_gravity="center"/>

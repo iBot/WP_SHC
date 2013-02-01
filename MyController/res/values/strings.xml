@@ -44,6 +44,7 @@
     <string name="blindsTitel">Rollos</string>
     <string name="blindsOpen">auf</string>
     <string name="blindsClose">zu</string>
+    <string name="ColorLightOff">Farblicht aus</string>
 
 
 </resources>
