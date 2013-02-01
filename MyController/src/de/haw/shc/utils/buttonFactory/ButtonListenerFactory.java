@@ -18,6 +18,7 @@ import de.haw.shc.ContextListActivity;
 import de.haw.shc.R;
 import de.haw.shc.utils.colorPicker.ColorPickerDialog;
 import de.haw.shc.utils.context.Room;
+import de.haw.shc.utils.control.Control;
 import de.haw.shc.utils.messageAdapter.Message;
 import de.haw.shc.utils.messageAdapter.MessageSender;
 import de.haw.shc.utils.messageAdapter.Messages;
@@ -45,32 +46,41 @@ public class ButtonListenerFactory implements Serializable {
         //this.viewTransportTyp = viewTransportTyp;
     }
 
-    public void setListenerForView(ViewTransportTyp viewTransportTyp) {
+    public void setListenerForView(View view, Control control, Room room) {
 
-        switch (viewTransportTyp.getControl()) {
+        switch (control) {
             case LIGHT:
-                createLighListener(viewTransportTyp);
+
+
+
+                createLighListener(view,room);
+                if(! room.equals(Room.CORRIDOR)){
+                    createColorLightListener(view,room);
+                }
+
                 break;
             case BLINDS:
-                createBlindsListener(viewTransportTyp);
+                createBlindsListener(view,room);
                 break;
             case CURTAIN:
-                createCurtainsListener(viewTransportTyp);
+                createCurtainsListener(view,room);
                 break;
             case HEATING:
-                createHeatingListener(viewTransportTyp);
+                createHeatingListener(view,room);
                 break;
             case WINDOW:
-                createWindowsListener(viewTransportTyp);
+                createWindowsListener(view,room);
                 break;
         }
 
 
     }
 
-    private void createWindowsListener(ViewTransportTyp viewTransportTyp) {
-        final Room room = viewTransportTyp.getRoom();
-        View view = viewTransportTyp.getView();
+
+
+    private void createWindowsListener(View view, Room room) {
+        final Room mRoom = room;
+
 
 
         Button button;
@@ -78,10 +88,10 @@ public class ButtonListenerFactory implements Serializable {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Message message = Messages.createWindowOpenMessage(room);
+                Message message = Messages.createWindowOpenMessage(mRoom);
 
                 //debug log
-                Log.d(LOG_TAG, "Open windows in " + room);
+                Log.d(LOG_TAG, "Open windows in " + mRoom);
                 Log.d(LOG_TAG, "Message" + message);
 
                 MessageSender.windowControl(message);
@@ -94,10 +104,10 @@ public class ButtonListenerFactory implements Serializable {
             @Override
             public void onClick(View v) {
 
-                Message message = Messages.createWindowCloseMessage(room);
+                Message message = Messages.createWindowCloseMessage(mRoom);
 
                 //debug log
-                Log.d(LOG_TAG, "Close windows in " + room);
+                Log.d(LOG_TAG, "Close windows in " + mRoom);
                 Log.d(LOG_TAG, "Message" + message);
 
                 MessageSender.windowControl(message);
@@ -105,10 +115,10 @@ public class ButtonListenerFactory implements Serializable {
         });
     }
 
-    private void createHeatingListener(ViewTransportTyp viewTransportTyp) {
+    private void createHeatingListener(View view, Room room) {
 
-        final Room room = viewTransportTyp.getRoom();
-        View view = viewTransportTyp.getView();
+        final Room mRroom = room;
+
         SeekBar seekBar;
 
         seekBar = (SeekBar) view.findViewById(R.id.HeatingSlider);
@@ -126,16 +136,16 @@ public class ButtonListenerFactory implements Serializable {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                Log.d(LOG_TAG, "Heating goes to " + seekBar.getProgress() + " in " + room);
+                Log.d(LOG_TAG, "Heating goes to " + seekBar.getProgress() + " in " + mRroom);
             }
         });
 
     }
 
-    private void createCurtainsListener(ViewTransportTyp viewTransportTyp) {
+    private void createCurtainsListener(View view, Room room) {
 
-        final Room room = viewTransportTyp.getRoom();
-        View view = viewTransportTyp.getView();
+        final Room mRoom = room;
+
         Button button;
 
         button = (Button) view.findViewById(R.id.CurtainsOpen);
@@ -143,13 +153,13 @@ public class ButtonListenerFactory implements Serializable {
             @Override
             public void onClick(View v) {
                 //debug log
-                Log.d(LOG_TAG, "Curtains open in " + room);
-                if (room == Room.ALL) {
+                Log.d(LOG_TAG, "Curtains open in " + mRoom);
+                if (mRoom == Room.ALL) {
                     Collection<Message> messages = Messages.createAllCurtainsOpen();
                     Log.d(LOG_TAG, "Messages: " + messages);
                     MessageSender.messageBatch(messages);
                 } else {
-                    Message message = Messages.createCurtainsOpenMessage(room);
+                    Message message = Messages.createCurtainsOpenMessage(mRoom);
                     Log.d(LOG_TAG, "Message" + message);
 
                     MessageSender.curtainControl(message);
@@ -161,13 +171,13 @@ public class ButtonListenerFactory implements Serializable {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(LOG_TAG, "Curtains close in " + room);
-                if (room == Room.ALL) {
+                Log.d(LOG_TAG, "Curtains close in " + mRoom);
+                if (mRoom == Room.ALL) {
                     Collection<Message> messages = Messages.createAllCurtainsClose();
                     Log.d(LOG_TAG, "Messages: " + messages);
                     MessageSender.messageBatch(messages);
                 } else {
-                    Message message = Messages.createCurtainsCloseMessage(room);
+                    Message message = Messages.createCurtainsCloseMessage(mRoom);
                     Log.d(LOG_TAG, "Message" + message);
                     MessageSender.curtainControl(message);
                 }
@@ -176,10 +186,10 @@ public class ButtonListenerFactory implements Serializable {
 
     }
 
-    private void createBlindsListener(ViewTransportTyp viewTransportTyp) {
+    private void createBlindsListener(View view, Room room) {
 
-        final Room room = viewTransportTyp.getRoom();
-        View view = viewTransportTyp.getView();
+        final Room mRoom= room;
+
         Button button;
 
 
@@ -189,14 +199,14 @@ public class ButtonListenerFactory implements Serializable {
             public void onClick(View v) {
 
                 //debug log
-                Log.d(LOG_TAG, "blinds open in " + room);
+                Log.d(LOG_TAG, "blinds open in " + mRoom);
 
-                if (room == Room.ALL) {
+                if (mRoom == Room.ALL) {
                     Collection<Message> messages = Messages.createAllBlindsOpenMessages();
                     Log.d(LOG_TAG, "Messages: " + messages);
                     MessageSender.messageBatch(messages);
                 } else {
-                    Message message = Messages.createBlindsOpenMessage(room);
+                    Message message = Messages.createBlindsOpenMessage(mRoom);
                     Log.d(LOG_TAG, "Message: " + message);
                     MessageSender.blindsControl(message);
                 }
@@ -211,14 +221,14 @@ public class ButtonListenerFactory implements Serializable {
             public void onClick(View v) {
 
                 //debug log
-                Log.d(LOG_TAG, "blinds close in " + room);
+                Log.d(LOG_TAG, "blinds close in " + mRoom);
 
-                if (room == Room.ALL) {
+                if (mRoom == Room.ALL) {
                     Collection<Message> messages = Messages.createAllBlindsCloseMessages();
                     Log.d(LOG_TAG, "Messages: " + messages);
                     MessageSender.messageBatch(messages);
                 } else {
-                    Message message = Messages.createBlindsCloseMessage(room);
+                    Message message = Messages.createBlindsCloseMessage(mRoom);
                     Log.d(LOG_TAG, "Message" + message);
                     MessageSender.blindsControl(message);
                 }
@@ -227,16 +237,96 @@ public class ButtonListenerFactory implements Serializable {
 
     }
 
-    private void createLighListener(ViewTransportTyp viewTransportTyp) {
+    private void createLighListener(View view , Room room) {
 
         Button button;
         SeekBar seekBar;
 
-        final View view = viewTransportTyp.getView();
-        final Paint mPaint = new Paint();
-        final Room room = viewTransportTyp.getRoom();
+        final Room mRoom =room;
 
-        TextView tvColorPreview = (TextView) view.findViewById(R.id.ColorPreview);
+
+
+        button = (Button) view.findViewById(R.id.WhiteLightOn);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //debug log
+                Log.d(LOG_TAG, "whitelight on in " + mRoom);
+
+
+                if (mRoom == Room.ALL) {
+                    Collection<Message> messages = Messages.createAllLightOnMessage();
+                    Log.d(LOG_TAG, "Messages" + messages);
+                    MessageSender.messageBatch(messages);
+                } else {
+                    Message message = Messages.createLightOnMessage(mRoom);
+                    Log.d(LOG_TAG, "Message" + message);
+                    MessageSender.lightControl(message);
+                }
+
+            }
+        });
+
+        button = (Button) view.findViewById(R.id.WhiteLightOff);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //debug
+                Log.d(LOG_TAG, "whitelight off in " + mRoom);
+                if (mRoom == Room.ALL) {
+                    Collection<Message> messages = Messages.createAllLightOffMessage();
+                    Log.d(LOG_TAG, "Messages" + messages);
+                    MessageSender.messageBatch(messages);
+                } else {
+
+                    Message message = Messages.createLightOffMessage(mRoom);
+                    Log.d(LOG_TAG, "Message" + message);
+                    MessageSender.lightControl(message);
+                }
+            }
+        });
+
+        seekBar = (SeekBar) view.findViewById(R.id.dimmbar);
+        seekBar.setMax(100);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                //debug log
+                Log.d(LOG_TAG, "whitelight dim to " + seekBar.getProgress() + " in " + mRoom);
+                if (mRoom == Room.ALL) {
+                    Collection<Message> messages = Messages.createAllLightIntesityMessage(seekBar.getProgress());
+                    Log.d(LOG_TAG, "Messages: " + messages);
+                    MessageSender.messageBatch(messages);
+                } else {
+
+                    Message message = Messages.createLightIntesityMessage(mRoom, seekBar.getProgress());
+                    Log.d(LOG_TAG, "Message: " + message);
+                    MessageSender.lightControl(message);
+                }
+            }
+        });
+
+
+    }
+
+    private void createColorLightListener(View view, Room room) {
+        final View mView = view;
+        final Room mRoom = room;
+        Button button;
+        final Paint mPaint = new Paint();
+
+        TextView tvColorPreview = (TextView) mView.findViewById(R.id.ColorPreview);
         tvColorPreview.setOnTouchListener(new View.OnTouchListener() {
             /**
              * Called when a touch event is dispatched to a view. This allows listeners to
@@ -261,10 +351,10 @@ public class ButtonListenerFactory implements Serializable {
             }
         });
 
-        TextView tvColorFav1 = (TextView) view.findViewById(R.id.ColorFav1);
+        TextView tvColorFav1 = (TextView) mView.findViewById(R.id.ColorFav1);
         tvColorFav1.setOnDragListener( new View.OnDragListener(){
 
-              /**
+            /**
              * Called when a drag event is dispatched to a view. This allows listeners
              * to get a chance to override base View behavior.
              *
@@ -302,7 +392,7 @@ public class ButtonListenerFactory implements Serializable {
             }
         });
 
-        TextView tvColorFav2 = (TextView) view.findViewById(R.id.ColorFav2);
+        TextView tvColorFav2 = (TextView) mView.findViewById(R.id.ColorFav2);
         tvColorFav2.setOnDragListener( new View.OnDragListener(){
 
             /**
@@ -343,7 +433,7 @@ public class ButtonListenerFactory implements Serializable {
             }
         });
 
-        TextView tvColorFav3 = (TextView) view.findViewById(R.id.ColorFav3);
+        TextView tvColorFav3 = (TextView) mView.findViewById(R.id.ColorFav3);
         tvColorFav3.setOnDragListener( new View.OnDragListener(){
 
             /**
@@ -384,7 +474,7 @@ public class ButtonListenerFactory implements Serializable {
             }
         });
 
-        TextView tvColorFav4 = (TextView) view.findViewById(R.id.ColorFav4);
+        TextView tvColorFav4 = (TextView) mView.findViewById(R.id.ColorFav4);
         tvColorFav4.setOnDragListener( new View.OnDragListener(){
 
             /**
@@ -425,7 +515,7 @@ public class ButtonListenerFactory implements Serializable {
             }
         });
 
-        TextView textView = (TextView) view.findViewById(R.id.ColorFav1);
+        TextView textView = (TextView) mView.findViewById(R.id.ColorFav1);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -438,11 +528,11 @@ public class ButtonListenerFactory implements Serializable {
 
                 //debug log
                 Log.d(LOG_TAG, "Color changged by Fav-Button-1");
-                if (room == Room.ALL) {
+                if (mRoom == Room.ALL) {
                     Collection<Message> messages = Messages.createAllLightColorMessages(red, green, blue);
                     MessageSender.messageBatch(messages);
                 } else {
-                    Message message = Messages.createColorLightMessage(room, red, green, blue);
+                    Message message = Messages.createColorLightMessage(mRoom, red, green, blue);
                     Log.d(LOG_TAG, "Message :" + message);
                     MessageSender.lightControl(message);
                 }
@@ -450,7 +540,7 @@ public class ButtonListenerFactory implements Serializable {
             }
         });
 
-        textView = (TextView) view.findViewById(R.id.ColorFav2);
+        textView = (TextView) mView.findViewById(R.id.ColorFav2);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -463,11 +553,11 @@ public class ButtonListenerFactory implements Serializable {
 
                 //debug log
                 Log.d(LOG_TAG, "Color changged by Fav-Button-2");
-                if (room == Room.ALL) {
+                if (mRoom == Room.ALL) {
                     Collection<Message> messages = Messages.createAllLightColorMessages(red, green, blue);
                     MessageSender.messageBatch(messages);
                 } else {
-                    Message message = Messages.createColorLightMessage(room, red, green, blue);
+                    Message message = Messages.createColorLightMessage(mRoom, red, green, blue);
                     Log.d(LOG_TAG, "Message :" + message);
                     MessageSender.lightControl(message);
                 }
@@ -475,7 +565,7 @@ public class ButtonListenerFactory implements Serializable {
             }
         });
 
-        textView = (TextView) view.findViewById(R.id.ColorFav3);
+        textView = (TextView) mView.findViewById(R.id.ColorFav3);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -488,11 +578,11 @@ public class ButtonListenerFactory implements Serializable {
 
                 //debug log
                 Log.d(LOG_TAG, "Color changged by Fav-Button-3");
-                if (room == Room.ALL) {
+                if (mRoom == Room.ALL) {
                     Collection<Message> messages = Messages.createAllLightColorMessages(red, green, blue);
                     MessageSender.messageBatch(messages);
                 } else {
-                    Message message = Messages.createColorLightMessage(room, red, green, blue);
+                    Message message = Messages.createColorLightMessage(mRoom, red, green, blue);
                     Log.d(LOG_TAG, "Message :" + message);
                     MessageSender.lightControl(message);
                 }
@@ -500,7 +590,7 @@ public class ButtonListenerFactory implements Serializable {
             }
         });
 
-        textView = (TextView) view.findViewById(R.id.ColorFav4);
+        textView = (TextView) mView.findViewById(R.id.ColorFav4);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -514,11 +604,11 @@ public class ButtonListenerFactory implements Serializable {
                 //debug log
                 Log.d(LOG_TAG, "Color changged by Fav-Button-4");
 
-                if (room == Room.ALL) {
+                if (mRoom == Room.ALL) {
                     Collection<Message> messages = Messages.createAllLightColorMessages(red, green, blue);
                     MessageSender.messageBatch(messages);
                 } else {
-                    Message message = Messages.createColorLightMessage(room, red, green, blue);
+                    Message message = Messages.createColorLightMessage(mRoom, red, green, blue);
                     Log.d(LOG_TAG, "Message :" + message);
                     MessageSender.lightControl(message);
                 }
@@ -526,11 +616,11 @@ public class ButtonListenerFactory implements Serializable {
             }
         });
 
-        textView = (TextView) view.findViewById(R.id.ColorPreview);
+        textView = (TextView) mView.findViewById(R.id.ColorPreview);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int color = ((ColorDrawable)v.getBackground()).getColor();
+                int color = ((ColorDrawable) v.getBackground()).getColor();
 
                 int red = Color.red(color);
                 int green = Color.green(color);
@@ -539,11 +629,11 @@ public class ButtonListenerFactory implements Serializable {
 
                 //debug log
                 Log.d(LOG_TAG, "Color changged by ColorPreview-Button");
-                if (room == Room.ALL) {
+                if (mRoom == Room.ALL) {
                     Collection<Message> messages = Messages.createAllLightColorMessages(red, green, blue);
                     MessageSender.messageBatch(messages);
                 } else {
-                    Message message = Messages.createColorLightMessage(room, red, green, blue);
+                    Message message = Messages.createColorLightMessage(mRoom, red, green, blue);
                     Log.d(LOG_TAG, "Message :" + message);
                     MessageSender.lightControl(message);
                 }
@@ -551,83 +641,13 @@ public class ButtonListenerFactory implements Serializable {
             }
         });
 
-        button = (Button) view.findViewById(R.id.WhiteLightOn);
+
+        final TextView colorPreview = (TextView) mView.findViewById(R.id.ColorPreview);
+        button = (Button) mView.findViewById(R.id.CallColorPicker);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                //debug log
-                Log.d(LOG_TAG, "whitelight on in " + room);
-
-
-                if (room == Room.ALL) {
-                    Collection<Message> messages = Messages.createAllLightOnMessage();
-                    Log.d(LOG_TAG, "Messages" + messages);
-                    MessageSender.messageBatch(messages);
-                } else {
-                    Message message = Messages.createLightOnMessage(room);
-                    Log.d(LOG_TAG, "Message" + message);
-                    MessageSender.lightControl(message);
-                }
-
-            }
-        });
-
-        button = (Button) view.findViewById(R.id.WhiteLightOff);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //debug
-                Log.d(LOG_TAG, "whitelight off in " + room);
-                if (room == Room.ALL) {
-                    Collection<Message> messages = Messages.createAllLightOffMessage();
-                    Log.d(LOG_TAG, "Messages" + messages);
-                    MessageSender.messageBatch(messages);
-                } else {
-
-                    Message message = Messages.createLightOffMessage(room);
-                    Log.d(LOG_TAG, "Message" + message);
-                    MessageSender.lightControl(message);
-                }
-            }
-        });
-
-        seekBar = (SeekBar) view.findViewById(R.id.dimmbar);
-        seekBar.setMax(100);
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                //debug log
-                Log.d(LOG_TAG, "whitelight dim to " + seekBar.getProgress() + " in " + room);
-                if (room == Room.ALL) {
-                    Collection<Message> messages = Messages.createAllLightIntesityMessage(seekBar.getProgress());
-                    Log.d(LOG_TAG, "Messages: " + messages);
-                    MessageSender.messageBatch(messages);
-                } else {
-
-                    Message message = Messages.createLightIntesityMessage(room, seekBar.getProgress());
-                    Log.d(LOG_TAG, "Message: " + message);
-                    MessageSender.lightControl(message);
-                }
-            }
-        });
-
-        final TextView colorPreview = (TextView) view.findViewById(R.id.ColorPreview);
-        button = (Button) view.findViewById(R.id.CallColorPicker);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ColorPickerDialog colorPickerDialog = new ColorPickerDialog(view.getContext(), new ColorPickerDialog.OnColorChangedListener() {
+                ColorPickerDialog colorPickerDialog = new ColorPickerDialog(mView.getContext(), new ColorPickerDialog.OnColorChangedListener() {
                     @Override
                     public void colorChanged(int color) {
                         colorPreview.setBackgroundColor(color);
@@ -638,11 +658,11 @@ public class ButtonListenerFactory implements Serializable {
 
                         //                        debug log
                         Log.d(LOG_TAG, "Color changGGGE event");
-                        if (room == Room.ALL) {
+                        if (mRoom == Room.ALL) {
                             Collection<Message> messages = Messages.createAllLightColorMessages(red, green, blue);
                             MessageSender.messageBatch(messages);
                         } else {
-                            Message message = Messages.createColorLightMessage(room, red, green, blue);
+                            Message message = Messages.createColorLightMessage(mRoom, red, green, blue);
                             Log.d(LOG_TAG, "Message :" + message);
                             MessageSender.lightControl(message);
                         }
@@ -654,7 +674,8 @@ public class ButtonListenerFactory implements Serializable {
 
             }
         });
-    }
 
+
+    }
 
 }

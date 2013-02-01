@@ -127,14 +127,14 @@ public class ControlFragment extends Fragment {
 
     private void createListenerForView(View view) {
         Log.d(LOG_TAG, "rufe factory auf mit context:" + mContext + " Controls:" + mControl + " view:" + view);
-        buttonListenerFactory.setListenerForView(new ViewTransportTyp(mContext, mControl, view));
+        buttonListenerFactory.setListenerForView(view, mControl, mContext );
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
 
-        if (mControl == Control.LIGHT) {
+        if (mControl == Control.LIGHT && ! mContext.equals(Room.CORRIDOR)) {
             int[] colors = new int[4];
             Log.d(LOG_TAG, "activiti is " + this.getActivity());
             Log.d(LOG_TAG, "view is" + getView());
