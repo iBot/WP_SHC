@@ -22,17 +22,17 @@ public class ControlFragmentFactory {
 		}
 	}
 	public static Fragment getInstance(Room context, Control control) {
-		if (fragmentMap.get(context) == null){
+//		if (fragmentMap.get(context) == null){
 			fragmentMap.put(context, new HashMap<Control, Fragment>());
-		}
-		if (fragmentMap.get(context).get(control) == null){
+//		}
+//		if (fragmentMap.get(context).get(control) == null){
 			Fragment fragment = new ControlFragment();
 			Bundle args = new Bundle();
 			args.putSerializable(ControlFragment.CONTEXT, context);
 			args.putSerializable(ControlFragment.CONTROL, control);
 			fragment.setArguments(args);
 			fragmentMap.get(context).put(control, fragment);
-		}
+//		}
 		return fragmentMap.get(context).get(control);
 	}
 

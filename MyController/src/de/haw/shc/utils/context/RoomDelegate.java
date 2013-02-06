@@ -7,11 +7,12 @@ import java.util.Map;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Activity;
+import android.app.Fragment;
 import android.os.Bundle;
 import android.app.FragmentTransaction;
 
 
-
+import android.util.Log;
 import de.haw.shc.ControlFragment;
 import de.haw.shc.R;
 import de.haw.shc.utils.control.Control;
@@ -21,6 +22,7 @@ public class RoomDelegate {
 
 	private Room mRoom;
 	private Control mControl;
+    private static final String LOG_TAG = "RoomDelegate";
 	
 	
 
@@ -40,24 +42,35 @@ public class RoomDelegate {
 
 		ActionBar.TabListener tabListener = new ActionBar.TabListener() {
 
+            @Override
 			public void onTabSelected(Tab tab, FragmentTransaction ft) {
-				mRoom = id;
-				mControl = (Control) tab.getTag();
 
-				activity.getFragmentManager()
-						.beginTransaction()
-						.replace(
-								R.id.control_container,
-								ControlFragmentFactory.getInstance(id,
-                                        (Control) tab.getTag())).commit();
+                mRoom = id;
+                mControl = (Control) tab.getTag();
+
+                Log.d(LOG_TAG, "selected Tab: "+mRoom+"-"+mControl);
+//                activity.getFragmentManager()
+                        ft
+//                        .beginTransaction()
+                        .replace(
+                                R.id.control_container,
+                                ControlFragmentFactory.getInstance(id,
+                                        (Control) tab.getTag()));
+
 			}
 
+            @Override
 			public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 			}
 
+            @Override
 			public void onTabReselected(Tab tab, FragmentTransaction ft) {
+                onTabSelectOrReselect(tab, ft);
 			}
 
+            private void onTabSelectOrReselect(Tab tab, FragmentTransaction ft){
+
+            }
 		};
 
 		RoomTabFactory.createTabs(actionBar, id, tabListener);

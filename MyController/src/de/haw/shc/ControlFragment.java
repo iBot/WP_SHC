@@ -99,27 +99,35 @@ public class ControlFragment extends Fragment {
 
             Log.d(LOG_TAG,"loaded value is "+ colorPrefs.getInt("color0",0xFF0000));
 
+            Log.d(LOG_TAG, "Inflated Layout for " + Control.LIGHT);
+
         } else if (mControl.equals(Control.CURTAIN)) {
 
             view = inflater.inflate(R.layout.curtains_layout, container, false);
             createListenerForView(view);
+
+            Log.d(LOG_TAG, "Inflated Layout for " + Control.CURTAIN);
         } else if (mControl.equals(Control.BLINDS)) {
 
             view = inflater.inflate(R.layout.blinds_layout, container, false);
             createListenerForView(view);
+            Log.d(LOG_TAG, "Inflated Layout for " + Control.BLINDS);
         } else if (mControl.equals(Control.WINDOW)) {
 
             view = inflater.inflate(R.layout.window_layout, container, false);
             createListenerForView(view);
+
+            Log.d(LOG_TAG, "Inflated Layout for " + Control.WINDOW);
         } else if (mControl.equals(Control.HEATING)) {
 
             view = inflater.inflate(R.layout.heating_layout, container, false);
             createListenerForView(view);
+            Log.d(LOG_TAG, "Inflated Layout for " + Control.HEATING);
         } else {
             Log.d(LOG_TAG, "CANT MATCH mControl value " + mControl);
         }
 
-
+        Log.d(LOG_TAG,"view ist null? "+(view==null));
         return view;
     }
 
