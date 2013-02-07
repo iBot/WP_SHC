@@ -3,6 +3,7 @@ package de.haw.shc;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -92,10 +93,10 @@ public class ControlFragment extends Fragment {
             view = inflater.inflate(R.layout.light_layout, container, false);
             createListenerForView(view);
 
-            view.findViewById(R.id.ColorFav1).setBackgroundColor(colorPrefs.getInt("color0",-65465));
-            view.findViewById(R.id.ColorFav2).setBackgroundColor(colorPrefs.getInt("color1",-65465));
-            view.findViewById(R.id.ColorFav3).setBackgroundColor(colorPrefs.getInt("color2",-65465));
-            view.findViewById(R.id.ColorFav4).setBackgroundColor(colorPrefs.getInt("color3",-65465));
+            view.findViewById(R.id.ColorFav1).setBackgroundColor(colorPrefs.getInt("color0", Color.BLUE));
+            view.findViewById(R.id.ColorFav2).setBackgroundColor(colorPrefs.getInt("color1",Color.RED));
+            view.findViewById(R.id.ColorFav3).setBackgroundColor(colorPrefs.getInt("color2",Color.GREEN));
+            view.findViewById(R.id.ColorFav4).setBackgroundColor(colorPrefs.getInt("color3",Color.YELLOW));
 
             Log.d(LOG_TAG,"loaded value is "+ colorPrefs.getInt("color0",0xFF0000));
 

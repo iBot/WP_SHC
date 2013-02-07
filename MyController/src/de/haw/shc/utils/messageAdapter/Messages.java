@@ -158,7 +158,7 @@ public final class Messages {
         String addString;
         if (room == Room.KITCHEN || room == Room.DINING) {
             addString = "_dining_kitchen";
-        } else if (room == ALL) {
+        } else if ( room == Room.SLEEPING) {
             addString = "";
         } else {
             addString = "_" + room.getValue();

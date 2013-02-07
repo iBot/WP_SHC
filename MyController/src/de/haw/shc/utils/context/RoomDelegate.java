@@ -40,7 +40,7 @@ public class RoomDelegate {
 		}
 		actionBar.removeAllTabs();
 
-		ActionBar.TabListener tabListener = new ActionBar.TabListener() {
+        ActionBar.TabListener tabListener = new ActionBar.TabListener() {
 
             @Override
 			public void onTabSelected(Tab tab, FragmentTransaction ft) {
